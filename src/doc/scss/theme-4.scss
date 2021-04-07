@@ -344,8 +344,13 @@
     z-index: 2;
   }
 
+  .wrapper_items {
+    margin-top: -70px;
+  }
+
   .menu4.home4menu {
-    position: absolute;
+    position: sticky;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 99;

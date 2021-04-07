@@ -118,7 +118,7 @@ const FooterAreaThree = () => {
                             </div>
                             <div className="col-lg-6">
                                 <NewsLetter/>
-                                <FollowUs title="Follow Us"/>
+                                {/* <FollowUs title="Follow Us"/> */}
                                 <div className="banner2 mb30 ">
                                     <Link to="/" className="border-radious5">
                                         <img src={banner4} alt="banner"/>
@@ -130,7 +130,7 @@ const FooterAreaThree = () => {
                             <div className="space-15"/>
                             <div className="border_black"/>
                             <div className="space-15"/>
-                            <div className="row">
+                            {/* <div className="row">
                                 <div className="col-lg-6">
                                     <div className="apps_desc">
                                         <h3 className="apps_title">Newspark app download</h3>
@@ -148,7 +148,7 @@ const FooterAreaThree = () => {
                                         </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
