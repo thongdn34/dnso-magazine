@@ -351,6 +351,14 @@
     z-index: 99;
   }
 
+  .menu4.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
   .welcome_list {
     position: absolute;
     bottom: 0;

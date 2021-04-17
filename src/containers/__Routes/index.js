@@ -1,6 +1,6 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import PrivateRoute from '../_PrivateRoute';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import PrivateRoute from "../_PrivateRoute";
 import HomePage from "../HomePage";
 import HomePageTwo from "../HomePageTwo";
 import BusinessPage from "../BusinessPage";
@@ -82,10 +82,10 @@ import PostOneLeftSidebarDarkPage from "../PostOneLeftSidebarDarkPage";
 // import PublicRoute from '../_PublicRoute';
 
 const Routes = () => {
-    return (
-        <Switch>
-            {/*home one routes*/}
-            <PrivateRoute
+  return (
+    <Switch>
+      {/*home one routes*/}
+      {/* <PrivateRoute
                 exact
                 path="/"
                 parentClass="theme-1"
@@ -184,10 +184,10 @@ const Routes = () => {
                 exact
                 path="/left_post2"
                 parentClass="theme-1"
-                component={PostOneLeftSidebarPage}/>
+                component={PostOneLeftSidebarPage}/> */}
 
-            {/*home two routes*/}
-            <PrivateRoute
+      {/*home two routes*/}
+      {/* <PrivateRoute
                 exact
                 home_style={2}
                 parentClass="theme-3 theme3_bg"
@@ -300,132 +300,152 @@ const Routes = () => {
                 home_style={2}
                 parentClass="theme-3"
                 path="/home-two/left_post2"
-                component={PostOneHTwoLeftSidebarPage}/>
+                component={PostOneHTwoLeftSidebarPage}/> */}
 
-            {/*home page three*/}
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three"
-                component={HomePageThree}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/business"
-                component={BusinessThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/entertainment"
-                component={EntertainmentThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/features"
-                component={FeatureThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/sports"
-                component={SportsThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/trending"
-                component={TrendingThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/about"
-                component={AboutUsThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/archive"
-                component={ArchiveThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/contact"
-                component={ContactUsThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 bg4"
-                path="/home-three/404"
-                component={NotFoundThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/post1"
-                component={PostOneHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/post2"
-                component={PostTwoHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4 theme3_bg"
-                path="/home-three/post3"
-                component={PostThreeHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/video_post1"
-                component={VideoPostOneHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/video_post2"
-                component={VideoPostTwoHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/video_post3"
-                component={VideoPostThreeHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/audio_post1"
-                component={AudioPostOneHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/audio_post2"
-                component={AudioPostTwoHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/audio_post3"
-                component={AudioPostThreeHThreePage}/>
-            <PrivateRoute
-                exact
-                home_style={3}
-                parentClass="theme-4"
-                path="/home-three/left_post2"
-                component={PostOneHThreeLeftSidebarPage}/>
+      {/*home page three*/}
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/"
+        component={HomePageThree}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/business"
+        component={BusinessThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/entertainment"
+        component={EntertainmentThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/features"
+        component={FeatureThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/sports"
+        component={SportsThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/trending"
+        component={TrendingThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/about"
+        component={AboutUsThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/archive"
+        component={ArchiveThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/contact"
+        component={ContactUsThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 bg4"
+        path="/404"
+        component={NotFoundThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/post1"
+        component={PostOneHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/post2"
+        component={PostTwoHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4 theme3_bg"
+        path="/post3"
+        component={PostThreeHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/video_post1"
+        component={VideoPostOneHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/video_post2"
+        component={VideoPostTwoHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/video_post3"
+        component={VideoPostThreeHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/audio_post1"
+        component={AudioPostOneHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/audio_post2"
+        component={AudioPostTwoHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/audio_post3"
+        component={AudioPostThreeHThreePage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/left_post2"
+        component={PostOneHThreeLeftSidebarPage}
+      />
 
-            {/*home dark version*/}
-            <PrivateRoute
+      {/*home dark version*/}
+      {/* <PrivateRoute
                 exact
                 home_style={4}
                 path="/dark"
@@ -544,10 +564,10 @@ const Routes = () => {
                 home_style={4}
                 path="/dark/left_post2"
                 parentClass="dark-theme primay_bg"
-                component={PostOneLeftSidebarDarkPage}/>
+                component={PostOneLeftSidebarDarkPage}/> */}
 
-            <Route exact component={NotFoundPage}/>
-        </Switch>
-    );
+      <Route exact component={NotFoundPage} />
+    </Switch>
+  );
 };
-export default Routes
+export default Routes;
