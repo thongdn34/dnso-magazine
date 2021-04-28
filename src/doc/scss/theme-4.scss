@@ -341,7 +341,6 @@
 
   .wrapper_welcome {
     position: relative;
-    z-index: 2;
   }
 
   .menu4.home4menu {
@@ -349,6 +348,7 @@
     left: 0;
     width: 100%;
     z-index: 99;
+    background-color: $primary_bg;
   }
 
   .menu4.sticky {
@@ -356,7 +356,6 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 3;
   }
 
   .welcome_list {

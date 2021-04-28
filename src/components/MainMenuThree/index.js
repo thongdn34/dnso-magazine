@@ -7,7 +7,7 @@ import SearchModal from "../SearchModal";
 const menus = [
   {
     id: 1,
-    linkText: "Home",
+    linkText: "Thời sự",
     link: "/",
     child: false,
     // icon: "angle-down",
@@ -37,7 +37,7 @@ const menus = [
   },
   {
     id: 2,
-    linkText: "Pages",
+    linkText: "Góc nhìn",
     child: true,
     icon: "angle-down",
     submenu: [
@@ -161,7 +161,7 @@ const menus = [
   // },
   {
     id: 4,
-    linkText: "Categories",
+    linkText: "Thế giới",
     child: true,
     icon: "angle-down",
     submenu: [
@@ -194,17 +194,47 @@ const menus = [
   },
   {
     id: 5,
-    linkText: "World",
+    linkText: "Kinh doanh",
     link: "/world"
   },
   {
     id: 6,
-    linkText: "Sports",
+    linkText: "Giải trí",
     link: "/sports"
   },
   {
     id: 7,
-    linkText: "Contact",
+    linkText: "Thể thao",
+    link: "/sports"
+  },
+  {
+    id: 8,
+    linkText: "Pháp luật",
+    link: "/contact"
+  },
+  {
+    id: 9,
+    linkText: "Giáo dục",
+    link: "/contact"
+  },
+  {
+    id: 10,
+    linkText: "Sức khỏe",
+    link: "/contact"
+  },
+  {
+    id: 11,
+    linkText: "Đời sống",
+    link: "/contact"
+  },
+  {
+    id: 12,
+    linkText: "Du lịch",
+    link: "/contact"
+  },
+  {
+    id: 13,
+    linkText: "Khoa học",
     link: "/contact"
   }
 ];
@@ -240,7 +270,7 @@ const MainMenuThree = ({ className }) => {
           <div className="main-menu">
             <div className="main-nav clearfix is-ts-sticky">
               <div className="row justify-content-between">
-                <nav className="navbar navbar-expand-lg col-lg-8 align-self-center">
+                <nav className="navbar navbar-expand-lg align-self-center">
                   <div className="site-nav-inner">
                     <button
                       className="navbar-toggler"
@@ -336,14 +366,14 @@ const MainMenuThree = ({ className }) => {
                     />
                   </div>
                 </nav>
-                <div className="col-lg-2 text-right align-self-center">
+                {/* <div className="col-lg-2 text-right align-self-center">
                   <div
                     className="search4"
                     onClick={() => setSearchShow(!searchShow)}
                   >
                     <FontAwesome name="search" />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
