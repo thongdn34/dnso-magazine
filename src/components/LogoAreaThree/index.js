@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Swiper from "react-id-swiper";
 import FontAwesome from "../uiStyle/FontAwesome";
 import tempIcon from "../../doc/img/icon/s4.png";
-import logo from "../../doc/img/logo/logo41.png";
+import logo from "../../doc/img/logo/logo2.png";
 
 const LogoAreaThree = () => {
   const [swiper, setSwiper] = useState(null);
