@@ -42,7 +42,7 @@
 @import 'theme4-nav';
 @import 'theme-4';
 @import 'preloader';
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 a {
   @include transition(all .4s);
@@ -67,11 +67,15 @@ h6 {
   color: $heading_color;
 }
 
+p {
+  font-family: $font1;
+}
+
 body {
   font-size: $body_font_size;
   line-height: 27px;
   color: $body_color;
-  font-family: $font1;
+  font-family: $primary-font;
   font-weight: $wightRegular;
   overflow-x: hidden;
 }
