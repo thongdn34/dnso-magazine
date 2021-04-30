@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+/* eslint-disable no-unused-expressions */
+import React, { Fragment, useEffect, useState } from "react";
 import MainMenuThree from "../../components/MainMenuThree";
 import HeroArea from "../../components/HeroArea";
 import TrendingNewsThree from "../../components/TrendingNewsThree";
@@ -25,6 +26,9 @@ import international42 from "../../doc/img/international/international42.jpg";
 import international43 from "../../doc/img/international/international43.jpg";
 import international44 from "../../doc/img/international/international44.jpg";
 import international45 from "../../doc/img/international/international45.jpg";
+import { connect } from "react-redux";
+import { getAllPosts } from "../../store/actions/posts";
+import { MarkdownPreview } from "react-marked-markdown";
 
 const internationalPosts = [
   {
@@ -100,7 +104,16 @@ const financePosts2 = [
   }
 ];
 
-const HomePageThree = () => {
+const HomePageThree = (props) => {
+  const { posts } = props;
+  const getPosts = () => {
+    props?.getAllPosts();
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
     <Fragment>
       <div className="wrapper_welcome">
@@ -191,4 +204,12 @@ const HomePageThree = () => {
   );
 };
 
-export default HomePageThree;
+const actions = (dispatch) => ({
+  getAllPosts: () => dispatch(getAllPosts())
+});
+
+const selects = (state) => ({
+  posts: state.posts.posts
+})
+
+export default connect(selects, actions)(HomePageThree);
