@@ -319,3 +319,4 @@ export const menus = [
     child: false
   }
 ];
+export const path = 'http://188.166.225.4:1337';
