@@ -1,3 +1,6 @@
+import { path } from "./constants";
+import moment from "moment";
+
 function mostViewSort(data) {
   let initial = 0;
   let secondFirst = Math.floor(data.length / 2) - 1;
@@ -14,6 +17,9 @@ function mostViewSort(data) {
   return results;
 }
 
-const convertDate = (date) => new Date(date).toUTCString();
+const convertDate = (date) => new moment(date).format('dddd MM YYYY');
+const sortDateArray = (array) =>
+  array.sort((d1, d2) => new moment(d1) - new moment(d2));
+const addingImgPrefix = (url) => `${path}${url}`;
 
-export { mostViewSort, convertDate };
+export { mostViewSort, convertDate, addingImgPrefix, sortDateArray };

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-import { convertDate } from "../../utils/commonFunctions";
+import { addingImgPrefix, convertDate } from "../../utils/commonFunctions";
 
 const SinglePost = (props) => {
   const { post } = props;
@@ -12,7 +12,10 @@ const SinglePost = (props) => {
       <div className="post_img border-radious5">
         <div className="img_wrap">
           <Link to="/">
-            <img src={post?.thumbnail} alt={post?.title} />
+            <img
+              src={addingImgPrefix(post?.thumbnail.formats.medium.url)}
+              alt={post?.caption}
+            />
           </Link>
         </div>
         <span className="tranding border_tranding">
@@ -23,7 +26,7 @@ const SinglePost = (props) => {
         <div className="row">
           <div className="col-9 align-self-cnter">
             <div className="meta3">
-              <Link to="/">{post?.category}</Link>
+              <Link to="/">{post?.category.type}</Link>
               <Link to="/">{convertDate(post?.updated_at)}</Link>
             </div>
           </div>
@@ -43,13 +46,10 @@ const SinglePost = (props) => {
         </div>
         <div className="space-5" />
         <h4>
-          <Link to="/">{props?.title}</Link>
+          <Link to="/">{post?.title}</Link>
         </h4>
         <div className="space-10" />
-        <p className="post-p">
-          The property, complete with 30-seat screening from room, a 100-seat
-          amphitheater and a swimming pond with sandy shower…
-        </p>
+        <p className="post-p">{post?.subDescription}</p>
       </div>
     </div>
   );
