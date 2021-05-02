@@ -28,7 +28,7 @@ import international44 from "../../doc/img/international/international44.jpg";
 import international45 from "../../doc/img/international/international45.jpg";
 import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
-import { MarkdownPreview } from "react-marked-markdown";
+import { sortDateArray } from "../../utils/commonFunctions";
 
 const internationalPosts = [
   {
@@ -114,18 +114,27 @@ const HomePageThree = (props) => {
     getPosts();
   }, []);
 
+  const getLatedPosts = () => {
+    if (props.posts.length <= 10) {
+      return posts
+    }
+
+    return sortDateArray(posts).slice(0, 10);
+  }
+
+
   return (
     <Fragment>
       <div className="wrapper_welcome">
         <MainMenuThree className="home4menu" />
-        <HeroArea />
+        {/* <HeroArea /> */}
         <div className="bg4">
           <div className="space-60" />
           <div className="total3 mb30">
             <div className="container">
               <div className="row">
                 <div className="col-md-12 col-xl-8">
-                  <TrendingNewsThree />
+                  <TrendingNewsThree posts={getLatedPosts()} />
                   <BusinessCarousel />
                   <BusinessImageCarousel />
                 </div>
@@ -139,7 +148,7 @@ const HomePageThree = (props) => {
                 </div>
               </div>
             </div>
-            <VIdeoNewsSection />
+            {/* <VIdeoNewsSection /> */}
           </div>
           <div className="inernational4">
             <div className="container">
@@ -177,10 +186,10 @@ const HomePageThree = (props) => {
                       <WidgetOpinionNews />
                     </div>
                     <div className="col-md-6 col-xl-12">
-                      <NewsLetter
+                      {/* <NewsLetter
                         titleClass="white"
                         className="news_letter4 border-radious5"
-                      />
+                      /> */}
                       <CategoryFour />
                       <WidgetFinanceTwo
                         data={financePosts2}
