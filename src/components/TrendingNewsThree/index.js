@@ -36,13 +36,22 @@ const trendingNews = [
         title: 'Copa America: Luis Suarez from devastated US'
     },
 ];
-const TrendingNewsThree = () => {
+const TrendingNewsThree = (props) => {
+    // const renderFirstPost = () => {
+    //     if (!props?.post.lenght) {
+    //         return null;
+    //     }
+
+    //     return (
+    //         <Single
+    //     )
+    // }
     return (
         <div className="white_bg tranding3 padding20 border-radious5 mb30 shadow7">
             <div className="row">
                 <div className="col-12">
                     <div className="heading">
-                        <h2 className="widget-title">Trending News</h2>
+                        <h2 className="widget-title">Tin mới nhất</h2>
                     </div>
                 </div>
             </div>
