@@ -337,7 +337,7 @@
     left: 0;
     width: 100%;
     z-index: 99;
-    background-color: $primary_bg;
+    background-color: $red-primary;
   }
 
   .menu4.sticky {
@@ -1818,7 +1818,7 @@
           font-size: 24px;
           font-weight: 500;
           color: $tab4_color;
-          padding: 12px;
+          padding: 10px;
           position: relative;
           z-index: 2;
           @include transition(all 0.3s);
