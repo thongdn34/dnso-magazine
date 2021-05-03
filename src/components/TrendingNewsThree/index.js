@@ -81,7 +81,7 @@ const TrendingNewsThree = (props) => {
           <div className="post_img">
             <div className="img_wrap">
               <Link to="/">
-                <img src={addingImgPrefix(item?.thumbnail.formats.small.url)} alt={item.caption} />
+                <img src={addingImgPrefix(item?.thumbnail.formats.thumbnail.url)} alt={item.caption} />
               </Link>
             </div>
           </div>

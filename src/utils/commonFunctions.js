@@ -17,9 +17,9 @@ function mostViewSort(data) {
   return results;
 }
 
-const convertDate = (date) => new moment(date).format('dddd MM YYYY');
+const convertDate = (date) => new moment(date).format("dddd MM YYYY");
 const sortDateArray = (array) =>
-  array.sort((d1, d2) => new moment(d1) - new moment(d2));
+  array.sort((d1, d2) => new moment(d2.updated_at) - new moment(d1.updated_at));
 const addingImgPrefix = (url) => `${path}${url}`;
 
 export { mostViewSort, convertDate, addingImgPrefix, sortDateArray };

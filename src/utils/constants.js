@@ -7,7 +7,7 @@ export const categoryNames = {
   LIFESTYLES: "Lifestyles",
   TECHNOLOGIES: "Technologies",
   VIDEOS: "Videos",
-  VIEWS: "Views"
+  VIEWS: "Views",
 };
 export const subCategories = {
   ABOUT_BUSINESS: "About business",
