@@ -5,26 +5,36 @@ const FooterNewsCategories = () => {
     return (
         <Fragment>
             <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-3">
                     <ul>
-                        <li><Link to="/">Politics</Link></li>
-                        <li><Link to="/">Business</Link></li>
-                        <li><Link to="/">TECHNOLOGY</Link></li>
-                        <li><Link to="/">Science</Link></li>
-                        <li><Link to="/">Health</Link></li>
-                        <li><Link to="/">Sports</Link></li>
-                        <li><Link to="/">Entertainment</Link></li>
+                        <li><Link to="/">Góc nhìn</Link></li>
+                        <li><Link to="/">Kinh Doanh</Link></li>
+                        <li><Link to="/">Văn hóa</Link></li>
+                        <li><Link to="/">Sự kiện</Link></li>
                     </ul>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-3">
                     <ul>
-                        <li><Link to="/">Education</Link></li>
-                        <li><Link to="/">Obituaries</Link></li>
-                        <li><Link to="/">Corrections</Link></li>
-                        <li><Link to="/">Education</Link></li>
-                        <li><Link to="/">Today’s Paper</Link></li>
-                        <li><Link to="/">Corrections</Link></li>
-                        <li><Link to="/">Foods</Link></li>
+                        <li><Link to="/">Đầu tư</Link></li>
+                        <li><Link to="/">Nhịp sống</Link></li>
+                        <li><Link to="/">Công nghệ</Link></li>
+                        <li><Link to="/">Videos</Link></li>
+                    </ul>
+                </div>
+                <div className="col-lg-3">
+                    <ul>
+                        <li><Link to="/">Tư vấn</Link></li>
+                        <li><Link to="/">Sách hay</Link></li>
+                        <li><Link to="/">Doanh nhân</Link></li>
+                        <li><Link to="/">Thương mại</Link></li>
+                    </ul>
+                </div>
+                <div className="col-lg-3">
+                    <ul>
+                        <li><Link to="/">Sức khỏe</Link></li>
+                        <li><Link to="/">Du lịch</Link></li>
+                        <li><Link to="/">Bất động sản</Link></li>
+                        <li><Link to="/">Khởi nghiệp</Link></li>
                     </ul>
                 </div>
             </div>
