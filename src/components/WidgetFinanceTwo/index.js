@@ -9,14 +9,14 @@ const WidgetFinanceTwo = ({ title, data }) => {
         <h3 className="widget-title">{title}</h3>
       </div>
       {data.map((item, i) => (
-        <div key={i} className="single_post mb30 type18">
+        <div key={item.title} className="single_post mb30 type18">
           <div className="post_img">
             <div className="img_wrap">
               <Link to="/">
                 <img src={item.photo} alt="thumb" />
               </Link>
             </div>
-            <span className="batch3 date">April 26, 2020</span>
+            <span className="batch3 date">{item.updateAt}</span>
           </div>
           <div className="single_post_text py0">
             <h4>
@@ -27,13 +27,13 @@ const WidgetFinanceTwo = ({ title, data }) => {
             <ul className="mt10 like_cm">
               <li>
                 <Link to="/">
-                  <FontAwesome name="eye" /> 6745
+                  <FontAwesome name="eye" /> {item.view || 0}
                 </Link>
               </li>
               {/* <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li> */}
               <li>
                 <Link to="/">
-                  <FontAwesome name="share" /> 6745
+                  <FontAwesome name="share" /> {item.share || 0}
                 </Link>
               </li>
             </ul>

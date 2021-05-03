@@ -5,8 +5,8 @@ export const $http = axios.create({
   timeout: 10000
 });
 
-export const $get = async (path) => {
-  const { data } = await $http.get(path);
+export const $get = async (path, options) => {
+  const { data } = await $http.get(path, options);
 
   return data;
 }

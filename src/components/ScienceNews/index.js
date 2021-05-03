@@ -6,49 +6,50 @@ import {mostViewSort} from "../../utils/commonFunctions";
 
 import science41 from '../../doc/img/science/science41.jpg';
 
-const posts = [
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-    {
-        photo: science41,
-        title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
-        description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
-    },
-];
-const ScienceNews = () => {
+// const posts = [
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+//     {
+//         photo: science41,
+//         title: 'Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…',
+//         description: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy'
+//     },
+// ];
+const ScienceNews = (props) => {
+    const { posts } = props
     const [swiper, setSwiper] = useState(null);
 
     const goNext = () => {
@@ -106,10 +107,10 @@ const ScienceNews = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="book_mark">
+                            {/* <div className="book_mark">
                                 <div className="bookmark_icon"><FontAwesome name="bookmark"/></div>
                                 <h6>QuomodoSoft <span>March 25, 2020</span></h6>
-                            </div>
+                            </div> */}
                         </div>
                     ))}
                 </Swiper>

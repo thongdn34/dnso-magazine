@@ -3,37 +3,8 @@ import { Link } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from "react-id-swiper";
 
-import smslide41 from "../../doc/img/trending/smslide41.jpg";
-import smslide42 from "../../doc/img/trending/smslide42.jpg";
-import smslide43 from "../../doc/img/trending/smslide43.jpg";
-
-const businessPosts = [
-  {
-    photo: smslide41,
-    category: "Technology",
-    title:
-      "Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…",
-    description:
-      "The property, complete with seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: smslide42,
-    category: "Technology",
-    title:
-      "Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…",
-    description:
-      "The property, complete with seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: smslide43,
-    category: "Technology",
-    title:
-      "Why clinician spiritual health matters in the covid-19 crisis: you can’t pour from an empty cup…",
-    description:
-      "The property, complete with seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  }
-];
-const BusinessCarousel = () => {
+const BusinessCarousel = (props) => {
+  const { businessPosts } = props;
   const [swiper, setSwiper] = useState(null);
 
   const goNext = () => {
@@ -67,6 +38,11 @@ const BusinessCarousel = () => {
       }
     }
   };
+
+  if (!businessPosts?.length) {
+    return null;
+  }
+
   return (
     <div className="business_carousel nav_style4 mb30 ">
       <Swiper getSwiper={setSwiper} {...params}>
@@ -87,7 +63,7 @@ const BusinessCarousel = () => {
                 <div className="col-4 align-self-center">
                   <div className="img_wrap">
                     <Link to="/">
-                      <img src={item.photo} alt="thumb" />
+                      <img src={item.photo} alt={item.caption} />
                     </Link>
                   </div>
                 </div>
@@ -95,13 +71,13 @@ const BusinessCarousel = () => {
               <ul className="mt20 like_cm">
                 <li>
                   <Link to="/">
-                    <FontAwesome name="eye" /> 6745
+                    <FontAwesome name="eye" />{item.view || 0}
                   </Link>
                 </li>
                 {/* <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li> */}
                 <li>
                   <Link to="/">
-                    <FontAwesome name="share" /> 6745
+                    <FontAwesome name="share" />{item.share || 0}
                   </Link>
                 </li>
               </ul>

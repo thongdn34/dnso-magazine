@@ -6,7 +6,9 @@ export const getAllPosts = () => {
     dispatch({ type: GET_POSTS });
 
     try {
-      const res = await getPosts();
+      const res = await getPosts({
+        _publicationState: 'live'
+      });
       dispatch({ type: GET_POSTS_SUCCESS, payload: res });
     } catch (error) {
       console.log("===eror", error);

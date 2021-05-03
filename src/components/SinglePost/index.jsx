@@ -13,7 +13,7 @@ const SinglePost = (props) => {
         <div className="img_wrap">
           <Link to="/">
             <img
-              src={addingImgPrefix(post?.thumbnail.formats.medium.url)}
+              src={addingImgPrefix(post?.thumbnail.formats.medium?.url || post?.thumbnail.formats.thumbnail.url)}
               alt={post?.caption}
             />
           </Link>
