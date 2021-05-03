@@ -50,7 +50,7 @@ const WidgetTabPane = ({arr, a_id, id}) => {
                             </div>
                         </div>
                     </div>
-                    {i + 1 < data.length ? <Fragment>
+                    {i + 1 < arr.length ? <Fragment>
                         <div className="space-15"/>
                         <div className="border4"/>
                         <div className="space-15"/>
@@ -60,7 +60,8 @@ const WidgetTabPane = ({arr, a_id, id}) => {
         </Fade>
     )
 };
-const WidgetTabThree = () => {
+const WidgetTabThree = (props) => {
+    const { tab1, tab2, tab3 } = props;
     const [activeTab, setActiveTab] = useState('1');
 
     const toggle = tab => {
@@ -78,7 +79,7 @@ const WidgetTabThree = () => {
                             toggle('1');
                         }}
                     >
-                        Food
+                        Sức khỏe
                     </Link>
                 </NavItem>
                 <NavItem>
@@ -90,7 +91,7 @@ const WidgetTabThree = () => {
                             toggle('2');
                         }}
                     >
-                        Business
+                        Du lịch
                     </Link>
                 </NavItem>
                 <NavItem>
@@ -102,15 +103,15 @@ const WidgetTabThree = () => {
                             toggle('3');
                         }}
                     >
-                        Politics
+                        Startup
                     </Link>
                 </NavItem>
             </Nav>
             <div className="space-20"/>
             <TabContent activeTab={activeTab}>
-                <TabPane tabId='1'><WidgetTabPane a_id={activeTab} id="1" arr={data}/></TabPane>
-                <TabPane tabId='2'><WidgetTabPane a_id={activeTab} id="2" arr={data}/></TabPane>
-                <TabPane tabId='3'><WidgetTabPane a_id={activeTab} id="3" arr={data}/></TabPane>
+                <TabPane tabId='1'><WidgetTabPane a_id={activeTab} id="1" arr={tab1}/></TabPane>
+                <TabPane tabId='2'><WidgetTabPane a_id={activeTab} id="2" arr={tab2}/></TabPane>
+                <TabPane tabId='3'><WidgetTabPane a_id={activeTab} id="3" arr={tab3}/></TabPane>
             </TabContent>
         </div>
     );

@@ -114,11 +114,47 @@ const HomePageThree = (props) => {
     return sortDateArray(posts).slice(0, 10);
   };
 
-  const getLatedParticularPosts = (type = "", isSubCategory = false, offset = 0) => {
-    let res;
-    let field = isSubCategory ? 'sub_categories' : 'category';
+  const getLatedPostsHero = () => {
+    if (props.posts.length <= 10) {
+      return posts;
+    }
 
-    res = props.posts.filter((item) => item?.[`${field}`]?.type === type).slice(0);
+    let list = sortDateArray(posts).slice(0, 4);
+    return list.reduce(
+      (acc, curr) => [
+        ...acc,
+        {
+          photo: addingImgPrefix(
+            curr?.thumbnail.formats.medium?.url ||
+              curr?.thumbnail.formats.thumbnail?.url
+          ),
+          category: curr?.category.translatedName,
+          title: curr?.title,
+          date: convertDate(curr?.updated_at)
+        }
+      ],
+      []
+    );
+  };
+
+  const getLatedParticularPosts = (
+    type = "",
+    isSubCategory = false,
+    offset = 0
+  ) => {
+    let res;
+    let field = isSubCategory ? "sub_categories" : "category";
+
+    if (isSubCategory) {
+      res = props.posts
+        .filter((item) => item?.[`${field}`]?.some((i) => i.type === type))
+        .slice(0);
+    } else {
+      res = props.posts
+        .filter((item) => item?.[`${field}`]?.type === type)
+        .slice(0);
+    }
+
     if (offset) {
       res = res.slice(0, offset);
     }
@@ -151,7 +187,7 @@ const HomePageThree = (props) => {
     <Fragment>
       <div className="wrapper_welcome">
         <MainMenuThree className="home4menu" />
-        {/* <HeroArea /> */}
+        {/* <HeroArea posts={getLatedPostsHero()} /> */}
         <div className="bg4">
           <div className="space-60" />
           <div className="total3 mb30">
@@ -167,6 +203,7 @@ const HomePageThree = (props) => {
                   <BusinessImageCarousel
                     populerPosts={getLatedParticularPosts(
                       categoryNames.CULTURALS,
+                      false,
                       5
                     )}
                     galleryPosts={getLatedParticularPosts(
@@ -176,7 +213,11 @@ const HomePageThree = (props) => {
                 </div>
                 <div className="col-md-6 col-xl-4 d-md-none d-xl-block">
                   <WidgetFinanceTwo
-                    data={getLatedParticularPosts(categoryNames.INVESTS, false, 3)}
+                    data={getLatedParticularPosts(
+                      categoryNames.INVESTS,
+                      false,
+                      3
+                    )}
                     title="Tài chính"
                   />
                   <div className="banner2 mb30 border-radious5">
@@ -223,7 +264,23 @@ const HomePageThree = (props) => {
                           categoryNames.ADVISORIES
                         )}
                       />
-                      <WidgetTabThree />
+                      <WidgetTabThree
+                        tab1={getLatedParticularPosts(
+                          subCategories.HEALTHS,
+                          true,
+                          5
+                        )}
+                        tab2={getLatedParticularPosts(
+                          subCategories.TRAVELS,
+                          true,
+                          5
+                        )}
+                        tab3={getLatedParticularPosts(
+                          subCategories.STARTUPS,
+                          true,
+                          5
+                        )}
+                      />
                     </div>
                   </div>
                 </div>
@@ -235,7 +292,10 @@ const HomePageThree = (props) => {
                         title="Follow Us"
                       /> */}
                       <WidgetOpinionNews
-                        opinionPosts={getLatedParticularPosts(subCategories.EXPERTS, true)}
+                        opinionPosts={getLatedParticularPosts(
+                          subCategories.EXPERTS,
+                          true
+                        )}
                       />
                     </div>
                     <div className="col-md-6 col-xl-12">
