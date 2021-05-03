@@ -28,7 +28,8 @@ import international44 from "../../doc/img/international/international44.jpg";
 import international45 from "../../doc/img/international/international45.jpg";
 import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
-import { sortDateArray } from "../../utils/commonFunctions";
+import { addingImgPrefix, sortDateArray } from "../../utils/commonFunctions";
+import { categoryNames } from "../../utils/constants";
 
 const internationalPosts = [
   {
@@ -116,12 +117,32 @@ const HomePageThree = (props) => {
 
   const getLatedPosts = () => {
     if (props.posts.length <= 10) {
-      return posts
+      return posts;
     }
 
     return sortDateArray(posts).slice(0, 10);
-  }
+  };
 
+  const getLatedFinancePosts = () => {
+    let res;
+    res = props.posts
+      .filter((item) => item?.category?.type === categoryNames.INVESTS)
+      .slice(0, 3);
+    return res.reduce((acc, curr) => {
+      return [
+        ...acc,
+        {
+          photo: addingImgPrefix(curr?.thumbnail?.formats?.thumbnail?.url),
+          title: curr?.title,
+          description: curr?.description,
+          view: curr.view,
+          share: curr.share
+        }
+      ];
+    }, []);
+  };
+
+  console.log("====getLatedFinancePosts", getLatedFinancePosts());
 
   return (
     <Fragment>
@@ -139,7 +160,7 @@ const HomePageThree = (props) => {
                   <BusinessImageCarousel />
                 </div>
                 <div className="col-md-6 col-xl-4 d-md-none d-xl-block">
-                  <WidgetFinanceTwo data={financePosts} title="Finance" />
+                  <WidgetFinanceTwo data={getLatedFinancePosts()} title="Tài chính" />
                   <div className="banner2 mb30 border-radious5">
                     <Link to="/">
                       <img src={banner4} alt="banner4" />
@@ -219,6 +240,6 @@ const actions = (dispatch) => ({
 
 const selects = (state) => ({
   posts: state.posts.posts
-})
+});
 
 export default connect(selects, actions)(HomePageThree);

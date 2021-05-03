@@ -27,13 +27,13 @@ const WidgetFinanceTwo = ({ title, data }) => {
             <ul className="mt10 like_cm">
               <li>
                 <Link to="/">
-                  <FontAwesome name="eye" /> 6745
+                  <FontAwesome name="eye" /> {item.view || 0}
                 </Link>
               </li>
               {/* <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li> */}
               <li>
                 <Link to="/">
-                  <FontAwesome name="share" /> 6745
+                  <FontAwesome name="share" /> {item.share || 0}
                 </Link>
               </li>
             </ul>
