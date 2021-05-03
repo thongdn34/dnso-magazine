@@ -34,7 +34,7 @@ import { categoryNames } from "../../utils/constants";
 const internationalPosts = [
   {
     photo: international41,
-    title: "Investors explain COVID-19’s impact on consumer startups",
+    title: "sdfsdfsdfsdfsdf dfsd sdf  Investors explain COVID-19’s impact on consumer startupsfsdfsdfsfsdfsdfsdfsd",
     description:
       "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
   },
@@ -70,20 +70,6 @@ const internationalPosts = [
   }
 ];
 
-const financePosts = [
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  },
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  }
-];
 const financePosts2 = [
   {
     photo: finance41,
@@ -123,16 +109,17 @@ const HomePageThree = (props) => {
     return sortDateArray(posts).slice(0, 10);
   };
 
-  const getLatedFinancePosts = () => {
+  const getLatedParticularPosts = (type) => {
     let res;
     res = props.posts
-      .filter((item) => item?.category?.type === categoryNames.INVESTS)
+      .filter((item) => item?.category?.type === type)
       .slice(0, 3);
     return res.reduce((acc, curr) => {
       return [
         ...acc,
         {
           photo: addingImgPrefix(curr?.thumbnail?.formats?.thumbnail?.url),
+          caption: curr?.thumbnail?.formats.caption,
           title: curr?.title,
           description: curr?.description,
           view: curr.view,
@@ -141,8 +128,6 @@ const HomePageThree = (props) => {
       ];
     }, []);
   };
-
-  console.log("====getLatedFinancePosts", getLatedFinancePosts());
 
   return (
     <Fragment>
@@ -156,11 +141,11 @@ const HomePageThree = (props) => {
               <div className="row">
                 <div className="col-md-12 col-xl-8">
                   <TrendingNewsThree posts={getLatedPosts()} />
-                  <BusinessCarousel />
+                  <BusinessCarousel businessPosts={getLatedParticularPosts(categoryNames.BUSINESS)} />
                   <BusinessImageCarousel />
                 </div>
                 <div className="col-md-6 col-xl-4 d-md-none d-xl-block">
-                  <WidgetFinanceTwo data={getLatedFinancePosts()} title="Tài chính" />
+                  <WidgetFinanceTwo data={getLatedParticularPosts(categoryNames.INVESTS)} title="Tài chính" />
                   <div className="banner2 mb30 border-radious5">
                     <Link to="/">
                       <img src={banner4} alt="banner4" />
