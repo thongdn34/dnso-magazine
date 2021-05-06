@@ -28,81 +28,73 @@ import international44 from "../../doc/img/international/international44.jpg";
 import international45 from "../../doc/img/international/international45.jpg";
 import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
-import { sortDateArray } from "../../utils/commonFunctions";
+import {
+  addingImgPrefix,
+  convertDate,
+  sortDateArray
+} from "../../utils/commonFunctions";
+import { categoryNames, subCategories } from "../../utils/constants";
 
-const internationalPosts = [
-  {
-    photo: international41,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international42,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international43,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international44,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international45,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international43,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  }
-];
+// const internationalPosts = [
+//   {
+//     photo: international41,
+//     title:
+//       "sdfsdfsdfsdfsdf dfsd sdf  Investors explain COVID-19’s impact on consumer startupsfsdfsdfsfsdfsdfsdfsd",
+//     description:
+//       "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
+//   },
+//   {
+//     photo: international42,
+//     title: "Investors explain COVID-19’s impact on consumer startups",
+//     description:
+//       "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
+//   },
+//   {
+//     photo: international43,
+//     title: "Investors explain COVID-19’s impact on consumer startups",
+//     description:
+//       "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
+//   },
+//   {
+//     photo: international44,
+//     title: "Investors explain COVID-19’s impact on consumer startups",
+//     description:
+//       "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
+//   },
+//   {
+//     photo: international45,
+//     title: "Investors explain COVID-19’s impact on consumer startups",
+//     description:
+//       "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
+//   },
+//   {
+//     photo: international43,
+//     title: "Investors explain COVID-19’s impact on consumer startups",
+//     description:
+//       "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
+//   }
+// ];
 
-const financePosts = [
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  },
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  }
-];
-const financePosts2 = [
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  },
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  },
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  }
-];
+// const financePosts2 = [
+//   {
+//     photo: finance41,
+//     title: "Copa America: Luis Suarez from devastated US",
+//     description:
+//       "The property, complete with seates screening from room amphitheater pond with sandy"
+//   },
+//   {
+//     photo: finance41,
+//     title: "Copa America: Luis Suarez from devastated US",
+//     description:
+//       "The property, complete with seates screening from room amphitheater pond with sandy"
+//   },
+//   {
+//     photo: finance41,
+//     title: "Copa America: Luis Suarez from devastated US",
+//     description:
+//       "The property, complete with seates screening from room amphitheater pond with sandy"
+//   }
+// ];
 
 const HomePageThree = (props) => {
   const { posts } = props;
@@ -116,18 +108,86 @@ const HomePageThree = (props) => {
 
   const getLatedPosts = () => {
     if (props.posts.length <= 10) {
-      return posts
+      return posts;
     }
 
     return sortDateArray(posts).slice(0, 10);
-  }
+  };
 
+  const getLatedPostsHero = () => {
+    if (props.posts.length <= 10) {
+      return posts;
+    }
+
+    let list = sortDateArray(posts).slice(0, 4);
+    return list.reduce(
+      (acc, curr) => [
+        ...acc,
+        {
+          photo: addingImgPrefix(
+            curr?.thumbnail.formats.medium?.url ||
+              curr?.thumbnail.formats.thumbnail?.url
+          ),
+          category: curr?.category.translatedName,
+          title: curr?.title,
+          date: convertDate(curr?.updated_at)
+        }
+      ],
+      []
+    );
+  };
+
+  const getLatedParticularPosts = (
+    type = "",
+    isSubCategory = false,
+    offset = 0
+  ) => {
+    let res;
+    let field = isSubCategory ? "sub_categories" : "category";
+
+    if (isSubCategory) {
+      res = props.posts
+        .filter((item) => item?.[`${field}`]?.some((i) => i.type === type))
+        .slice(0);
+    } else {
+      res = props.posts
+        .filter((item) => item?.[`${field}`]?.type === type)
+        .slice(0);
+    }
+
+    if (offset) {
+      res = res.slice(0, offset);
+    }
+
+    res = res.reduce((acc, curr) => {
+      return [
+        ...acc,
+        {
+          photo: addingImgPrefix(
+            curr?.thumbnail.formats.medium?.url ||
+              curr?.thumbnail.formats.thumbnail?.url
+          ),
+          caption: curr?.thumbnail?.caption,
+          title: curr?.title,
+          description: curr?.subDescription,
+          view: curr.view,
+          share: curr.share,
+          category: curr?.category.translatedName,
+          updateAt: convertDate(curr?.updated_at)
+        }
+      ];
+    }, []);
+
+    return sortDateArray(res);
+  };
+
+  // console.log("===posts", posts);
 
   return (
     <Fragment>
       <div className="wrapper_welcome">
         <MainMenuThree className="home4menu" />
-        {/* <HeroArea /> */}
+        {/* <HeroArea posts={getLatedPostsHero()} /> */}
         <div className="bg4">
           <div className="space-60" />
           <div className="total3 mb30">
@@ -135,11 +195,31 @@ const HomePageThree = (props) => {
               <div className="row">
                 <div className="col-md-12 col-xl-8">
                   <TrendingNewsThree posts={getLatedPosts()} />
-                  <BusinessCarousel />
-                  <BusinessImageCarousel />
+                  <BusinessCarousel
+                    businessPosts={getLatedParticularPosts(
+                      categoryNames.BUSINESS
+                    )}
+                  />
+                  <BusinessImageCarousel
+                    populerPosts={getLatedParticularPosts(
+                      categoryNames.CULTURALS,
+                      false,
+                      5
+                    )}
+                    galleryPosts={getLatedParticularPosts(
+                      categoryNames.LIFESTYLES
+                    )}
+                  />
                 </div>
                 <div className="col-md-6 col-xl-4 d-md-none d-xl-block">
-                  <WidgetFinanceTwo data={financePosts} title="Finance" />
+                  <WidgetFinanceTwo
+                    data={getLatedParticularPosts(
+                      categoryNames.INVESTS,
+                      false,
+                      3
+                    )}
+                    title="Tài chính"
+                  />
                   <div className="banner2 mb30 border-radious5">
                     <Link to="/">
                       <img src={banner4} alt="banner4" />
@@ -155,24 +235,52 @@ const HomePageThree = (props) => {
               <div className="row">
                 <div className="col-md-12 col-xl-8">
                   <InternationalNews
-                    data={internationalPosts}
+                    data={getLatedParticularPosts(categoryNames.EVENTS)}
                     className="mb30"
-                    title={true}
+                    title="Sự kiện"
                     showMore={true}
                   />
-                  <div className="banner_area mb30 xs-mt60">
+                  {/* <div className="banner_area mb30 xs-mt60">
                     <Link to="/">
                       <img src={banner42} alt="banner42" />
                     </Link>
-                  </div>
-                  <ScienceNews />
+                  </div> */}
+                  <ScienceNews
+                    posts={getLatedParticularPosts(categoryNames.TECHNOLOGIES)}
+                  />
                   <div className="row">
                     <div className="col-md-6">
-                      <SportsNewsTwo />
+                      <SportsNewsTwo
+                        sportsNews={getLatedParticularPosts(
+                          categoryNames.VIEWS,
+                          false,
+                          7
+                        )}
+                      />
                     </div>
                     <div className="col-md-6">
-                      <GalleryCarousel />
-                      <WidgetTabThree />
+                      <GalleryCarousel
+                        galleryPosts={getLatedParticularPosts(
+                          categoryNames.ADVISORIES
+                        )}
+                      />
+                      <WidgetTabThree
+                        tab1={getLatedParticularPosts(
+                          subCategories.HEALTHS,
+                          true,
+                          5
+                        )}
+                        tab2={getLatedParticularPosts(
+                          subCategories.TRAVELS,
+                          true,
+                          5
+                        )}
+                        tab3={getLatedParticularPosts(
+                          subCategories.STARTUPS,
+                          true,
+                          5
+                        )}
+                      />
                     </div>
                   </div>
                 </div>
@@ -183,7 +291,12 @@ const HomePageThree = (props) => {
                         className="padding20 white_bg shadow7"
                         title="Follow Us"
                       /> */}
-                      <WidgetOpinionNews />
+                      <WidgetOpinionNews
+                        opinionPosts={getLatedParticularPosts(
+                          subCategories.EXPERTS,
+                          true
+                        )}
+                      />
                     </div>
                     <div className="col-md-6 col-xl-12">
                       {/* <NewsLetter
@@ -191,10 +304,10 @@ const HomePageThree = (props) => {
                         className="news_letter4 border-radious5"
                       /> */}
                       <CategoryFour />
-                      <WidgetFinanceTwo
+                      {/* <WidgetFinanceTwo
                         data={financePosts2}
                         title="Inernational"
-                      />
+                      /> */}
                       <div className="banner2 mb30 border-radious5  d-md-none d-xl-block">
                         <Link to="/">
                           <img src={banner4} alt="banner4" />
@@ -219,6 +332,6 @@ const actions = (dispatch) => ({
 
 const selects = (state) => ({
   posts: state.posts.posts
-})
+});
 
 export default connect(selects, actions)(HomePageThree);

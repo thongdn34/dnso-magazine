@@ -5,9 +5,9 @@ import FontAwesome from "../uiStyle/FontAwesome";
 const InternationalNews = ({title, showMore, className, data}) => {
     return (
         <div className={`business3 padding30 white_bg border-radious5 ${className ? className : ''}`}>
-            {title ? <h4 className="widget-title">Inernational</h4> : null}
+            {title ? <h4 className="widget-title">{title}</h4> : null}
             {data.map((item, i) => (
-                <div key={i} className={`single_post post_type12 type20 ${i + 1 < data.length ? 'mb30' : ''}`}>
+                <div key={item.title} className={`single_post post_type12 type20 ${i + 1 < data.length ? 'mb30' : ''}`}>
                     <div className="post_img">
                         <div className="img_wrap  border-radious5">
                             <Link to="/">
@@ -40,7 +40,7 @@ const InternationalNews = ({title, showMore, className, data}) => {
                     </div>
                 </div>
             ))}
-            {showMore ? <Link to="/" className="showmore">Show more</Link> : null}
+            {showMore && data.length ? <Link to="/" className="showmore">Show more</Link> : null}
         </div>
     );
 };
