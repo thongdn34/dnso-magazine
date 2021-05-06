@@ -1,8 +1,8 @@
 import axios from "axios";
-const baseURL = "https://dns-be.cyou/";
+import { baseURL } from "../utils/constants";
 
 export const $http = axios.create({
-  baseURL,
+  baseURL: baseURL,
   timeout: 10000
 });
 
