@@ -319,4 +319,4 @@ export const menus = [
     child: false
   }
 ];
-export const baseURL = "https://dns-be.cyou/";
+export const baseURL = "https://dns-be.cyou";
