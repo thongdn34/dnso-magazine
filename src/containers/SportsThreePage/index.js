@@ -75,7 +75,7 @@ const SportsThreePage = () => {
     return (
         <Fragment>
             <MainMenuThree/>
-            <div className="archives layout3 post post1 padding-top-30">
+            <div className="archives layout3 post post1 padding-top-60">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">

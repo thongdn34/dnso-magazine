@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import MainMenuThree from "../../components/MainMenuThree";
 import BannerSectionThree from "../../components/BannerSectionThree";
 import FollowUs from "../../components/FollowUs";
@@ -20,6 +20,8 @@ import quote from "../../doc/img/icon/q4.png";
 import big2 from "../../doc/img/blog/big2.jpg";
 import OurBlogSectionTwo from "../../components/OurBlogSectionTwo";
 import BlogComment from "../../components/BlogComment";
+import { connect } from "react-redux";
+import { getAPost } from "../../store/actions/posts";
 
 const financePosts = [
   {
@@ -36,11 +38,20 @@ const financePosts = [
   }
 ];
 
-const PostOneHThreePage = () => {
+const PostOneHThreePage = (props) => {
+  const { post, getPost } = props;
+
+  useEffect(() => {
+    const id = props.match.params.id.split('-').slice(-1)[0];
+
+    getPost(id);
+  }, [])
+  console.log('====post', post)
+
   return (
     <Fragment>
       <MainMenuThree />
-      <div className="archives layout3 post post1 padding-top-30">
+      <div className="archives layout3 post post1 padding-top-60">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -54,7 +65,7 @@ const PostOneHThreePage = () => {
               <div className="row">
                 <div className="col-6 align-self-center">
                   <div className="page_category">
-                    <h4>HEALTH</h4>
+                    <h4>{post?.category?.translatedName}</h4>
                   </div>
                 </div>
                 <div className="col-6 text-right">
@@ -68,10 +79,7 @@ const PostOneHThreePage = () => {
               </div>
               <div className="space-30" />
               <div className="single_post_heading">
-                <h1>
-                  Japan’s virus success has puzzled the world. Is its luck
-                  running out?
-                </h1>
+                <h1>{post?.title}</h1>
                 <div className="space-10" />
                 <p>
                   The property, complete with 30-seat screening from room, a
@@ -397,4 +405,11 @@ const PostOneHThreePage = () => {
   );
 };
 
-export default PostOneHThreePage;
+const actions = (dispatch) => ({
+  getPost: (id) => dispatch(getAPost({ id }))
+})
+
+const selects = (state) => ({
+  post: state.posts.post
+});
+export default connect(selects, actions)(PostOneHThreePage);
