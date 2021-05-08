@@ -42,36 +42,48 @@ const HeroArea = (props) => {
     activeSlideKey: activeIndex,
     effect: "fade"
   };
-  return (
-    <div className="wrapper_items">
-      <div className="wrapper_carousel wlc_slider_demo2">
-        <Swiper {...params}>
-          {posts.map((item, i) => (
-            <div
-              key={item.title}
-              className="welcome4_area_wrap wlc_overlay"
-              style={{
-                background: `url(${item.photo}) center/cover no-repeat`
-              }}
-            >
-              <div className="welcome4_area">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-7">
-                      <div className="welcome_txt">
-                        <p className="title_meta">
-                          {item.category} <span>| {item.date}</span>
-                        </p>
-                        <h1>{item.title}</h1>
-                      </div>
-                    </div>
-                  </div>
+
+  const renderHeroPost = () => {
+    if (!posts[0]) {
+      return null;
+    }
+
+    const currentPost = posts[activeIndex];
+    return (
+      <div
+        className="welcome4_area_wrap wlc_overlay"
+        style={{
+          background: `url(${currentPost.photo}) center/contain no-repeat`
+        }}
+      >
+        <div className="welcome4_area">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-7">
+                <div className="welcome_txt">
+                  <p className="title_meta">
+                    {currentPost.category} <span>| {currentPost.date}</span>
+                  </p>
+                  <h1>{currentPost.title}</h1>
                 </div>
               </div>
             </div>
-          ))}
-        </Swiper>
+          </div>
+        </div>
       </div>
+    );
+  };
+
+  const renderListNews = () => {
+    if (!posts[0]) {
+      return null
+    }
+
+    return posts?.map()
+  }
+  return (
+    <div className="wrapper_items">
+      <div className="wrapper_carousel">{renderHeroPost()}</div>
       <div className="container d-md-block d-none">
         <div className="row">
           <div className="col-12">

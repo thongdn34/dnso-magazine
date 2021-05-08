@@ -10,7 +10,7 @@ import trend36 from "../../doc/img/trending/trend36.jpg";
 import trend37 from "../../doc/img/blog/90652.jpg";
 import SinglePost from "../SinglePost";
 import FontAwesome from "../uiStyle/FontAwesome";
-import { addingImgPrefix, convertDate } from "../../utils/commonFunctions";
+import { convertDate } from "../../utils/commonFunctions";
 
 const renderRawPost = () => {
   return (
@@ -81,13 +81,13 @@ const TrendingNewsThree = (props) => {
           <div className="post_img">
             <div className="img_wrap">
               <Link to="/">
-                <img src={addingImgPrefix(item?.thumbnail.formats.thumbnail.url)} alt={item.caption} />
+                <img src={item?.thumbnail.formats.thumbnail.url} alt={item.caption} />
               </Link>
             </div>
           </div>
           <div className="single_post_text">
             <div className="meta3">
-              <Link to="">{item.category.type}</Link>
+              <Link to="">{item.category.translatedName}</Link>
               <Link to="">{convertDate(item?.updated_at)}</Link>
             </div>
             <h4>

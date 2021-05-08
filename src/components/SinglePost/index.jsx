@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-import { addingImgPrefix, convertDate } from "../../utils/commonFunctions";
+import { convertDate } from "../../utils/commonFunctions";
 
 const SinglePost = (props) => {
   const { post } = props;
@@ -13,7 +13,10 @@ const SinglePost = (props) => {
         <div className="img_wrap">
           <Link to="/">
             <img
-              src={addingImgPrefix(post?.thumbnail.formats.medium?.url || post?.thumbnail.formats.thumbnail.url)}
+              src={
+                post?.thumbnail.formats.medium?.url ||
+                post?.thumbnail.formats.thumbnail.url
+              }
               alt={post?.caption}
             />
           </Link>
@@ -26,7 +29,7 @@ const SinglePost = (props) => {
         <div className="row">
           <div className="col-9 align-self-cnter">
             <div className="meta3">
-              <Link to="/">{post?.category.type}</Link>
+              <Link to="/">{post?.category.translatedName}</Link>
               <Link to="/">{convertDate(post?.updated_at)}</Link>
             </div>
           </div>

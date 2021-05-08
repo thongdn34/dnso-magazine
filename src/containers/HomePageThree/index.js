@@ -28,11 +28,7 @@ import international44 from "../../doc/img/international/international44.jpg";
 import international45 from "../../doc/img/international/international45.jpg";
 import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
-import {
-  addingImgPrefix,
-  convertDate,
-  sortDateArray
-} from "../../utils/commonFunctions";
+import { convertDate, sortDateArray } from "../../utils/commonFunctions";
 import { categoryNames, subCategories } from "../../utils/constants";
 
 // const internationalPosts = [
@@ -124,10 +120,9 @@ const HomePageThree = (props) => {
       (acc, curr) => [
         ...acc,
         {
-          photo: addingImgPrefix(
+          photo:
             curr?.thumbnail.formats.medium?.url ||
-              curr?.thumbnail.formats.thumbnail?.url
-          ),
+            curr?.thumbnail.formats.thumbnail?.url,
           category: curr?.category.translatedName,
           title: curr?.title,
           date: convertDate(curr?.updated_at)
@@ -163,10 +158,9 @@ const HomePageThree = (props) => {
       return [
         ...acc,
         {
-          photo: addingImgPrefix(
+          photo:
             curr?.thumbnail.formats.medium?.url ||
-              curr?.thumbnail.formats.thumbnail?.url
-          ),
+            curr?.thumbnail.formats.thumbnail?.url,
           caption: curr?.thumbnail?.caption,
           title: curr?.title,
           description: curr?.subDescription,
@@ -181,13 +175,15 @@ const HomePageThree = (props) => {
     return sortDateArray(res);
   };
 
-  // console.log("===posts", posts);
+  console.log("===posts", getLatedParticularPosts(
+    categoryNames.CULTURALS
+  ));
 
   return (
     <Fragment>
       <div className="wrapper_welcome">
         <MainMenuThree className="home4menu" />
-        {/* <HeroArea posts={getLatedPostsHero()} /> */}
+        <HeroArea posts={getLatedPostsHero()} />
         <div className="bg4">
           <div className="space-60" />
           <div className="total3 mb30">

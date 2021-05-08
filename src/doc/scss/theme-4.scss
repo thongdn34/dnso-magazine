@@ -218,11 +218,13 @@
   .welcome4_area_wrap {
     position: relative;
     z-index: 1;
+    padding-bottom: 40%;
   }
 
   .welcome4_area {
-    padding: 250px 0 350px;
-    position: relative;
+    position: absolute;
+    bottom: 200px;
+    left: 100px;
     z-index: 2;
   }
 
@@ -929,7 +931,7 @@
     .post_img {
       img {
         border-radius: 7px;
-        height: 452px;
+        height: auto;
         width: 100%;
         object-fit: contain;
       }

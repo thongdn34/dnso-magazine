@@ -20,6 +20,5 @@ function mostViewSort(data) {
 const convertDate = (date) => new moment(date).format("dddd MM YYYY");
 const sortDateArray = (array) =>
   array.sort((d1, d2) => new moment(d2.updated_at) - new moment(d1.updated_at));
-const addingImgPrefix = (url) => `${baseURL}${url}`;
 
-export { mostViewSort, convertDate, addingImgPrefix, sortDateArray };
+export { mostViewSort, convertDate, sortDateArray };
