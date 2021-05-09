@@ -11,7 +11,7 @@ const InternationalNews = ({title, showMore, className, data}) => {
                 <div key={item.title} className={`single_post post_type12 type20 ${i + 1 < data.length ? 'mb30' : ''}`}>
                     <div className="post_img">
                         <div className="img_wrap  border-radious5">
-                            <Link to={`${convertPath(item.title, item.id)}`}>
+                            <Link to={`/${convertPath(item.title, item.id)}`}>
                                 <img src={item.photo} alt="thumb"/>
                             </Link>
                         </div>
@@ -33,7 +33,7 @@ const InternationalNews = ({title, showMore, className, data}) => {
                                 </div>
                             </div> */}
                         </div>
-                        <h4><Link to={`${convertPath(item.title, item.id)}`}>{item.title}</Link></h4>
+                        <h4><Link to={`/${convertPath(item.title, item.id)}`}>{item.title}</Link></h4>
                         <div className="space-10"/>
                         <p className="post-p">{item.description}</p>
                         <div className="space-10"/>

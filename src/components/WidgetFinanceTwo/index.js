@@ -23,7 +23,7 @@ const WidgetFinanceTwo = ({ title, data }) => {
         <div key={item.title} className="single_post mb30 type18">
           <div className="post_img">
             <div className="img_wrap">
-              <Link to={`${convertPath(item.title, item.id)}`}>
+              <Link to={`/${convertPath(item.title, item.id)}`}>
                 <img src={item.photo} alt="thumb" />
               </Link>
             </div>
@@ -31,7 +31,7 @@ const WidgetFinanceTwo = ({ title, data }) => {
           </div>
           <div className="single_post_text py0">
             <h4>
-              <Link to={`${convertPath(item.title, item.id)}`}>
+              <Link to={`/${convertPath(item.title, item.id)}`}>
                 {item.title}
               </Link>
             </h4>
