@@ -1,20 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-import { addingImgPrefix, convertDate } from "../../utils/commonFunctions";
+import { convertDate, convertPath } from "../../utils/commonFunctions";
+import { useCallback } from "react";
 
 const SinglePost = (props) => {
   const { post } = props;
+  const history = useHistory();
+
+  const onClick = useCallback(
+    (title, id) => {
+      const to = convertPath(title, id);
+      history.push(to);
+    },
+    [post, history]
+  );
 
   return (
     <div className="single_post post_type3 xs-mb90 post_type15">
       <div className="post_img border-radious5">
         <div className="img_wrap">
-          <Link to="/">
+          <Link to={`/${convertPath(post?.title, post?.id)}`}>
             <img
-              src={addingImgPrefix(post?.thumbnail.formats.medium?.url || post?.thumbnail.formats.thumbnail.url)}
-              alt={post?.caption}
+              src={
+                post?.thumbnail.formats.medium?.url ||
+                post?.thumbnail.formats.thumbnail.url
+              }
+              alt={post.caption}
             />
           </Link>
         </div>
@@ -26,8 +39,8 @@ const SinglePost = (props) => {
         <div className="row">
           <div className="col-9 align-self-cnter">
             <div className="meta3">
-              <Link to="/">{post?.category.type}</Link>
-              <Link to="/">{convertDate(post?.updated_at)}</Link>
+              <Link to="/">{post?.category.translatedName}</Link>
+              <Link to={`/${convertPath(post?.title, post?.id)}`}>{convertDate(post?.updated_at)}</Link>
             </div>
           </div>
           {post?.isCanShare && (
@@ -46,10 +59,12 @@ const SinglePost = (props) => {
         </div>
         <div className="space-5" />
         <h4>
-          <Link to="/">{post?.title}</Link>
+          <Link to={`/${convertPath(post?.title, post?.id)}`}>{post?.title}</Link>
         </h4>
         <div className="space-10" />
-        <p className="post-p">{post?.subDescription}</p>
+        <p className="post-p" onClick={() => onClick(post.title, post.id)}>
+          {post?.subDescription || post?.subDescrtiption}
+        </p>
       </div>
     </div>
   );

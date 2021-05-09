@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from "react-id-swiper";
+import { convertPath } from "../../utils/commonFunctions";
 
 const BusinessCarousel = (props) => {
   const { businessPosts } = props;
@@ -54,15 +55,15 @@ const BusinessCarousel = (props) => {
             <div className="single_international">
               <p className="meta before">{item.category}</p>
               <h4>
-                <Link to="/">{item.title}</Link>
+                <Link to={`/${convertPath(item.title, item.id)}`}>{item.title}</Link>
               </h4>
               <div className="row">
-                <div className="col-8 align-self-center">
-                  <p>{item.description}</p>
+                <div className="col-7 align-self-center">
+                  <p className="business_carousel__description">{item.description}</p>
                 </div>
-                <div className="col-4 align-self-center">
+                <div className="col-5 align-self-center">
                   <div className="img_wrap">
-                    <Link to="/">
+                    <Link to={`/${convertPath(item.title, item.id)}`}>
                       <img src={item.photo} alt={item.caption} />
                     </Link>
                   </div>

@@ -61,7 +61,7 @@
     cursor: pointer;
     background: $gradient41;
     display: inline-block;
-    padding: 21px;
+    padding: 10px 20px;
   }
 
   .widget-title {
@@ -218,11 +218,17 @@
   .welcome4_area_wrap {
     position: relative;
     z-index: 1;
+    padding-bottom: 100%;
+
+    @media screen and (min-width: $small__laptop) {
+      padding-bottom: 40%;
+    }
   }
 
   .welcome4_area {
-    padding: 250px 0 350px;
-    position: relative;
+    position: absolute;
+    bottom: 200px;
+    left: 100px;
     z-index: 2;
   }
 
@@ -420,6 +426,26 @@
           @include transition(all 0.3s);
         }
       }
+    }
+
+    &.\post_type15 {
+      .post_img > .img_wrap {
+        a {
+          width: 366px;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .single-post {
+    &__banner {
+      position: sticky;
+      top: 70px;
+      z-index: 3;
     }
   }
 
@@ -747,6 +773,11 @@
   .business_carousel {
     border-radius: 5px;
     position: relative;
+
+    &__description {
+      font-size: $small_font_size;
+      line-height: 22px;
+    }
   }
 
   .share_meta4 {
@@ -929,7 +960,7 @@
     .post_img {
       img {
         border-radius: 7px;
-        height: 452px;
+        height: auto;
         width: 100%;
         object-fit: contain;
       }
@@ -937,7 +968,7 @@
   }
 
   .footer {
-    padding: 80px 0 0 0;
+    padding: 20px 0 0 0;
 
     .single_contact3 {
       display: inline-block;
@@ -1815,7 +1846,7 @@
     ul.nav.nav-tabs {
       li {
         a {
-          font-size: 24px;
+          font-size: 18px;
           font-weight: 500;
           color: $tab4_color;
           padding: 10px;
