@@ -120,23 +120,28 @@ const MainMenuThree = ({ className }) => {
                       menus={menus}
                     />
                   </div>
-                </nav>
-                {/* <div className="col-lg-2 text-right align-self-center">
-                  <div
-                    className="search4"
-                    onClick={() => setSearchShow(!searchShow)}
-                  >
-                    <FontAwesome name="search" />
+                  <div className="search-bar col-lg-4 text-right align-self-center justify-content-end">
+                    <input
+                      className={searchShow ? "--active" : ""}
+                      type="search"
+                      placeholder="Tìm kiếm"
+                    />
+                    <div
+                      className="search4"
+                      onClick={() => setSearchShow(!searchShow)}
+                    >
+                      <FontAwesome name="search" />
+                    </div>
                   </div>
-                </div> */}
+                </nav>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {searchShow ? (
+      {/* {searchShow ? (
         <SearchModal setSearchShow={setSearchShow} searchShow={searchShow} />
-      ) : null}
+      ) : null} */}
     </Fragment>
   );
 };
