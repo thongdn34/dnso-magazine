@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useCallback } from "react";
 import Swiper from "react-id-swiper";
+import { useHistory } from "react-router-dom";
 
 import hero1 from "../../doc/img/bg/hero1.jpg";
 import hero2 from "../../doc/img/bg/hero2.jpg";
 import hero3 from "../../doc/img/bg/hero3.jpg";
+import { convertPath } from "../../utils/commonFunctions";
 
 const slider = [
   {
@@ -38,6 +41,15 @@ const slider = [
 const HeroArea = (props) => {
   const { posts } = props;
   const [activeIndex, setActiveIndex] = useState(0);
+  const history = useHistory();
+
+  const onClick = useCallback(
+    (title, id) => {
+      const to = convertPath(title, id);
+      history.push(to);
+    },
+    [posts, history]
+  );
   const params = {
     activeSlideKey: activeIndex,
     effect: "fade"
@@ -64,7 +76,7 @@ const HeroArea = (props) => {
                   <p className="title_meta">
                     {currentPost.category} <span>| {currentPost.date}</span>
                   </p>
-                  <h1>{currentPost.title}</h1>
+                  <h1 onClick={() => onClick(currentPost?.title, currentPost?.id)}>{currentPost.title}</h1>
                 </div>
               </div>
             </div>
@@ -99,9 +111,7 @@ const HeroArea = (props) => {
         <div className="row">
           <div className="col-12">
             <div className="welcome_list">
-              <div className="wlc_slide_demo1 d-flex">
-                {renderListNews()}
-              </div>
+              <div className="wlc_slide_demo1 d-flex">{renderListNews()}</div>
             </div>
           </div>
         </div>

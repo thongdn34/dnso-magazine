@@ -441,6 +441,14 @@
     }
   }
 
+  .single-post {
+    &__banner {
+      position: sticky;
+      top: 70px;
+      z-index: 3;
+    }
+  }
+
   .user3 i {
     color: #17222b;
     opacity: 0.6;
@@ -765,6 +773,11 @@
   .business_carousel {
     border-radius: 5px;
     position: relative;
+
+    &__description {
+      font-size: $small_font_size;
+      line-height: 22px;
+    }
   }
 
   .share_meta4 {
@@ -955,7 +968,7 @@
   }
 
   .footer {
-    padding: 80px 0 0 0;
+    padding: 20px 0 0 0;
 
     .single_contact3 {
       display: inline-block;
@@ -1833,7 +1846,7 @@
     ul.nav.nav-tabs {
       li {
         a {
-          font-size: 24px;
+          font-size: 18px;
           font-weight: 500;
           color: $tab4_color;
           padding: 10px;

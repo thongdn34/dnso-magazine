@@ -92,6 +92,9 @@ import { categoryNames, subCategories } from "../../utils/constants";
 //   }
 // ];
 
+const threeTab1 = ["Sức khỏe", "Du lịch", "Khởi nghiệp"];
+const threeTab2 = ["Giáo dục", "Doanh nghiệp", "Giải trí"];
+
 const HomePageThree = (props) => {
   const { posts } = props;
   const getPosts = () => {
@@ -113,24 +116,28 @@ const HomePageThree = (props) => {
   const getHottestPost = () => {
     return posts.reduce((acc, curr) => {
       if (curr.isHottest) {
-        return [...acc, {
-          photo:
-            curr?.thumbnail.formats.medium?.url ||
-            curr?.thumbnail.formats.thumbnail?.url,
-          category: curr?.category.translatedName,
-          title: curr?.title,
-          date: convertDate(curr?.updated_at)
-        }]
+        return [
+          ...acc,
+          {
+            id: curr?.id,
+            photo:
+              curr?.thumbnail.formats.medium?.url ||
+              curr?.thumbnail.formats.thumbnail?.url,
+            category: curr?.category.translatedName,
+            title: curr?.title,
+            date: convertDate(curr?.updated_at)
+          }
+        ];
       }
 
-      return acc
-    }, [])
-  }
+      return acc;
+    }, []);
+  };
 
   const getLatedParticularPosts = (
     type = "",
-    isSubCategory = false,
-    offset = 0
+    offset = 0,
+    isSubCategory = false
   ) => {
     let res;
     let field = isSubCategory ? "sub_categories" : "category";
@@ -149,16 +156,18 @@ const HomePageThree = (props) => {
       res = res.slice(0, offset);
     }
 
+    res = res.filter((item) => !getLatedPosts().some((i) => i.id === item.id));
     res = res.reduce((acc, curr) => {
       return [
         ...acc,
         {
+          id: curr?.id,
           photo:
             curr?.thumbnail.formats.medium?.url ||
             curr?.thumbnail.formats.thumbnail?.url,
           caption: curr?.thumbnail?.caption,
           title: curr?.title,
-          description: curr?.subDescription,
+          description: curr?.subDescription || curr?.subDescrtiption,
           view: curr.view,
           share: curr.share,
           category: curr?.category.translatedName,
@@ -170,7 +179,7 @@ const HomePageThree = (props) => {
     return sortDateArray(res);
   };
 
-  console.log("===posts", getHottestPost());
+  // console.log("===posts", getLatedParticularPosts(categoryNames.VIEWS));
 
   return (
     <Fragment>
@@ -184,6 +193,43 @@ const HomePageThree = (props) => {
               <div className="row">
                 <div className="col-md-12 col-xl-8">
                   <TrendingNewsThree posts={getLatedPosts()} />
+                  <div className="row">
+                    <div className="col-md-6">
+                      <SportsNewsTwo
+                        category="Bất động sản"
+                        sportsNews={getLatedParticularPosts(
+                          subCategories.LANDS,
+                          2,
+                          true
+                        )}
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <GalleryCarousel
+                        galleryPosts={getLatedParticularPosts(
+                          categoryNames.VIEWS
+                        )}
+                      />
+                      <WidgetTabThree
+                        categories={threeTab1}
+                        tab1={getLatedParticularPosts(
+                          subCategories.HEALTHS,
+                          3,
+                          true
+                        )}
+                        tab2={getLatedParticularPosts(
+                          subCategories.TRAVELS,
+                          3,
+                          true
+                        )}
+                        tab3={getLatedParticularPosts(
+                          subCategories.STARTUPS,
+                          3,
+                          true
+                        )}
+                      />
+                    </div>
+                  </div>
                   <BusinessCarousel
                     businessPosts={getLatedParticularPosts(
                       categoryNames.BUSINESS
@@ -192,21 +238,17 @@ const HomePageThree = (props) => {
                   <BusinessImageCarousel
                     populerPosts={getLatedParticularPosts(
                       categoryNames.CULTURALS,
-                      false,
                       5
                     )}
                     galleryPosts={getLatedParticularPosts(
-                      categoryNames.LIFESTYLES
+                      categoryNames.LIFESTYLES,
+                      5
                     )}
                   />
                 </div>
                 <div className="col-md-6 col-xl-4 d-md-none d-xl-block">
                   <WidgetFinanceTwo
-                    data={getLatedParticularPosts(
-                      categoryNames.INVESTS,
-                      false,
-                      3
-                    )}
+                    data={getLatedParticularPosts(subCategories.FINANCE, 5, true)}
                     title="Tài chính"
                   />
                   <div className="banner2 mb30 border-radious5">
@@ -229,45 +271,59 @@ const HomePageThree = (props) => {
                     title="Sự kiện"
                     showMore={true}
                   />
+                  <BusinessCarousel
+                    businessPosts={getLatedParticularPosts(
+                      categoryNames.TECHNOLOGIES
+                    )}
+                  />
+                  {/* <InternationalNews
+                    data={getLatedParticularPosts(categoryNames.TECHNOLOGIES)}
+                    className="mb30"
+                    title="Công nghệ"
+                    showMore={true}
+                  /> */}
                   {/* <div className="banner_area mb30 xs-mt60">
                     <Link to="/">
                       <img src={banner42} alt="banner42" />
                     </Link>
                   </div> */}
-                  <ScienceNews
+                  {/* <ScienceNews
                     posts={getLatedParticularPosts(categoryNames.TECHNOLOGIES)}
-                  />
+                  /> */}
                   <div className="row">
                     <div className="col-md-6">
                       <SportsNewsTwo
+                        category="Thương mại"
                         sportsNews={getLatedParticularPosts(
-                          categoryNames.VIEWS,
-                          false,
-                          7
+                          subCategories.COMMERCES,
+                          7,
+                          true
                         )}
                       />
                     </div>
                     <div className="col-md-6">
                       <GalleryCarousel
                         galleryPosts={getLatedParticularPosts(
-                          categoryNames.ADVISORIES
+                          subCategories.BOOKS,
+                          4
                         )}
                       />
                       <WidgetTabThree
+                        categories={threeTab2}
                         tab1={getLatedParticularPosts(
-                          subCategories.HEALTHS,
-                          true,
-                          5
+                          subCategories.EDUCATIONS,
+                          5,
+                          true
                         )}
                         tab2={getLatedParticularPosts(
-                          subCategories.TRAVELS,
-                          true,
-                          5
+                          subCategories.ENTERPRISES,
+                          5,
+                          true
                         )}
                         tab3={getLatedParticularPosts(
-                          subCategories.STARTUPS,
-                          true,
-                          5
+                          subCategories.EXISTENCES,
+                          5,
+                          true
                         )}
                       />
                     </div>
@@ -283,6 +339,7 @@ const HomePageThree = (props) => {
                       <WidgetOpinionNews
                         opinionPosts={getLatedParticularPosts(
                           subCategories.EXPERTS,
+                          0,
                           true
                         )}
                       />

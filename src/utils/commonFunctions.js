@@ -20,5 +20,10 @@ function mostViewSort(data) {
 const convertDate = (date) => new moment(date).format("dddd MM YYYY");
 const sortDateArray = (array) =>
   array.sort((d1, d2) => new moment(d2.updated_at) - new moment(d1.updated_at));
+const convertPath = (title, id) => {
+  const regex = /[^A-Za-z0-9]/g;
+  let path = `${title.replace(regex, "")}-${id}`;
+  return path.replace(' ', '-');
+}
 
-export { mostViewSort, convertDate, sortDateArray };
+export { mostViewSort, convertDate, sortDateArray, convertPath };

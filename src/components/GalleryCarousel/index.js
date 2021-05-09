@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import gallery41 from "../../doc/img/gallary/gallery41.jpg";
 import gallery42 from "../../doc/img/gallary/gallery42.jpg";
 import Swiper from "react-id-swiper";
+import { convertPath } from "../../utils/commonFunctions";
 
 const _galleryPosts = [
   {
@@ -38,7 +39,7 @@ const GalleryCarousel = (props) => {
       <div key={i} className="single_post post_type6 border-radious7 xs-mb30">
         <div className="post_img gradient1">
           <div className="img_wrap">
-            <Link to="/">
+            <Link to={`/${convertPath(item.title, item.id)}`} style={{ height: '411px' }}>
               <img src={item.photo} alt="thumb" />
             </Link>
           </div>
@@ -48,7 +49,7 @@ const GalleryCarousel = (props) => {
             {item.category} <span>&nbsp;| &nbsp; {item.updateAt}</span>
           </p>
           <h4>
-            <Link to="/">{item.title}</Link>
+            <Link to={`/${convertPath(item.title, item.id)}`}>{item.title}</Link>
           </h4>
         </div>
       </div>
