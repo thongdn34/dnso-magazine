@@ -120,7 +120,7 @@ const MainMenuThree = ({ className }) => {
                       menus={menus}
                     />
                   </div>
-                  <div className="search-bar col-lg-4 text-right align-self-center justify-content-end">
+                  <div className="search-bar col-lg-5 text-right align-self-center justify-content-end">
                     <input
                       className={searchShow ? "--active" : ""}
                       type="search"

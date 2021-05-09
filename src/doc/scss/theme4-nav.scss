@@ -83,6 +83,7 @@
 
     .search-bar {
       display: flex;
+      height: 40px;
 
       input {
         margin: 0;
@@ -96,6 +97,7 @@
 
         &.\--active {
           width: auto;
+          flex: 1;
           opacity: 1;
           visibility: visible;
           transform: scaleX(1);
