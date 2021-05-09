@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useCallback } from "react";
 import Swiper from "react-id-swiper";
+import { useHistory } from "react-router-dom";
 
 import hero1 from "../../doc/img/bg/hero1.jpg";
 import hero2 from "../../doc/img/bg/hero2.jpg";
 import hero3 from "../../doc/img/bg/hero3.jpg";
+import { convertPath } from "../../utils/commonFunctions";
 
 const slider = [
   {
@@ -37,102 +40,78 @@ const slider = [
 ];
 const HeroArea = (props) => {
   const { posts } = props;
-  const [activeIndex, setActiveIndex] = useState("0");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const history = useHistory();
+
+  const onClick = useCallback(
+    (title, id) => {
+      const to = convertPath(title, id);
+      history.push(to);
+    },
+    [posts, history]
+  );
   const params = {
     activeSlideKey: activeIndex,
     effect: "fade"
   };
-  return (
-    <div className="wrapper_items">
-      <div className="wrapper_carousel wlc_slider_demo2">
-        <Swiper {...params}>
-          {posts.map((item, i) => (
-            <div
-              key={item.title}
-              className="welcome4_area_wrap wlc_overlay"
-              style={{
-                background: `url(${item.photo}) center/cover no-repeat`
-              }}
-            >
-              <div className="welcome4_area">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-7">
-                      <div className="welcome_txt">
-                        <p className="title_meta">
-                          {item.category} <span>| {item.date}</span>
-                        </p>
-                        <h1>{item.title}</h1>
-                      </div>
-                    </div>
-                  </div>
+
+  const renderHeroPost = () => {
+    if (!posts[0]) {
+      return null;
+    }
+
+    const currentPost = posts[activeIndex];
+    return (
+      <div
+        className="welcome4_area_wrap wlc_overlay"
+        style={{
+          background: `url(${currentPost.photo}) center/contain no-repeat`
+        }}
+      >
+        <div className="welcome4_area">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-7">
+                <div className="welcome_txt">
+                  <p className="title_meta">
+                    {currentPost.category} <span>| {currentPost.date}</span>
+                  </p>
+                  <h1 onClick={() => onClick(currentPost?.title, currentPost?.id)}>{currentPost.title}</h1>
                 </div>
               </div>
             </div>
-          ))}
-        </Swiper>
+          </div>
+        </div>
       </div>
+    );
+  };
+
+  const renderListNews = () => {
+    if (!posts[0]) {
+      return null;
+    }
+
+    return posts?.map((item, index) => (
+      <div
+        key={item.title}
+        className={`single_news_list ${activeIndex === index ? "active" : ""}`}
+        onClick={() => setActiveIndex(index)}
+      >
+        <p>
+          <span>{`0${index + 1}`}</span> {item.category}
+        </p>
+        <h4>{item.title}</h4>
+      </div>
+    ));
+  };
+  return (
+    <div className="wrapper_items">
+      <div className="wrapper_carousel">{renderHeroPost()}</div>
       <div className="container d-md-block d-none">
         <div className="row">
           <div className="col-12">
             <div className="welcome_list">
-              <div className="wlc_slide_demo1 d-flex">
-                <div
-                  className={`single_news_list ${
-                    activeIndex === "0" ? "active" : ""
-                  }`}
-                  onClick={() => setActiveIndex("0")}
-                >
-                  <p>
-                    <span>01</span> Business
-                  </p>
-                  <h4>
-                    Setting politics aside, Sequoia raises $3.4 billion for US
-                    and China investments
-                  </h4>
-                </div>
-                <div
-                  className={`single_news_list ${
-                    activeIndex === "1" ? "active" : ""
-                  }`}
-                  onClick={() => setActiveIndex("1")}
-                >
-                  <p>
-                    <span>02</span> Technology
-                  </p>
-                  <h4>
-                    Dan Levy tries to guess James Corden’s team are wearing
-                    pants or PJs over Zoom.
-                  </h4>
-                </div>
-                <div
-                  className={`single_news_list ${
-                    activeIndex === "2" ? "active" : ""
-                  }`}
-                  onClick={() => setActiveIndex("2")}
-                >
-                  <p>
-                    <span>03</span> Science
-                  </p>
-                  <h4>
-                    Everything you need to know about contact lenses during the
-                    coronavirus pandemic
-                  </h4>
-                </div>
-                <div
-                  className={`single_news_list ${
-                    activeIndex === "3" ? "active" : ""
-                  }`}
-                  onClick={() => setActiveIndex("3")}
-                >
-                  <p>
-                    <span>04</span> Food
-                  </p>
-                  <h4>
-                    How to spend as little time at the grocery store as possible
-                  </h4>
-                </div>
-              </div>
+              <div className="wlc_slide_demo1 d-flex">{renderListNews()}</div>
             </div>
           </div>
         </div>

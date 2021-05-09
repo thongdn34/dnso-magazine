@@ -54,7 +54,6 @@
 
   .main-nav {
     background: $red-primary;
-    min-height: 70px;
   }
 
   .navbar {
@@ -79,6 +78,30 @@
         opacity: 1;
         visibility: visible;
         transform: scaleX(1);
+      }
+    }
+
+    .search-bar {
+      display: flex;
+      height: 40px;
+
+      input {
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition-timing-function: cubic-bezier(0.25, 0.1, 0, 0.45);
+        @include transition(all 0.3s);
+
+        &.\--active {
+          width: auto;
+          flex: 1;
+          opacity: 1;
+          visibility: visible;
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -564,13 +587,9 @@
   ================================================== */
 
   @media (min-width: 992px) {
-    .header {
-      min-height: 70px;
-    }
-
     .main-nav ul.navbar-nav > li > a {
       padding: 0 15px;
-      line-height: 70px;
+      line-height: 40px;
       display: inline-block;
     }
 
@@ -719,10 +738,6 @@
 
     .navbar-toggler {
       left: 15px;
-    }
-
-    .navbar {
-      width: 98%;
     }
   }
 

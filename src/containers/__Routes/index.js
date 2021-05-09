@@ -377,7 +377,7 @@ const Routes = () => {
         exact
         home_style={3}
         parentClass="theme-4"
-        path="/post1"
+        path="/:id"
         component={PostOneHThreePage}
       />
       <PrivateRoute

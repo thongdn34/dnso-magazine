@@ -12,6 +12,13 @@ const MainMenuThree = ({ className }) => {
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", () => handleScroll);
+    };
+  }, []);
+
   const handleScroll = () => {
     if (headerRef.current) {
       const offset = window.scrollY;
@@ -19,12 +26,30 @@ const MainMenuThree = ({ className }) => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", () => handleScroll);
-    };
-  }, []);
+  const renderThirdMenu = (list) => {
+    return list.map((item) => (
+      <li key={item.id}>
+        <NavLink to={item.link}>{item.linkText}</NavLink>
+      </li>
+    ));
+  };
+
+  const renderSubMenu = (list) => {
+    return list.map((item) => (
+      <li key={item.id} className={`${item.child ? "dropdown-submenu" : null}`}>
+        {item.child ? (
+          <NavLink onClick={(e) => e.preventDefault()} to="/">
+            {item.linkText}
+          </NavLink>
+        ) : (
+          <NavLink to={item.link}>{item.linkText}</NavLink>
+        )}
+        {item.third_menu ? (
+          <ul className="dropdown-menu">{renderThirdMenu(item.third_menu)}</ul>
+        ) : null}
+      </li>
+    ));
+  };
 
   return (
     <Fragment>
@@ -67,69 +92,20 @@ const MainMenuThree = ({ className }) => {
                               <li
                                 key={item.id}
                                 className={`
-												${item.child ? "dropdown" : ""}
-												nav-item`}
+										${item.child ? "dropdown" : ""}
+										nav-item`}
                               >
-                                {item.child ? (
-                                  <NavLink
-                                    onClick={(e) => e.preventDefault()}
-                                    to="/"
-                                    className="menu-dropdown"
-                                    data-toggle="dropdown"
-                                  >
-                                    {item.linkText}
-                                    <FontAwesome name={item.icon} />
-                                  </NavLink>
-                                ) : (
-                                  <NavLink
-                                    to={item.link}
-                                    className="menu-dropdown"
-                                    data-toggle="dropdown"
-                                  >
-                                    {item.linkText}
-                                    <FontAwesome name={item.icon} />
-                                  </NavLink>
-                                )}
-
+                                <NavLink
+                                  to={item.link}
+                                  className="menu-dropdown"
+                                  data-toggle="dropdown"
+                                >
+                                  {item.linkText}
+                                  <FontAwesome name={item.icon} />
+                                </NavLink>
                                 {item.child ? (
                                   <ul className="dropdown-menu" role="menu">
-                                    {item.submenu.map((sub_item, i) => (
-                                      <li
-                                        key={sub_item.id}
-                                        className={`${
-                                          sub_item.child
-                                            ? "dropdown-submenu"
-                                            : null
-                                        }
-														`}
-                                      >
-                                        {sub_item.child ? (
-                                          <NavLink
-                                            onClick={(e) => e.preventDefault()}
-                                            to="/"
-                                          >
-                                            {sub_item.linkText}
-                                          </NavLink>
-                                        ) : (
-                                          <NavLink to={sub_item.link}>
-                                            {sub_item.linkText}
-                                          </NavLink>
-                                        )}
-                                        {sub_item.third_menu ? (
-                                          <ul className="dropdown-menu">
-                                            {sub_item.third_menu.map(
-                                              (third_item, i) => (
-                                                <li key={third_item.id}>
-                                                  <NavLink to={third_item.link}>
-                                                    {third_item.linkText}
-                                                  </NavLink>
-                                                </li>
-                                              )
-                                            )}
-                                          </ul>
-                                        ) : null}
-                                      </li>
-                                    ))}
+                                    {renderSubMenu(item.submenu)}
                                   </ul>
                                 ) : null}
                               </li>
@@ -144,23 +120,28 @@ const MainMenuThree = ({ className }) => {
                       menus={menus}
                     />
                   </div>
-                </nav>
-                {/* <div className="col-lg-2 text-right align-self-center">
-                  <div
-                    className="search4"
-                    onClick={() => setSearchShow(!searchShow)}
-                  >
-                    <FontAwesome name="search" />
+                  <div className="search-bar col-lg-5 text-right align-self-center justify-content-end">
+                    <input
+                      className={searchShow ? "--active" : ""}
+                      type="search"
+                      placeholder="Tìm kiếm"
+                    />
+                    <div
+                      className="search4"
+                      onClick={() => setSearchShow(!searchShow)}
+                    >
+                      <FontAwesome name="search" />
+                    </div>
                   </div>
-                </div> */}
+                </nav>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {searchShow ? (
+      {/* {searchShow ? (
         <SearchModal setSearchShow={setSearchShow} searchShow={searchShow} />
-      ) : null}
+      ) : null} */}
     </Fragment>
   );
 };

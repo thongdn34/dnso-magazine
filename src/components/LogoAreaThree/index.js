@@ -4,6 +4,7 @@ import Swiper from "react-id-swiper";
 import FontAwesome from "../uiStyle/FontAwesome";
 import tempIcon from "../../doc/img/icon/s4.png";
 import logo from "../../doc/img/logo/logo2.png";
+import { banner900x140 } from "../../doc/img";
 
 const LogoAreaThree = () => {
   const [swiper, setSwiper] = useState(null);
@@ -37,25 +38,16 @@ const LogoAreaThree = () => {
             </div>
           </div>
           <div className="col-lg-9 align-self-center">
-            <div className="row justify-content-end">
+            <div
+              className="v3datentemp"
+              style={{ height: "140px", flex: 1, border: '1px solid gray',  }}
+            >
+              <img src={banner900x140} alt="900x100" />
+            </div>
+            {/* <div className="row justify-content-end">
               <div className="space-5" />
               <div className="col-md-6 col-lg-5 align-self-center">
-                <div className="v3datentemp">
-                  <div className="date4">
-                    <h5>
-                      Thursday <span>March 26, 2020</span>
-                    </h5>
-                  </div>
-                  <div className="temp d-none d-lg-block">
-                    <div className="temp_wap">
-                      <div className="temp_icon">
-                        <img src={tempIcon} alt="icon" />
-                      </div>
-                      <h3 className="temp_count">13</h3>
-                      <p>San Francisco</p>
-                    </div>
-                  </div>
-                </div>
+                
               </div>
               <div className="col-md-6 col-lg-4 align-self-center fix_width_social">
                 <div className="social4 text-right">
@@ -83,7 +75,7 @@ const LogoAreaThree = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

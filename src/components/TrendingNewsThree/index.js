@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import trend31 from "../../doc/img/trending/trend31.jpg";
 import trend32 from "../../doc/img/trending/trend32.jpg";
@@ -10,7 +10,8 @@ import trend36 from "../../doc/img/trending/trend36.jpg";
 import trend37 from "../../doc/img/blog/90652.jpg";
 import SinglePost from "../SinglePost";
 import FontAwesome from "../uiStyle/FontAwesome";
-import { addingImgPrefix, convertDate } from "../../utils/commonFunctions";
+import { convertDate, convertPath } from "../../utils/commonFunctions";
+import { useCallback } from "react";
 
 const renderRawPost = () => {
   return (
@@ -66,6 +67,15 @@ const renderRawPost = () => {
   );
 };
 const TrendingNewsThree = (props) => {
+  const history = useHistory();
+
+  const onClick = useCallback(
+    (title, id) => {
+      const to = convertPath(title, id);
+      history.push(to);
+    },
+    [history]
+  );
   const renderFirstPost = () => {
     if (!props.posts.length) {
       return renderRawPost();
@@ -80,18 +90,18 @@ const TrendingNewsThree = (props) => {
         <div className="single_post type10 type16 widgets_small mb15">
           <div className="post_img">
             <div className="img_wrap">
-              <Link to="/">
-                <img src={addingImgPrefix(item?.thumbnail.formats.thumbnail.url)} alt={item.caption} />
+              <Link to={`/${convertPath(item?.title, item?.id)}`}>
+                <img src={item?.thumbnail.formats.thumbnail.url} alt={item.caption} />
               </Link>
             </div>
           </div>
           <div className="single_post_text">
             <div className="meta3">
-              <Link to="">{item.category.type}</Link>
-              <Link to="">{convertDate(item?.updated_at)}</Link>
+              <Link to="/">{item.category.translatedName}</Link>
+              <Link to={`${item?.title}-${item?.id}`}>{convertDate(item?.updated_at)}</Link>
             </div>
             <h4>
-              <Link to="/">{item.title}</Link>
+              <Link to={`/${convertPath(item?.title, item?.id)}`}>{item.title}</Link>
             </h4>
           </div>
         </div>
