@@ -110,27 +110,22 @@ const HomePageThree = (props) => {
     return sortDateArray(posts).slice(0, 10);
   };
 
-  const getLatedPostsHero = () => {
-    if (props.posts.length <= 10) {
-      return posts;
-    }
-
-    let list = sortDateArray(posts).slice(0, 4);
-    return list.reduce(
-      (acc, curr) => [
-        ...acc,
-        {
+  const getHottestPost = () => {
+    return posts.reduce((acc, curr) => {
+      if (curr.isHottest) {
+        return [...acc, {
           photo:
             curr?.thumbnail.formats.medium?.url ||
             curr?.thumbnail.formats.thumbnail?.url,
           category: curr?.category.translatedName,
           title: curr?.title,
           date: convertDate(curr?.updated_at)
-        }
-      ],
-      []
-    );
-  };
+        }]
+      }
+
+      return acc
+    }, [])
+  }
 
   const getLatedParticularPosts = (
     type = "",
@@ -175,15 +170,13 @@ const HomePageThree = (props) => {
     return sortDateArray(res);
   };
 
-  console.log("===posts", getLatedParticularPosts(
-    categoryNames.CULTURALS
-  ));
+  console.log("===posts", getHottestPost());
 
   return (
     <Fragment>
       <div className="wrapper_welcome">
         <MainMenuThree className="home4menu" />
-        <HeroArea posts={getLatedPostsHero()} />
+        <HeroArea posts={getHottestPost()} />
         <div className="bg4">
           <div className="space-60" />
           <div className="total3 mb30">

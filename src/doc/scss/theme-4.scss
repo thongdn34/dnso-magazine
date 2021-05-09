@@ -218,7 +218,11 @@
   .welcome4_area_wrap {
     position: relative;
     z-index: 1;
-    padding-bottom: 40%;
+    padding-bottom: 100%;
+
+    @media screen and (min-width: $small__laptop) {
+      padding-bottom: 40%;
+    }
   }
 
   .welcome4_area {
@@ -420,6 +424,18 @@
         a {
           color: $v4meta_color;
           @include transition(all 0.3s);
+        }
+      }
+    }
+
+    &.\post_type15 {
+      .post_img > .img_wrap {
+        a {
+          width: 366px;
+        }
+
+        img {
+          width: 100%;
         }
       }
     }
