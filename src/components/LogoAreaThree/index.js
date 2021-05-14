@@ -40,9 +40,9 @@ const LogoAreaThree = () => {
           <div className="col-lg-9 align-self-center">
             <div
               className="v3datentemp"
-              style={{ height: "140px", flex: 1, border: '1px solid gray',  }}
+              // style={{ height: "140px", flex: 1, border: '1px solid gray',  }}
             >
-              <img src={banner900x140} alt="900x100" />
+              {/* <img src={banner900x140} alt="900x100" /> */}
             </div>
             {/* <div className="row justify-content-end">
               <div className="space-5" />
