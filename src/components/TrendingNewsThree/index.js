@@ -91,7 +91,7 @@ const TrendingNewsThree = (props) => {
           <div className="post_img">
             <div className="img_wrap">
               <Link to={`/${convertPath(item?.title, item?.id)}`}>
-                <img src={item?.thumbnail.formats.thumbnail.url} alt={item.caption} />
+                <img src={item?.thumbnail?.formats.thumbnail.url} alt={item.caption} />
               </Link>
             </div>
           </div>
