@@ -46,7 +46,7 @@
 
 a {
   @include transition(all .4s);
-  color: $secondary_color;
+  // color: $secondary_color;
   display: inline-block;
 }
 

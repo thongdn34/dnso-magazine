@@ -28,7 +28,7 @@ import international44 from "../../doc/img/international/international44.jpg";
 import international45 from "../../doc/img/international/international45.jpg";
 import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
-import { convertDate, sortDateArray } from "../../utils/commonFunctions";
+import { convertDate, formatDataPosts, sortDateArray } from "../../utils/commonFunctions";
 import { categoryNames, subCategories } from "../../utils/constants";
 
 // const internationalPosts = [
@@ -157,27 +157,8 @@ const HomePageThree = (props) => {
     }
 
     res = res.filter((item) => !getLatedPosts().some((i) => i.id === item.id));
-    res = res.reduce((acc, curr) => {
-      return [
-        ...acc,
-        {
-          id: curr?.id,
-          photo:
-            curr?.thumbnail.formats.medium?.url ||
-            curr?.thumbnail.formats.thumbnail?.url,
-          caption: curr?.thumbnail?.caption,
-          title: curr?.title,
-          description: curr?.subDescription || curr?.subDescrtiption,
-          view: curr.view,
-          share: curr.share,
-          category: curr?.category.translatedName,
-          updateAt: convertDate(curr?.updated_at)
-        }
-      ];
-    }, []);
-
-    return sortDateArray(res);
-  };
+    return formatDataPosts(res);
+  }
 
   // console.log("===posts", getLatedParticularPosts(categoryNames.VIEWS));
 
