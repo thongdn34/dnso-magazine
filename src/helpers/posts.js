@@ -12,4 +12,8 @@ const getPosts = async (params) => {
   return posts;
 };
 
+const getCount = async (params) => {
+  const count = await $get()
+}
+
 export { getPosts };
