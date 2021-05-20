@@ -10,53 +10,13 @@ import InternationalNews from "../../components/InternationalNews";
 
 import banner4 from "../../doc/img/bg/banner4.png";
 import finance41 from "../../doc/img/finance/finance41.jpg";
-import international41 from "../../doc/img/international/international41.jpg";
-import international42 from "../../doc/img/international/international42.jpg";
-import international43 from "../../doc/img/international/international43.jpg";
-import international44 from "../../doc/img/international/international44.jpg";
-import international45 from "../../doc/img/international/international45.jpg";
 import { connect } from "react-redux";
-import { getPostsCategories } from "../../store/actions/categories";
+import {
+  getPostsCategories,
+  getPostsSubCategories,
+  getPostsNestedCategories
+} from "../../store/actions/categories";
 import { formatDataPosts } from "../../utils/commonFunctions";
-
-const businessPosts = [
-  {
-    photo: international41,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international42,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international43,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international44,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international45,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  },
-  {
-    photo: international43,
-    title: "Investors explain COVID-19’s impact on consumer startups",
-    description:
-      "The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with"
-  }
-];
 
 const financePosts = [
   {
@@ -74,13 +34,42 @@ const financePosts = [
 ];
 
 const CategoriesPage = (props) => {
-  const { match: { params: { category } }, getPostsCategories, posts } = props;
+  const {
+    match: { params },
+    posts,
+    getPostsSubCategories,
+    getPostsNestedCategories,
+    getPostsCategories
+  } = props;
 
   useEffect(() => {
-    getPostsCategories(category);
-  }, [])
+    if (params.subCategory) {
+      getPostsSubCategories(params.subCategory);
+    } else if (params.nestedCategory) {
+      getPostsNestedCategories(params.nestedCategory);
+    } else {
+      getPostsCategories(params.category);
+    }
+  }, [params, getPostsCategories, getPostsSubCategories, getPostsNestedCategories]);
 
-  console.log('=====posts', posts)
+  const getTitleCategories = () => {
+    let category = "";
+
+    if (params.category) {
+      category = posts[0]?.category.translatedName;
+    } else if (params.subCategory) {
+      category = posts[0]?.sub_categories.find(
+        (i) => i.type === params.subCategory
+      )?.translatedName;
+    } else {
+      category = posts[0]?.nested_categories.find(
+        (i) => i.Sub_subcategorys === params.nestedCategory
+      )?.translatedName;
+    }
+
+    return category;
+  };
+
   return (
     <Fragment>
       <MainMenuThree />
@@ -100,7 +89,7 @@ const CategoriesPage = (props) => {
                 <div className="col-12">
                   <div className="categories_title">
                     <h2>
-                      <Link to="/">{category}</Link>
+                      <Link to="/">{getTitleCategories()}</Link>
                     </h2>
                   </div>
                 </div>
@@ -143,17 +132,17 @@ const CategoriesPage = (props) => {
               </div>
             </div>
             <div className="col-md-6 col-lg-4">
-              <FollowUs title="Follow Us" />
+              {/* <FollowUs title="Follow Us" /> */}
               <div className="banner2 mb30 border-radious5">
                 <Link to="/">
                   <img src={banner4} alt="banner4" />
                 </Link>
               </div>
-              <WidgetFinanceTwo data={financePosts} title="Finance" />
-              <NewsLetter
+              {/* <WidgetFinanceTwo data={financePosts} title="Finance" /> */}
+              {/* <NewsLetter
                 titleClass="white"
                 className="news_letter4 border-radious5"
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -165,10 +154,14 @@ const CategoriesPage = (props) => {
 
 const selects = (state) => ({
   posts: state.posts.posts
-})
+});
 
 const actions = (dispatch) => ({
-  getPostsCategories: (category) => dispatch(getPostsCategories(category))
+  getPostsCategories: (category) => dispatch(getPostsCategories(category)),
+  getPostsSubCategories: (category) =>
+    dispatch(getPostsSubCategories(category)),
+  getPostsNestedCategories: (category) =>
+    dispatch(getPostsNestedCategories(category))
 });
 
 export default connect(selects, actions)(CategoriesPage);

@@ -67,15 +67,6 @@ const renderRawPost = () => {
   );
 };
 const TrendingNewsThree = (props) => {
-  const history = useHistory();
-
-  const onClick = useCallback(
-    (title, id) => {
-      const to = convertPath(title, id);
-      history.push(to);
-    },
-    [history]
-  );
   const renderFirstPost = () => {
     if (!props.posts.length) {
       return renderRawPost();

@@ -322,6 +322,20 @@ const Routes = () => {
         exact
         home_style={3}
         parentClass="theme-4"
+        path="/sub_categories/:subCategory"
+        component={CategoriesPage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/nested_categories/:nestedCategory"
+        component={CategoriesPage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
         path="/entertainment"
         component={EntertainmentThreePage}
       />
@@ -378,7 +392,7 @@ const Routes = () => {
         exact
         home_style={3}
         parentClass="theme-4"
-        path="/:id"
+        path="/post/:id"
         component={PostOneHThreePage}
       />
       <PrivateRoute
