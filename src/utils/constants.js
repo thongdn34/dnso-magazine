@@ -56,12 +56,12 @@ export const menus = [
   {
     id: categoryNames.VIEWS,
     linkText: "Góc nhìn",
-    link: "/",
+    link: `/categories/${categoryNames.VIEWS}`,
     child: true,
     submenu: [
       {
         id: subCategories.EXPERTS,
-        link: "/",
+        link: `/sub_categories/${subCategories.EXPERTS}`,
         linkText: "Chuyên gia"
         // third_menu: [
         //   {
@@ -73,7 +73,7 @@ export const menus = [
       },
       {
         id: subCategories.ABOUT_BUSINESS,
-        link: "/",
+        link: `/sub_categories/${subCategories.ABOUT_BUSINESS}`,
         linkText: "Chuyện làm ăn"
       }
     ]
@@ -81,38 +81,38 @@ export const menus = [
   {
     id: categoryNames.INVESTS,
     linkText: "Đầu tư",
-    link: "/",
+    link: `/categories/${categoryNames.INVESTS}`,
     child: true,
     submenu: [
       {
         id: subCategories.LANDS,
-        link: "/",
+        link: `/sub_categories/${subCategories.LANDS}`,
         linkText: "Bất động sản"
       },
       {
         id: subCategories.FINANCE,
-        link: "/",
+        link: `/sub_categories/${subCategories.FINANCE}`,
         linkText: "Tài chính",
         child: true,
         third_menu: [
           {
             id: nestedCategories.BANKS,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.BANKS}`,
             linkText: "Ngân hàng"
           },
           {
             id: nestedCategories.STOCKS,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.STOCKS}`,
             linkText: "Chứng khoán"
           },
           {
             id: nestedCategories.INSURANCE,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.INSURANCE}`,
             linkText: "Bảo hiểm"
           },
           {
             id: nestedCategories.GOLDS,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.GOLDS}`,
             linkText: "Vàng"
           }
         ]
@@ -122,32 +122,32 @@ export const menus = [
   {
     id: categoryNames.BUSINESS,
     linkText: "Kinh doanh",
-    link: "/",
+    link: `/categories/${categoryNames.BUSINESS}`,
     child: true,
     submenu: [
       {
         id: subCategories.ENTERPRISES,
-        link: "/",
+        link: `/sub_categories/${subCategories.ENTERPRISES}`,
         linkText: "Doanh nghiệp"
       },
       {
         id: subCategories.BUSINESSMENS,
-        link: "/",
+        link: `/sub_categories/${subCategories.BUSINESSMENS}`,
         linkText: "Doanh nhân"
       },
       {
         id: subCategories.COMMERCES,
-        link: "/",
+        link: `/sub_categories/${subCategories.COMMERCES}`,
         linkText: "Thương mại"
       },
       {
         id: subCategories.STARTUPS,
-        link: "/",
+        link: `/sub_categories/${subCategories.STARTUPS}`,
         linkText: "Khởi nghiệp"
       },
       {
         id: subCategories.GOVERNS,
-        link: "/",
+        link: `/sub_categories/${subCategories.GOVERNS}`,
         linkText: "Quản trị"
       }
     ]
@@ -155,66 +155,66 @@ export const menus = [
   {
     id: categoryNames.LIFESTYLES,
     linkText: "Nhịp sống",
-    link: "/",
+    link: `/categories/${categoryNames.LIFESTYLES}`,
     child: true,
     submenu: [
       {
         id: subCategories.EXISTENCES,
-        link: "/",
+        link: `/sub_categories/${subCategories.EXISTENCES}`,
         linkText: "Đời sống",
         child: true,
         third_menu: [
           {
             id: nestedCategories.SOCIETY,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.SOCIETY}`,
             linkText: "Xã hội"
           },
           {
             id: nestedCategories.TENDENCYS,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.TENDENCYS}`,
             linkText: "Xu hướng"
           },
           {
             id: nestedCategories.KOLS,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.KOLS}`,
             linkText: "Nhân vật"
           },
           {
             id: nestedCategories.CONSUMPTION,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.CONSUMPTION}`,
             linkText: "Tiêu dùng"
           }
         ]
       },
       {
         id: subCategories.HEALTHS,
-        link: "/",
+        link: `/sub_categories/${subCategories.HEALTHS}`,
         linkText: "Sức khỏe",
         child: true,
         third_menu: [
           {
             id: nestedCategories.ADVISORY,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.ADVISORY}`,
             linkText: "Tư vấn"
           },
           {
             id: nestedCategories.NUTRITION,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.NUTRITION}`,
             linkText: "Dinh dưỡng"
           },
           {
             id: nestedCategories.GOOD_HEALTH,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.GOOD_HEALTH}`,
             linkText: "Sống khỏe"
           },
           {
             id: nestedCategories.MEN,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.MEN}`,
             linkText: "Đàn ông"
           },
           {
             id: nestedCategories.WOMAN,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.WOMAN}`,
             linkText: "Đàn bà"
           }
         ]
@@ -224,23 +224,23 @@ export const menus = [
   {
     id: categoryNames.CULTURALS,
     linkText: "Văn hóa",
-    link: "/",
+    link: `/categories/${categoryNames.CULTURALS}`,
     child: true,
     submenu: [
       {
         id: subCategories.EDUCATIONS,
         linkText: "Giáo dục",
-        link: "/",
+        link: `/sub_categories/${subCategories.EDUCATIONS}`,
         child: true,
         third_menu: [
           {
             id: nestedCategories.ADMISSIONS,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.ADMISSIONS}`,
             linkText: "Tuyển sinh"
           },
           {
             id: nestedCategories.STUDY_ABROARD,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.STUDY_ABROARD}`,
             linkText: "Du học"
           },
         ]
@@ -248,26 +248,27 @@ export const menus = [
       {
         id: subCategories.TRAVELS,
         linkText: "Du lịch",
-        link: "/",
-        child: [
+        link: `/sub_categories/${subCategories.TRAVELS}`,
+        child: true,
+        third_menu: [
           {
             id: nestedCategories.PICTURES,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.PICTURES}`,
             linkText: "Ảnh"
           },
           {
             id: nestedCategories.DESTINATION,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.DESTINATION}`,
             linkText: "Điểm đến"
           },
           {
             id: nestedCategories.DISCOVER,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.DISCOVER}`,
             linkText: "Khám phá"
           },
           {
             id: nestedCategories.EATING_PLAYING,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.EATING_PLAYING}`,
             linkText: "Ăn gì Chơi gì"
           },
         ]
@@ -275,32 +276,32 @@ export const menus = [
       {
         id: subCategories.ENTERTAIMENT,
         linkText: "Giải trí",
-        link: "/",
+        link: `/sub_categories/${subCategories.ENTERTAIMENT}`,
         child: true,
         third_menu: [
           {
             id: nestedCategories.VIETSTART,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.VIETSTART}`,
             linkText: "Sao Việt"
           },
           {
             id: nestedCategories.STAGE,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.STAGE}`,
             linkText: "Sân khấu"
           },
           {
             id: nestedCategories.FILM,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.FILM}`,
             linkText: "Điện ảnh"
           },
           {
             id: nestedCategories.FASHION,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.FASHION}`,
             linkText: "Thời trang"
           },
           {
             id: nestedCategories.MAKE_UP,
-            link: "/",
+            link: `/nested_categories/${nestedCategories.MAKE_UP}`,
             linkText: "Làm đẹp"
           },
         ]
@@ -308,15 +309,15 @@ export const menus = [
       {
         id: subCategories.BOOKS,
         linkText: "Sách",
-        link: "/"
+        link: `/sub_categories/${subCategories.BOOKS}`,
       },
     ]
   },
   {
     id: categoryNames.TECHNOLOGIES,
     linkText: "Công nghệ",
-    link: "/",
+    link: `/categories/${categoryNames.TECHNOLOGIES}`,
     child: false
   }
 ];
-export const baseURL = "https://dns-backend-postgre-h44p7.ondigitalocean.app";
+export const baseURL = "https://dns-be.cyou";

@@ -48,7 +48,7 @@ const HeroArea = (props) => {
       const to = convertPath(title, id);
       history.push(to);
     },
-    [posts, history]
+    [history]
   );
   const params = {
     activeSlideKey: activeIndex,

@@ -38,7 +38,7 @@ const MainMenuThree = ({ className }) => {
     return list.map((item) => (
       <li key={item.id} className={`${item.child ? "dropdown-submenu" : null}`}>
         {item.child ? (
-          <NavLink onClick={(e) => e.preventDefault()} to="/">
+          <NavLink to={item.link}>
             {item.linkText}
           </NavLink>
         ) : (

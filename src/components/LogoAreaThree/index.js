@@ -32,7 +32,7 @@ const LogoAreaThree = () => {
         <div className="row">
           <div className="col-lg-3 align-self-center">
             <div className="logo4">
-              <Link to="/index">
+              <Link to="/">
                 <img src={logo} alt="logo" />
               </Link>
             </div>
