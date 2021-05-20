@@ -79,6 +79,7 @@ import AudioPostOneDarkPage from "../AudioPostOneDarkPage";
 import AudioPostTwoDarkPage from "../AudioPostTwoDarkPage";
 import AudioPostThreeDarkPage from "../AudioPostThreeDarkPage";
 import PostOneLeftSidebarDarkPage from "../PostOneLeftSidebarDarkPage";
+import CategoriesPage from "../CategoriesPage";
 // import PublicRoute from '../_PublicRoute';
 
 const Routes = () => {
@@ -313,63 +314,77 @@ const Routes = () => {
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
-        path="/business"
-        component={BusinessThreePage}
+        parentClass="theme-4"
+        path="/categories/:category"
+        component={CategoriesPage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
+        path="/sub_categories/:subCategory"
+        component={CategoriesPage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
+        path="/nested_categories/:nestedCategory"
+        component={CategoriesPage}
+      />
+      <PrivateRoute
+        exact
+        home_style={3}
+        parentClass="theme-4"
         path="/entertainment"
         component={EntertainmentThreePage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
         path="/features"
         component={FeatureThreePage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
         path="/sports"
         component={SportsThreePage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
         path="/trending"
         component={TrendingThreePage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
         path="/about"
         component={AboutUsThreePage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
         path="/archive"
         component={ArchiveThreePage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
         path="/contact"
         component={ContactUsThreePage}
       />
       <PrivateRoute
         exact
         home_style={3}
-        parentClass="theme-4 bg4"
+        parentClass="theme-4"
         path="/404"
         component={NotFoundThreePage}
       />
@@ -377,7 +392,7 @@ const Routes = () => {
         exact
         home_style={3}
         parentClass="theme-4"
-        path="/:id"
+        path="/post/:id"
         component={PostOneHThreePage}
       />
       <PrivateRoute

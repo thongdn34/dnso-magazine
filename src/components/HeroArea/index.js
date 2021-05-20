@@ -48,7 +48,7 @@ const HeroArea = (props) => {
       const to = convertPath(title, id);
       history.push(to);
     },
-    [posts, history]
+    [history]
   );
   const params = {
     activeSlideKey: activeIndex,
@@ -105,7 +105,7 @@ const HeroArea = (props) => {
     ));
   };
   return (
-    <div className="wrapper_items">
+    <div className="wrapper_items container">
       <div className="wrapper_carousel">{renderHeroPost()}</div>
       <div className="container d-md-block d-none">
         <div className="row">

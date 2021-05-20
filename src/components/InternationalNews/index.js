@@ -18,12 +18,11 @@ const InternationalNews = ({title, showMore, className, data}) => {
                     </div>
                     <div className="single_post_text">
                         <div className="row">
-                            <div className="col-9 align-self-cnter">
+                            {/* <div className="col-9 align-self-cnter">
                                 <div className="meta3">
-                                    <Link to="/">TECHNOLOGY</Link>
                                     <Link to="/">{item.category}</Link>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <div className="col-3 align-self-cnter">
                                 <div className="share_meta4 text-right">
                                     <ul className="inline">

@@ -22,10 +22,6 @@ const FooterAreaThree = () => {
                 Website đang hoạt động thử nghiệm và đang hoàn tất thủ tục xin
                 giấy phép hoạt động
               </p>
-              <div className="space-30" />
-              <p>
-                <strong>Tổng biên tập:</strong> Ngô Kiếm
-              </p>
             </div>
             {/* <div className="footer_contact">
               <h3 className="widget-title2">Newspark news services</h3>

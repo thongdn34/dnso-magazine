@@ -221,7 +221,7 @@
     padding-bottom: 100%;
 
     @media screen and (min-width: $small__laptop) {
-      padding-bottom: 40%;
+      padding-bottom: calc(40% + 160px);
     }
   }
 
@@ -936,6 +936,14 @@
   .post_type12 {
     .post_img {
       width: 42%;
+
+      a {
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
     }
 
     .single_post_text {

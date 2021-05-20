@@ -46,8 +46,7 @@ const PostOneHThreePage = (props) => {
     const id = props.match.params.id.split("-").slice(-1)[0];
 
     getPost(id);
-  }, []);
-  console.log("====post", post);
+  }, [getPost, props.match.params.id]);
 
   return (
     <Fragment>
