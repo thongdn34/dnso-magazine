@@ -89,7 +89,7 @@ const TrendingNewsThree = (props) => {
           <div className="single_post_text">
             <div className="meta3">
               <Link to="/">{item.category.translatedName}</Link>
-              <Link to={`${item?.title}-${item?.id}`}>{convertDate(item?.updated_at)}</Link>
+              <Link to={`/${convertPath(item?.title, item?.id)}`}>{convertDate(item?.updated_at)}</Link>
             </div>
             <h4>
               <Link to={`/${convertPath(item?.title, item?.id)}`}>{item.title}</Link>
