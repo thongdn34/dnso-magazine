@@ -55,7 +55,7 @@ const BusinessCarousel = (props) => {
             <div className="single_international">
               <p className="meta before">{item.category}</p>
               <h4>
-                <Link to={`/${convertPath(item.title, item.id)}`}>{item.title}</Link>
+                <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item.title}</Link>
               </h4>
               <div className="row">
                 <div className="col-7 align-self-center">
@@ -63,7 +63,7 @@ const BusinessCarousel = (props) => {
                 </div>
                 <div className="col-5 align-self-center">
                   <div className="img_wrap">
-                    <Link to={`/${convertPath(item.title, item.id)}`}>
+                    <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
                       <img src={item.photo} alt={item.caption} />
                     </Link>
                   </div>

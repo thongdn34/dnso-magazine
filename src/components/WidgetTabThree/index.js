@@ -40,12 +40,12 @@ const WidgetTabPane = ({ arr, a_id, id }) => {
             </div>
             <div className="single_post_text">
               <h4>
-                <Link to={`/${convertPath(item.title, item.id)}`}>{item.title}</Link>
+                <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item.title}</Link>
               </h4>
               <div className="row">
                 <div className="col-7 align-self-cnter">
                   <div className="meta4">
-                    <Link to={`/${convertPath(item.title, item.id)}`}>{item?.updateAt}</Link>
+                    <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item?.updateAt}</Link>
                   </div>
                 </div>
                 <div className="col-5 align-self-cnter">

@@ -1,3 +1,4 @@
 export const endpoint = {
-  posts: "/posts"
+  posts: "/posts",
+  count: "/posts/count"
 };
