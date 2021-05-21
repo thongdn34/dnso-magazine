@@ -39,7 +39,7 @@ const GalleryCarousel = (props) => {
       <div key={i} className="single_post post_type6 border-radious7 xs-mb30">
         <div className="post_img gradient1">
           <div className="img_wrap">
-            <Link to={`/${convertPath(item.title, item.id)}`} style={{ height: '411px' }}>
+            <Link to={`/${convertPath(item.title, item.id)}`} style={{ height: '411px' }} title={item.title}>
               <img src={item.photo} alt="thumb" />
             </Link>
           </div>
@@ -49,7 +49,7 @@ const GalleryCarousel = (props) => {
             {item.category} <span>&nbsp;| &nbsp; {item.updateAt}</span>
           </p>
           <h4>
-            <Link to={`/${convertPath(item.title, item.id)}`}>{item.title}</Link>
+            <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item.title}</Link>
           </h4>
         </div>
       </div>

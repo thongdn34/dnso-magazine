@@ -12,4 +12,15 @@ const getPosts = async (params) => {
   return posts;
 };
 
-export { getPosts };
+const getCount = async (params) => {
+  const count = await $get(endpoint.count, {
+    params: {
+      ...params,
+      _publicationState: "live"
+    }
+  });
+
+  return count;
+};
+
+export { getPosts, getCount };
