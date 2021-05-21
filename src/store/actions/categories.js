@@ -1,4 +1,5 @@
 import { getPosts } from "../../helpers";
+import { getCount } from "../../helpers/posts";
 import {
   GET_POST_CATEGORY,
   GET_POST_CATEGORY_FAIL,
@@ -14,7 +15,11 @@ export const getPostsCategories = (
 
     try {
       const res = await getPosts({ "category.type": category, ...params });
-      dispatch({ type: GET_POST_CATEGORY_SUCCESS, payload: res });
+      const count = await getCount({ "category.type": category });
+      dispatch({
+        type: GET_POST_CATEGORY_SUCCESS,
+        payload: { posts: res, count }
+      });
     } catch (error) {
       console.log("===eror", error);
       dispatch({ type: GET_POST_CATEGORY_FAIL });
@@ -61,7 +66,3 @@ export const getPostsNestedCategories = (
     }
   };
 };
-
-export const getCountPosts = () => {
-  
-}

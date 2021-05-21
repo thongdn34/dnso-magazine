@@ -81,7 +81,7 @@ const TrendingNewsThree = (props) => {
         <div className="single_post type10 type16 widgets_small mb15">
           <div className="post_img">
             <div className="img_wrap">
-              <Link to={`/${convertPath(item?.title, item?.id)}`}>
+              <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>
                 <img src={item?.thumbnail?.formats.thumbnail.url} alt={item.caption} />
               </Link>
             </div>
@@ -89,10 +89,10 @@ const TrendingNewsThree = (props) => {
           <div className="single_post_text">
             <div className="meta3">
               <Link to="/">{item.category.translatedName}</Link>
-              <Link to={`/${convertPath(item?.title, item?.id)}`}>{convertDate(item?.updated_at)}</Link>
+              <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>{convertDate(item?.updated_at)}</Link>
             </div>
             <h4>
-              <Link to={`/${convertPath(item?.title, item?.id)}`}>{item.title}</Link>
+              <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>{item.title}</Link>
             </h4>
           </div>
         </div>

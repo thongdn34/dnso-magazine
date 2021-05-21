@@ -25,4 +25,4 @@ export const getAPost = (params) => {
       dispatch({ type: GET_POST_FAIL })
     }
   }
-}
+};

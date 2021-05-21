@@ -10,6 +10,7 @@ import {
 const init = {
   posts: [],
   post: '',
+  count: 0,
 };
 
 const postReducer = (state = init, action) => {
@@ -18,7 +19,8 @@ const postReducer = (state = init, action) => {
     case GET_POST_CATEGORY_SUCCESS:
       return {
         ...state,
-        posts: action.payload
+        posts: action.payload.posts || action.payload,
+        count: action.payload?.count || 0
       }
     case GET_POST_SUCCESS:
       return {

@@ -95,7 +95,7 @@ const CategoriesPage = (props) => {
                 </div>
               </div>
               <InternationalNews data={formatDataPosts(posts)} title />
-              <div className="cpagination v4 padding5050">
+              {/* <div className="cpagination v4 padding5050">
                 <nav aria-label="Page navigation example">
                   <ul className="pagination">
                     <li className="page-item">
@@ -129,7 +129,7 @@ const CategoriesPage = (props) => {
                     </li>
                   </ul>
                 </nav>
-              </div>
+              </div> */}
             </div>
             <div className="col-md-6 col-lg-4">
               {/* <FollowUs title="Follow Us" /> */}
@@ -153,7 +153,8 @@ const CategoriesPage = (props) => {
 };
 
 const selects = (state) => ({
-  posts: state.posts.posts
+  posts: state.posts.posts,
+  count: state.posts.count,
 });
 
 const actions = (dispatch) => ({
