@@ -339,7 +339,7 @@
   }
 
   .menu4 {
-    position: absolute;
+    position: relative;
     left: 0;
     width: 100%;
     z-index: 99;
@@ -351,6 +351,23 @@
     top: 0;
     left: 0;
     right: 0;
+
+    .navbar {
+      top: 0;
+      transform: translate(-20px, 0);
+
+      @media screen and (min-width: 992px) {
+        top: 70px;
+      }
+    }
+
+    .navbar-mobile {
+      display: block;
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
   }
 
   .welcome_list {
@@ -443,9 +460,12 @@
 
   .single-post {
     &__banner {
-      position: sticky;
-      top: 70px;
       z-index: 3;
+
+      @media screen and (min-width: 992px) {
+        position: sticky;
+        top: 70px;
+      }
     }
   }
 
