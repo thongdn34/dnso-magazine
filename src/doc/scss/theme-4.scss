@@ -457,6 +457,11 @@
   .v3datentemp {
     display: flex;
     align-items: center;
+
+    img {
+      margin: 0 auto;
+      object-fit: contain;
+    }
   }
 
   .trancarousel_area {

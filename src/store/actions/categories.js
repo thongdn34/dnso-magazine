@@ -29,7 +29,7 @@ export const getPostsCategories = (
 
 export const getPostsSubCategories = (
   subCategory,
-  params = { _start: 10, _limit: 10 }
+  params = { _start: 0, _limit: 10 }
 ) => {
   return async (dispatch) => {
     dispatch({ type: GET_POST_CATEGORY });
@@ -49,7 +49,7 @@ export const getPostsSubCategories = (
 
 export const getPostsNestedCategories = (
   nestedCategory,
-  params = { _start: 10, _limit: 10 }
+  params = { _start: 0, _limit: 10 }
 ) => {
   return async (dispatch) => {
     dispatch({ type: GET_POST_CATEGORY });
