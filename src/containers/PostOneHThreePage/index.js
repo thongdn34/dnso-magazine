@@ -9,7 +9,6 @@ import FontAwesome from "../../components/uiStyle/FontAwesome";
 import CategoryFour from "../../components/CategoryFour";
 import PostOnePagination from "../../components/PostOnePagination";
 
-import banner4 from "../../doc/img/bg/banner4.png";
 import finance41 from "../../doc/img/finance/finance41.jpg";
 import single_post1 from "../../doc/img/blog/single_post1.jpg";
 import author2 from "../../doc/img/author/author2.png";
@@ -23,6 +22,7 @@ import BlogComment from "../../components/BlogComment";
 import { MarkdownPreview } from "react-marked-markdown";
 import { connect } from "react-redux";
 import { getAPost } from "../../store/actions/posts";
+import { banner4 } from "../../doc/img";
 
 const financePosts = [
   {
