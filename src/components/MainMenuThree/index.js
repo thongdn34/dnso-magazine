@@ -4,7 +4,7 @@ import FontAwesome from "../uiStyle/FontAwesome";
 import SidebarMenu from "../SidebarMenu";
 import SearchModal from "../SearchModal";
 import { menus } from "../../utils/constants";
-import logo from "../../doc/img/logo/logo1.png";
+import { logo2, logo } from "../../doc/img";
 
 const MainMenuThree = ({ className }) => {
   const [searchShow, setSearchShow] = useState(false);
@@ -38,9 +38,7 @@ const MainMenuThree = ({ className }) => {
     return list.map((item) => (
       <li key={item.id} className={`${item.child ? "dropdown-submenu" : null}`}>
         {item.child ? (
-          <NavLink to={item.link}>
-            {item.linkText}
-          </NavLink>
+          <NavLink to={item.link}>{item.linkText}</NavLink>
         ) : (
           <NavLink to={item.link}>{item.linkText}</NavLink>
         )}
@@ -65,12 +63,21 @@ const MainMenuThree = ({ className }) => {
               <div className="row justify-content-between">
                 <nav className="navbar navbar-expand-lg align-self-center">
                   <div className="site-nav-inner">
-                    <button
-                      className="navbar-toggler"
-                      onClick={() => setSideShow(true)}
-                    >
-                      <FontAwesome name="bars" />
-                    </button>
+                    <div className="navbar-mobile">
+                      <button
+                        className="navbar-toggler"
+                        onClick={() => setSideShow(true)}
+                      >
+                        <FontAwesome name="bars" />
+                      </button>
+                      <img
+                        className="navbar__logo"
+                        src={logo2}
+                        alt="logo1"
+                        width={100}
+                        height={60}
+                      />
+                    </div>
                     <div
                       id="navbarSupportedContent"
                       className="collapse navbar-collapse navbar-responsive-collapse"
@@ -120,7 +127,7 @@ const MainMenuThree = ({ className }) => {
                       menus={menus}
                     />
                   </div>
-                  <div className="search-bar col-lg-5 text-right align-self-center justify-content-end">
+                  {/* <div className="search-bar col-lg-5 text-right align-self-center justify-content-end">
                     <input
                       className={searchShow ? "--active" : ""}
                       type="search"
@@ -132,7 +139,7 @@ const MainMenuThree = ({ className }) => {
                     >
                       <FontAwesome name="search" />
                     </div>
-                  </div>
+                  </div> */}
                 </nav>
               </div>
             </div>
