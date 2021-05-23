@@ -18,7 +18,6 @@ import WidgetOpinionNews from "../../components/WidgetOpinionNews";
 import NewsLetter from "../../components/NewsLetter";
 import CategoryFour from "../../components/CategoryFour";
 
-import banner4 from "../../doc/img/bg/banner4.png";
 import banner42 from "../../doc/img/bg/banner42.png";
 import finance41 from "../../doc/img/finance/finance41.jpg";
 import international41 from "../../doc/img/international/international41.jpg";
@@ -30,6 +29,7 @@ import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
 import { convertDate, formatDataPosts, sortDateArray } from "../../utils/commonFunctions";
 import { categoryNames, subCategories } from "../../utils/constants";
+import { banner4 } from "../../doc/img";
 
 // const internationalPosts = [
 //   {
@@ -166,7 +166,7 @@ const HomePageThree = (props) => {
     <Fragment>
       <div className="wrapper_welcome">
         <MainMenuThree className="home4menu" />
-        <HeroArea posts={getHottestPost()} />
+        {/* <HeroArea posts={getHottestPost()} /> */}
         <div className="bg4">
           <div className="space-60" />
           <div className="total3 mb30">
@@ -229,7 +229,7 @@ const HomePageThree = (props) => {
                 </div>
                 <div className="col-md-6 col-xl-4 d-md-none d-xl-block">
                   <WidgetFinanceTwo
-                    data={getLatedParticularPosts(subCategories.FINANCE, 5, true)}
+                    data={getLatedParticularPosts(subCategories.FINANCE, 4, true)}
                     title="Tài chính"
                   />
                   <div className="banner2 mb30 border-radious5">
