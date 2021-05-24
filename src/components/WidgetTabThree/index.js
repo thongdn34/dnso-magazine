@@ -6,28 +6,28 @@ import { Link } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import { convertPath } from "../../utils/commonFunctions";
 
-const data = [
-  {
-    title:
-      "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
-  },
-  {
-    title:
-      "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
-  },
-  {
-    title:
-      "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
-  },
-  {
-    title:
-      "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
-  },
-  {
-    title:
-      "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
-  }
-];
+// const data = [
+//   {
+//     title:
+//       "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
+//   },
+//   {
+//     title:
+//       "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
+//   },
+//   {
+//     title:
+//       "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
+//   },
+//   {
+//     title:
+//       "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
+//   },
+//   {
+//     title:
+//       "Cheers, darling. Virtual cheer. How to throw a virtual cock tail party"
+//   }
+// ];
 
 const WidgetTabPane = ({ arr, a_id, id }) => {
   return (

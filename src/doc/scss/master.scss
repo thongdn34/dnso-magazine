@@ -1707,7 +1707,7 @@ span.tranding {
 
   .single_footer_nav {
     ul {
-      margin: 0;
+      margin: 0 0 10px 0;
       padding: 0;
 
       li {
@@ -2359,10 +2359,10 @@ a.cbtn3 {
 
 @media screen and (max-width: $large) {
   .single_post_heading {
-    h1 {
-      font-size: 24px;
-      line-height: 32px;
-    }
+    // h1 {
+    //   font-size: 24px;
+    //   line-height: 32px;
+    // }
   }
   .next_prv_single {
     margin-bottom: 30px;
@@ -2446,10 +2446,10 @@ a.cbtn3 {
     }
   }
   .single_post_heading {
-    h1 {
-      font-size: 20px;
-      line-height: 30px;
-    }
+    // h1 {
+    //   font-size: 20px;
+    //   line-height: 30px;
+    // }
   }
 
   .author_about {

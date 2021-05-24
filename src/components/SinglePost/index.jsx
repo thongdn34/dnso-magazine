@@ -14,7 +14,7 @@ const SinglePost = (props) => {
       const to = convertPath(title, id);
       history.push(to);
     },
-    [post, history]
+    [history]
   );
 
   return (

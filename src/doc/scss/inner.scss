@@ -52,7 +52,7 @@
 .title_inner {
   h6 {
     color: $white;
-    font-size: 15px;
+    // font-size: 15px;
     font-weight: $wightMedium;
     margin-bottom: 30px;
     text-transform: capitalize;
@@ -60,7 +60,7 @@
 
   h1 {
     color: $white;
-    font-size: 44px;
+    // font-size: 44px;
     font-weight: $wightBold;
     text-transform: capitalize;
   }
@@ -347,9 +347,9 @@
 }
 
 .single_post_heading {
-  h1 {
-    font-size: $heading2;
-  }
+  // h1 {
+  //   font-size: $heading2;
+  // }
 }
 
 .archives h3 {

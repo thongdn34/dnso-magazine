@@ -1,33 +1,21 @@
 /* eslint-disable no-unused-expressions */
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import MainMenuThree from "../../components/MainMenuThree";
-import HeroArea from "../../components/HeroArea";
 import TrendingNewsThree from "../../components/TrendingNewsThree";
 import BusinessCarousel from "../../components/BusinessCarousel";
 import BusinessImageCarousel from "../../components/BusinessImageCarousel";
 import WidgetFinanceTwo from "../../components/WidgetFinanceTwo";
 import { Link } from "react-router-dom";
-import VIdeoNewsSection from "../../components/VIdeoNewsSection";
 import InternationalNews from "../../components/InternationalNews";
-import ScienceNews from "../../components/ScienceNews";
 import SportsNewsTwo from "../../components/SportsNewsTwo";
 import GalleryCarousel from "../../components/GalleryCarousel";
 import WidgetTabThree from "../../components/WidgetTabThree";
-import FollowUs from "../../components/FollowUs";
 import WidgetOpinionNews from "../../components/WidgetOpinionNews";
-import NewsLetter from "../../components/NewsLetter";
 import CategoryFour from "../../components/CategoryFour";
 
-import banner42 from "../../doc/img/bg/banner42.png";
-import finance41 from "../../doc/img/finance/finance41.jpg";
-import international41 from "../../doc/img/international/international41.jpg";
-import international42 from "../../doc/img/international/international42.jpg";
-import international43 from "../../doc/img/international/international43.jpg";
-import international44 from "../../doc/img/international/international44.jpg";
-import international45 from "../../doc/img/international/international45.jpg";
 import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
-import { convertDate, formatDataPosts, sortDateArray } from "../../utils/commonFunctions";
+import { formatDataPosts, sortDateArray } from "../../utils/commonFunctions";
 import { categoryNames, subCategories } from "../../utils/constants";
 import { banner4 } from "../../doc/img";
 
@@ -103,6 +91,7 @@ const HomePageThree = (props) => {
 
   useEffect(() => {
     getPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getLatedPosts = () => {
@@ -113,26 +102,26 @@ const HomePageThree = (props) => {
     return sortDateArray(posts).slice(0, 10);
   };
 
-  const getHottestPost = () => {
-    return posts.reduce((acc, curr) => {
-      if (curr.isHottest) {
-        return [
-          ...acc,
-          {
-            id: curr?.id,
-            photo:
-              curr?.thumbnail.formats.medium?.url ||
-              curr?.thumbnail.formats.thumbnail?.url,
-            category: curr?.category.translatedName,
-            title: curr?.title,
-            date: convertDate(curr?.updated_at)
-          }
-        ];
-      }
+  // const getHottestPost = () => {
+  //   return posts.reduce((acc, curr) => {
+  //     if (curr.isHottest) {
+  //       return [
+  //         ...acc,
+  //         {
+  //           id: curr?.id,
+  //           photo:
+  //             curr?.thumbnail.formats.medium?.url ||
+  //             curr?.thumbnail.formats.thumbnail?.url,
+  //           category: curr?.category.translatedName,
+  //           title: curr?.title,
+  //           date: convertDate(curr?.updated_at)
+  //         }
+  //       ];
+  //     }
 
-      return acc;
-    }, []);
-  };
+  //     return acc;
+  //   }, []);
+  // };
 
   const getLatedParticularPosts = (
     type = "",
