@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import Swiper from "react-id-swiper";
-import FontAwesome from "../uiStyle/FontAwesome";
+// import Swiper from "react-id-swiper";
+// import FontAwesome from "../uiStyle/FontAwesome";
 import { convertPath } from "../../utils/commonFunctions";
 
 // import pop51 from '../../doc/img/popular/pop51.jpg';
@@ -51,62 +51,62 @@ import { convertPath } from "../../utils/commonFunctions";
 
 const BusinessImageCarousel = (props) => {
   const { galleryPosts, populerPosts } = props;
-  const [swiper, setSwiper] = useState(null);
+  // const [swiper, setSwiper] = useState(null);
 
-  const goNext = () => {
-    if (swiper !== null) {
-      swiper.slideNext();
-    }
-  };
+  // const goNext = () => {
+  //   if (swiper !== null) {
+  //     swiper.slideNext();
+  //   }
+  // };
 
-  const goPrev = () => {
-    if (swiper !== null) {
-      swiper.slidePrev();
-    }
-  };
-  const params = {
-    slidesPerView: 1,
-    loop: true
-  };
+  // const goPrev = () => {
+  //   if (swiper !== null) {
+  //     swiper.slidePrev();
+  //   }
+  // };
+  // const params = {
+  //   slidesPerView: 1,
+  //   loop: true
+  // };
 
-  const renderSwiper = (list) => {
-    return (
-      <div className="image_carousel nav_style4 mb30">
-        <Swiper getSwiper={setSwiper} {...params}>
-          {list.map((item, i) => (
-            <div
-              key={i}
-              className="single_post gradient1 post_type6 border-radious7 xs-mb30"
-            >
-              <div className="post_img gradient1">
-                <div className="img_wrap">
-                  <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
-                    <img src={item.photo} alt="thumb" />
-                  </Link>
-                </div>
-              </div>
-              <div className="single_post_text">
-                <p className="meta meta_style4">
-                  Business <span>&nbsp;| &nbsp; March 26, 2020</span>
-                </p>
-                <h4>
-                  <Link to="/video_post1">{item.title}</Link>
-                </h4>
-              </div>
-            </div>
-          ))}
-        </Swiper>
-        <div className="owl-nav">
-          <div onClick={goPrev} className="owl-prev">
-            <FontAwesome name="angle-left" />
-          </div>
-          <div onClick={goNext} className="owl-next">
-            <FontAwesome name="angle-right" />
-          </div>
-        </div>
-      </div>
-    );
-  };
+  // const renderSwiper = (list) => {
+  //   return (
+  //     <div className="image_carousel nav_style4 mb30">
+  //       <Swiper getSwiper={setSwiper} {...params}>
+  //         {list.map((item, i) => (
+  //           <div
+  //             key={i}
+  //             className="single_post gradient1 post_type6 border-radious7 xs-mb30"
+  //           >
+  //             <div className="post_img gradient1">
+  //               <div className="img_wrap">
+  //                 <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
+  //                   <img src={item.photo} alt="thumb" />
+  //                 </Link>
+  //               </div>
+  //             </div>
+  //             <div className="single_post_text">
+  //               <p className="meta meta_style4">
+  //                 Business <span>&nbsp;| &nbsp; March 26, 2020</span>
+  //               </p>
+  //               <h4>
+  //                 <Link to="/video_post1">{item.title}</Link>
+  //               </h4>
+  //             </div>
+  //           </div>
+  //         ))}
+  //       </Swiper>
+  //       <div className="owl-nav">
+  //         <div onClick={goPrev} className="owl-prev">
+  //           <FontAwesome name="angle-left" />
+  //         </div>
+  //         <div onClick={goNext} className="owl-next">
+  //           <FontAwesome name="angle-right" />
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   const renderVerticalList = (list) => {
     return list.map((item, i) => {

@@ -1,6 +1,4 @@
 import React from "react";
-import opinion41 from "../../doc/img/opinion/opinion41.jpg";
-import opinion42 from "../../doc/img/opinion/opinion42.jpg";
 import { Link } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import { convertPath } from "../../utils/commonFunctions";

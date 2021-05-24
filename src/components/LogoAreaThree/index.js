@@ -1,47 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Swiper from "react-id-swiper";
-import FontAwesome from "../uiStyle/FontAwesome";
-import tempIcon from "../../doc/img/icon/s4.png";
+// import Swiper from "react-id-swiper";
+// import FontAwesome from "../uiStyle/FontAwesome";
+// import tempIcon from "../../doc/img/icon/s4.png";
 import logo from "../../doc/img/logo/logo2.png";
 import { banner900x140 } from "../../doc/img";
 
 const LogoAreaThree = () => {
-  const [swiper, setSwiper] = useState(null);
+  // const [swiper, setSwiper] = useState(null);
 
-  const goNext = () => {
-    if (swiper !== null) {
-      swiper.slideNext();
-    }
-  };
+  // const goNext = () => {
+  //   if (swiper !== null) {
+  //     swiper.slideNext();
+  //   }
+  // };
 
-  const goPrev = () => {
-    if (swiper !== null) {
-      swiper.slidePrev();
-    }
-  };
-  const params = {
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    }
-  };
+  // const goPrev = () => {
+  //   if (swiper !== null) {
+  //     swiper.slidePrev();
+  //   }
+  // };
+  // const params = {
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev"
+  //   }
+  // };
   return (
     <div className="logo_area">
       <div className="container">
         <div className="row">
           <div className="col-lg-3 align-self-center">
             <div className="logo4">
-              <Link to="/">
+              <Link to="/" style={{ marginRight: '10px' }}>
                 <img src={logo} alt="logo" />
               </Link>
+              <div className="v3datentemp">
+                <img src={banner900x140} alt="900x100" />
+              </div>
             </div>
           </div>
-          <div className="col-lg-9 align-self-center">
-            <div
-              className="v3datentemp"
-              style={{ height: "140px", flex: 1 }}
-            >
+          <div className="col-lg-9 align-self-center banner-ads">
+            <div className="v3datentemp" style={{ height: "140px", flex: 1 }}>
               <img src={banner900x140} alt="900x100" />
             </div>
             {/* <div className="row justify-content-end">

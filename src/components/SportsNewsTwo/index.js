@@ -1,14 +1,13 @@
 import React, { Fragment } from "react";
-import { useCallback } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import sports41 from "../../doc/img/sports/sports41.jpg";
+// import sports41 from "../../doc/img/sports/sports41.jpg";
 import sports42 from "../../doc/img/sports/sports42.jpg";
 import sports43 from "../../doc/img/sports/sports43.jpg";
 import sports44 from "../../doc/img/sports/sports44.jpg";
-import sports45 from "../../doc/img/sports/sports45.jpg";
-import sports46 from "../../doc/img/sports/sports46.jpg";
-import sports47 from "../../doc/img/sports/sports47.jpg";
+// import sports45 from "../../doc/img/sports/sports45.jpg";
+// import sports46 from "../../doc/img/sports/sports46.jpg";
+// import sports47 from "../../doc/img/sports/sports47.jpg";
 import { convertPath } from "../../utils/commonFunctions";
 import FontAwesome from "../uiStyle/FontAwesome";
 
@@ -29,15 +28,6 @@ const _sportsNews = [
 
 const SportsNewsTwo = (props) => {
   const { sportsNews, category } = props;
-  const history = useHistory();
-
-  const onClick = useCallback(
-    (title, id) => {
-      const to = convertPath(title, id);
-      history.push(to);
-    },
-    [history]
-  );
   let list = _sportsNews
 
   if (sportsNews.length) {

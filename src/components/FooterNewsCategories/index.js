@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { convertPath } from "../../utils/commonFunctions";
+// import { convertPath } from "../../utils/commonFunctions";
 import { categoryNames, subCategories } from "../../utils/constants";
 
 const FooterNewsCategories = () => {
   return (
     <Fragment>
       <div className="row">
-        <div className="col-lg-3">
+        <div className="col-6 col-lg-3">
           <ul>
             <li>
               <Link to={`/categories/${(categoryNames.VIEWS)}`}>Góc nhìn</Link>
@@ -23,7 +23,7 @@ const FooterNewsCategories = () => {
             </li>
           </ul>
         </div>
-        <div className="col-lg-3">
+        <div className="col-6 col-lg-3">
           <ul>
             <li>
               <Link to={`/categories/${(categoryNames.INVESTS)}`}>Đầu tư</Link>
@@ -39,7 +39,7 @@ const FooterNewsCategories = () => {
             </li>
           </ul>
         </div>
-        <div className="col-lg-3">
+        <div className="col-6 col-lg-3">
           <ul>
             <li>
               <Link to={`/categories/${(categoryNames.ADVISORIES)}`}>Tư vấn</Link>
@@ -55,7 +55,7 @@ const FooterNewsCategories = () => {
             </li>
           </ul>
         </div>
-        <div className="col-lg-3">
+        <div className="col-6 col-lg-3">
           <ul>
             <li>
               <Link to={`/sub_categories/${(subCategories.HEALTHS)}`}>Sức khỏe</Link>

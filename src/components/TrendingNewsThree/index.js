@@ -1,17 +1,10 @@
 import React, { Fragment } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import trend31 from "../../doc/img/trending/trend31.jpg";
-import trend32 from "../../doc/img/trending/trend32.jpg";
-import trend33 from "../../doc/img/trending/trend33.jpg";
-import trend34 from "../../doc/img/trending/trend34.jpg";
-import trend35 from "../../doc/img/trending/trend35.jpg";
-import trend36 from "../../doc/img/trending/trend36.jpg";
-import trend37 from "../../doc/img/blog/90652.jpg";
 import SinglePost from "../SinglePost";
 import FontAwesome from "../uiStyle/FontAwesome";
 import { convertDate, convertPath } from "../../utils/commonFunctions";
-import { useCallback } from "react";
 
 const renderRawPost = () => {
   return (
