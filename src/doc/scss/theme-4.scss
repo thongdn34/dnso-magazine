@@ -11,6 +11,7 @@
 .theme-4 {
   .container {
     max-width: 1250px;
+    justify-content: unset;
   }
 
   .footer_area3 .logo a {
@@ -44,11 +45,24 @@
     display: flex;
     align-self: center;
     justify-content: center;
-    padding: 20px;
-    width: 250px;
-    height: 150px;
-    // background: $gradient41;
     text-align: center;
+    margin-right: 10px;
+    
+    @media screen and (min-width: 922px) {
+      width: 250px;
+      height: 150px;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .v3datentemp {
+      display: block;
+      margin-left: 10px;
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
   }
 
   .v3datentemp > div {
@@ -185,7 +199,15 @@
   }
 
   .logo_area {
-    padding: 0;
+    padding: 15px 0;
+
+    .banner-ads {
+      display: none;
+
+      @media screen and (min-width: 922px) {
+        display: block;
+      }
+    }
   }
 
   .welcome_txt {
@@ -210,7 +232,7 @@
 
     h1 {
       color: $white;
-      font-size: 44px;
+      // font-size: 44px;
       text-decoration: underline;
     }
   }
@@ -354,7 +376,8 @@
 
     .navbar {
       top: 0;
-      transform: translate(-20px, 0);
+      transform: translate(-15px, 0);
+      padding: 0 15px;
 
       @media screen and (min-width: 992px) {
         top: 70px;
@@ -477,9 +500,9 @@
   .v3datentemp {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
     img {
-      margin: 0 auto;
       object-fit: contain;
     }
   }
@@ -2088,9 +2111,9 @@
       text-align: center !important;
     }
 
-    .welcome_txt h1 {
-      font-size: 26px;
-    }
+    // .welcome_txt h1 {
+    //   font-size: 26px;
+    // }
     .tatal_video4 .video4_content a {
       font-size: 24px;
       line-height: 28px;

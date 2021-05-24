@@ -2,12 +2,12 @@ import React, { Fragment, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import SidebarMenu from "../SidebarMenu";
-import SearchModal from "../SearchModal";
+// import SearchModal from "../SearchModal";
 import { menus } from "../../utils/constants";
 import { logo2, logo } from "../../doc/img";
 
 const MainMenuThree = ({ className }) => {
-  const [searchShow, setSearchShow] = useState(false);
+  // const [searchShow, setSearchShow] = useState(false);
   const [sideShow, setSideShow] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null);
@@ -57,7 +57,7 @@ const MainMenuThree = ({ className }) => {
           isSticky ? "sticky" : ""
         }`}
       >
-        <div className="container">
+        <div>
           <div className="main-menu">
             <div className="main-nav clearfix is-ts-sticky">
               <div className="row justify-content-between">
@@ -82,43 +82,45 @@ const MainMenuThree = ({ className }) => {
                       id="navbarSupportedContent"
                       className="collapse navbar-collapse navbar-responsive-collapse"
                     >
-                      <NavLink to="/">
-                        <img
-                          className={`navbar__mini-logo ${
-                            isSticky ? "--active" : ""
-                          }`}
-                          src={logo}
-                          alt="logo1"
-                          width={40}
-                          height={40}
-                        />
-                      </NavLink>
-                      <ul className="nav navbar-nav" id="scroll">
-                        {menus.length > 0
-                          ? menus.map((item, i) => (
-                              <li
-                                key={item.id}
-                                className={`
+                      <div className="container">
+                        <NavLink to="/">
+                          <img
+                            className={`navbar__mini-logo ${
+                              isSticky ? "--active" : ""
+                            }`}
+                            src={logo}
+                            alt="logo1"
+                            width={40}
+                            height={40}
+                          />
+                        </NavLink>
+                        <ul className="nav navbar-nav" id="scroll">
+                          {menus.length > 0
+                            ? menus.map((item, i) => (
+                                <li
+                                  key={item.id}
+                                  className={`
 										${item.child ? "dropdown" : ""}
 										nav-item`}
-                              >
-                                <NavLink
-                                  to={item.link}
-                                  className="menu-dropdown"
-                                  data-toggle="dropdown"
                                 >
-                                  {item.linkText}
-                                  <FontAwesome name={item.icon} />
-                                </NavLink>
-                                {item.child ? (
-                                  <ul className="dropdown-menu" role="menu">
-                                    {renderSubMenu(item.submenu)}
-                                  </ul>
-                                ) : null}
-                              </li>
-                            ))
-                          : null}
-                      </ul>
+                                  <NavLink
+                                    to={item.link}
+                                    className="menu-dropdown"
+                                    data-toggle="dropdown"
+                                  >
+                                    {item.linkText}
+                                    <FontAwesome name={item.icon} />
+                                  </NavLink>
+                                  {item.child ? (
+                                    <ul className="dropdown-menu" role="menu">
+                                      {renderSubMenu(item.submenu)}
+                                    </ul>
+                                  ) : null}
+                                </li>
+                              ))
+                            : null}
+                        </ul>
+                      </div>
                     </div>
                     <SidebarMenu
                       className="themeDark"

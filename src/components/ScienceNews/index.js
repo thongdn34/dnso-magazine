@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import {mostViewSort} from "../../utils/commonFunctions";
 
-import science41 from '../../doc/img/science/science41.jpg';
+// import science41 from '../../doc/img/science/science41.jpg';
 
 // const posts = [
 //     {

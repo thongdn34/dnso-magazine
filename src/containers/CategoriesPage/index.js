@@ -1,15 +1,15 @@
 import React, { Fragment, useEffect } from "react";
 import MainMenuThree from "../../components/MainMenuThree";
 import BannerSectionThree from "../../components/BannerSectionThree";
-import FollowUs from "../../components/FollowUs";
-import WidgetFinanceTwo from "../../components/WidgetFinanceTwo";
-import NewsLetter from "../../components/NewsLetter";
+// import FollowUs from "../../components/FollowUs";
+// import WidgetFinanceTwo from "../../components/WidgetFinanceTwo";
+// import NewsLetter from "../../components/NewsLetter";
 import { Link } from "react-router-dom";
-import FontAwesome from "../../components/uiStyle/FontAwesome";
+// import FontAwesome from "../../components/uiStyle/FontAwesome";
 import InternationalNews from "../../components/InternationalNews";
 
 import banner4 from "../../doc/img/bg/banner4.png";
-import finance41 from "../../doc/img/finance/finance41.jpg";
+// import finance41 from "../../doc/img/finance/finance41.jpg";
 import { connect } from "react-redux";
 import {
   getPostsCategories,
@@ -18,20 +18,20 @@ import {
 } from "../../store/actions/categories";
 import { formatDataPosts } from "../../utils/commonFunctions";
 
-const financePosts = [
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  },
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  }
-];
+// const financePosts = [
+//   {
+//     photo: finance41,
+//     title: "Copa America: Luis Suarez from devastated US",
+//     description:
+//       "The property, complete with seates screening from room amphitheater pond with sandy"
+//   },
+//   {
+//     photo: finance41,
+//     title: "Copa America: Luis Suarez from devastated US",
+//     description:
+//       "The property, complete with seates screening from room amphitheater pond with sandy"
+//   }
+// ];
 
 const CategoriesPage = (props) => {
   const {

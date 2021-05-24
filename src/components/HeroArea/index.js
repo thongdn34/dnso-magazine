@@ -1,43 +1,10 @@
 import React, { useState } from "react";
 import { useCallback } from "react";
-import Swiper from "react-id-swiper";
+// import Swiper from "react-id-swiper";
 import { useHistory } from "react-router-dom";
 
-import hero1 from "../../doc/img/bg/hero1.jpg";
-import hero2 from "../../doc/img/bg/hero2.jpg";
-import hero3 from "../../doc/img/bg/hero3.jpg";
 import { convertPath } from "../../utils/commonFunctions";
 
-const slider = [
-  {
-    photo: hero1,
-    category: "Business",
-    date: "March 2020",
-    title:
-      "Setting politics aside, Sequoia raises $3.4 billion for US and China investments"
-  },
-  {
-    photo: hero2,
-    category: "Business",
-    date: "March 2020",
-    title:
-      "Setting politics aside, Sequoia raises $3.4 billion for US and China investments"
-  },
-  {
-    photo: hero3,
-    category: "Business",
-    date: "March 2020",
-    title:
-      "Setting politics aside, Sequoia raises $3.4 billion for US and China investments"
-  },
-  {
-    photo: hero1,
-    category: "Business",
-    date: "March 2020",
-    title:
-      "Setting politics aside, Sequoia raises $3.4 billion for US and China investments"
-  }
-];
 const HeroArea = (props) => {
   const { posts } = props;
   const [activeIndex, setActiveIndex] = useState(0);

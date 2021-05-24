@@ -1,43 +1,13 @@
 import React, { Fragment, useEffect } from "react";
 import MainMenuThree from "../../components/MainMenuThree";
 import BannerSectionThree from "../../components/BannerSectionThree";
-import FollowUs from "../../components/FollowUs";
-import WidgetFinanceTwo from "../../components/WidgetFinanceTwo";
-import NewsLetter from "../../components/NewsLetter";
-import { Link, NavLink } from "react-router-dom";
-import FontAwesome from "../../components/uiStyle/FontAwesome";
+import { Link } from "react-router-dom";
 import CategoryFour from "../../components/CategoryFour";
-import PostOnePagination from "../../components/PostOnePagination";
 
-import finance41 from "../../doc/img/finance/finance41.jpg";
-import single_post1 from "../../doc/img/blog/single_post1.jpg";
-import author2 from "../../doc/img/author/author2.png";
-import smail1 from "../../doc/img/blog/smail1.jpg";
-import big1 from "../../doc/img/blog/big1.jpg";
-import quote_1 from "../../doc/img/blog/quote_1.jpg";
-import quote from "../../doc/img/icon/q4.png";
-import big2 from "../../doc/img/blog/big2.jpg";
-import OurBlogSectionTwo from "../../components/OurBlogSectionTwo";
-import BlogComment from "../../components/BlogComment";
 import { MarkdownPreview } from "react-marked-markdown";
 import { connect } from "react-redux";
 import { getAPost } from "../../store/actions/posts";
 import { banner4 } from "../../doc/img";
-
-const financePosts = [
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  },
-  {
-    photo: finance41,
-    title: "Copa America: Luis Suarez from devastated US",
-    description:
-      "The property, complete with seates screening from room amphitheater pond with sandy"
-  }
-];
 
 const PostOneHThreePage = (props) => {
   const { post, getPost } = props;
