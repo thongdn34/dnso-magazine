@@ -7,8 +7,6 @@ import BannerSectionThree from "../../components/BannerSectionThree";
 import { Link } from "react-router-dom";
 // import FontAwesome from "../../components/uiStyle/FontAwesome";
 import InternationalNews from "../../components/InternationalNews";
-
-import banner4 from "../../doc/img/bg/banner4.png";
 // import finance41 from "../../doc/img/finance/finance41.jpg";
 import { connect } from "react-redux";
 import {
@@ -17,6 +15,7 @@ import {
   getPostsNestedCategories
 } from "../../store/actions/categories";
 import { formatDataPosts } from "../../utils/commonFunctions";
+import { banner4 } from "../../doc/img";
 
 // const financePosts = [
 //   {
