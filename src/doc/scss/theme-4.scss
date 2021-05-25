@@ -47,7 +47,7 @@
     justify-content: center;
     text-align: center;
     margin-right: 10px;
-    
+
     @media screen and (min-width: 922px) {
       width: 250px;
       height: 150px;
@@ -1433,8 +1433,14 @@
   }
 
   .post_img {
+    a {
+      width: 100%;
+    }
+
     img {
       border-radius: 3px;
+      width: 100%;
+      height: 100%;
     }
   }
 
