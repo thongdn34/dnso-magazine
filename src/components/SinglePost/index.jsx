@@ -36,7 +36,7 @@ const SinglePost = (props) => {
         </span>
       </div>
       <div className="single_post_text">
-        <div className="row">
+        {/* <div className="row">
           <div className="col-9 align-self-cnter">
             <div className="meta3">
               <Link to={`/${convertPath(post?.title, post?.id)}`} title={post.title}>{post?.category.translatedName}</Link>
@@ -56,8 +56,8 @@ const SinglePost = (props) => {
               </div>
             </div>
           )}
-        </div>
-        <div className="space-5" />
+        </div> */}
+        {/* <div className="space-5" /> */}
         <h4>
           <Link to={`/${convertPath(post?.title, post?.id)}`} title={post.title}>{post?.title}</Link>
         </h4>
