@@ -1,4 +1,5 @@
 import { getPosts } from "../../helpers";
+import { sortDateArray } from "../../utils/commonFunctions";
 import { GET_POSTS, GET_POSTS_FAIL, GET_POSTS_SUCCESS, GET_POST_FAIL, GET_POST_SUCCESS } from "../constants";
 
 export const getAllPosts = (params = {}) => {
@@ -7,7 +8,7 @@ export const getAllPosts = (params = {}) => {
 
     try {
       const res = await getPosts(params);
-      dispatch({ type: GET_POSTS_SUCCESS, payload: res });
+      dispatch({ type: GET_POSTS_SUCCESS, payload: sortDateArray(res) });
     } catch (error) {
       console.log("===eror", error);
       dispatch({ type: GET_POSTS_FAIL })

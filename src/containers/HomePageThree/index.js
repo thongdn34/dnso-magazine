@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import MainMenuThree from "../../components/MainMenuThree";
 import TrendingNewsThree from "../../components/TrendingNewsThree";
 import BusinessCarousel from "../../components/BusinessCarousel";
@@ -91,7 +91,7 @@ const HomePageThree = (props) => {
 
   useEffect(() => {
     getPosts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getLatedPosts = () => {
@@ -99,7 +99,7 @@ const HomePageThree = (props) => {
       return posts;
     }
 
-    return sortDateArray(posts).slice(0, 10);
+    return posts.slice(0, 10);
   };
 
   // const getHottestPost = () => {
@@ -132,24 +132,22 @@ const HomePageThree = (props) => {
     let field = isSubCategory ? "sub_categories" : "category";
 
     if (isSubCategory) {
-      res = props.posts
-        .filter((item) => item?.[`${field}`]?.some((i) => i.type === type))
-        .slice(0);
+      res = props.posts.filter((item) =>
+        item?.[`${field}`]?.some((i) => i.type === type)
+      );
     } else {
-      res = props.posts
-        .filter((item) => item?.[`${field}`]?.type === type)
-        .slice(0);
-    }
-
-    if (offset) {
-      res = res.slice(0, offset);
+      res = props.posts.filter((item) => item?.[`${field}`]?.type === type);
     }
 
     res = res.filter((item) => !getLatedPosts().some((i) => i.id === item.id));
+    
+    if (offset) {
+      res = res.slice(0, offset);
+    }
     return formatDataPosts(res);
-  }
+  };
 
-  // console.log("===posts", getLatedParticularPosts(categoryNames.VIEWS));
+  // console.log("===posts", getLatedParticularPosts(subCategories.FINANCE, 4, true));
 
   return (
     <Fragment>
@@ -208,17 +206,21 @@ const HomePageThree = (props) => {
                   <BusinessImageCarousel
                     populerPosts={getLatedParticularPosts(
                       categoryNames.CULTURALS,
-                      5
+                      4
                     )}
                     galleryPosts={getLatedParticularPosts(
                       categoryNames.LIFESTYLES,
-                      5
+                      4
                     )}
                   />
                 </div>
                 <div className="col-md-6 col-xl-4 d-md-none d-xl-block">
                   <WidgetFinanceTwo
-                    data={getLatedParticularPosts(subCategories.FINANCE, 4, true)}
+                    data={getLatedParticularPosts(
+                      subCategories.FINANCE,
+                      4,
+                      true
+                    )}
                     title="Tài chính"
                   />
                   <div className="banner2 mb30 border-radious5">

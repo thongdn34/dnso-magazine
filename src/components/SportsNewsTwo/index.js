@@ -23,15 +23,15 @@ const _sportsNews = [
   {
     photo: sports44,
     title: "Copa America: Luis Suarez from devastated US3"
-  },
+  }
 ];
 
 const SportsNewsTwo = (props) => {
   const { sportsNews, category } = props;
-  let list = _sportsNews
+  let list = _sportsNews;
 
   if (sportsNews.length) {
-    list = sportsNews
+    list = sportsNews;
   }
 
   return (
@@ -43,7 +43,10 @@ const SportsNewsTwo = (props) => {
         <div className="single_post type18">
           <div className="post_img">
             <div className="img_wrap">
-              <Link to={`/${convertPath(list?.[0].title, list?.[0].id)}`} title={list?.[0].title}>
+              <Link
+                to={`/${convertPath(list?.[0].title, list?.[0].id)}`}
+                title={list?.[0].title}
+              >
                 <img src={list?.[0]?.photo} alt="sports41" />
               </Link>
             </div>
@@ -51,7 +54,12 @@ const SportsNewsTwo = (props) => {
           </div>
           <div className="single_post_text py0">
             <h4>
-              <Link to={`/${convertPath(list?.[0].title, list?.[0].id)}`} title={list?.[0].title}>{list?.[0]?.title}</Link>
+              <Link
+                to={`/${convertPath(list?.[0].title, list?.[0].id)}`}
+                title={list?.[0].title}
+              >
+                {list?.[0]?.title}
+              </Link>
             </h4>
             <div className="space-10" />
             <p className="post-p">{list?.[0]?.description}</p>
@@ -82,19 +90,28 @@ const SportsNewsTwo = (props) => {
             <div className="single_post type10 type16 widgets_small mb15">
               <div className="post_img">
                 <div className="img_wrap">
-                  <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
+                  <Link
+                    to={`/${convertPath(item.title, item.id)}`}
+                    title={item.title}
+                  >
                     <img src={item.photo} alt="thumb" />
                   </Link>
                 </div>
               </div>
               <div className="single_post_text">
                 <h4>
-                  <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item.title}</Link>{item?.view || 0}
+                  <Link
+                    to={`/${convertPath(item.title, item.id)}`}
+                    title={item.title}
+                  >
+                    {item.title}
+                  </Link>
                 </h4>
                 <ul className="like_cm">
                   <li>
                     <Link to="/">
-                      <FontAwesome name="eye" />{item?.share || 0}
+                      <FontAwesome name="eye" />
+                      {item?.view || 0}
                     </Link>
                   </li>
                   {/* <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li> */}

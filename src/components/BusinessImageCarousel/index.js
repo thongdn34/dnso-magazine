@@ -144,7 +144,7 @@ const BusinessImageCarousel = (props) => {
     <div className="row">
       {/* <div className="col-lg-7">{renderSwiper(galleryPosts)}</div> */}
       <div className="col-lg-6">
-        <div className="padding20 white_bg border-radious5">
+        <div className="padding20 white_bg border-radious5" style={{ height: '100%' }}>
           <p className="meta before">{galleryPosts?.[0]?.category}</p>
           <div className="space-15" />
           {renderVerticalList(galleryPosts)}
@@ -152,7 +152,7 @@ const BusinessImageCarousel = (props) => {
       </div>
       {populerPosts?.length ? (
         <div className="col-lg-6">
-          <div className="padding20 white_bg border-radious5">
+          <div className="padding20 white_bg border-radious5" style={{ height: '100%' }}>
             <p className="meta before">{populerPosts?.[0]?.category}</p>
             <div className="space-15" />
             {renderVerticalList(populerPosts)}

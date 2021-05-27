@@ -28,26 +28,24 @@ const convertPath = (title, id) => {
 };
 
 const formatDataPosts = (data) => {
-  return sortDateArray(
-    data.reduce((acc, curr) => {
-      return [
-        ...acc,
-        {
-          id: curr?.id,
-          photo:
-            curr?.thumbnail.formats.medium?.url ||
-            curr?.thumbnail.formats.thumbnail?.url,
-          caption: curr?.thumbnail?.caption,
-          title: curr?.title,
-          description: curr?.subDescription || curr?.subDescrtiption,
-          view: curr.view,
-          share: curr.share,
-          category: curr?.category.translatedName,
-          updateAt: convertDate(curr?.updated_at)
-        }
-      ];
-    }, [])
-  );
+  return data.reduce((acc, curr) => {
+    return [
+      ...acc,
+      {
+        id: curr?.id,
+        photo:
+          curr?.thumbnail.formats.medium?.url ||
+          curr?.thumbnail.formats.thumbnail?.url,
+        caption: curr?.thumbnail?.caption,
+        title: curr?.title,
+        description: curr?.subDescription || curr?.subDescrtiption,
+        view: curr.views,
+        share: curr.share,
+        category: curr?.category.translatedName,
+        updateAt: convertDate(curr?.updated_at)
+      }
+    ];
+  }, [])
 };
 
 const nonAccentVietnamese = (str) => {
