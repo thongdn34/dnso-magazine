@@ -10,7 +10,7 @@ const WidgetFinanceTwo = ({ title, data }) => {
         <h3 className="widget-title">{title}</h3>
       </div>
       {data.map((item, i) => (
-        <div key={item.title} className="single_post mb30 type18">
+        <div key={item.id} className="single_post mb30 type18">
           <div className="post_img">
             <div className="img_wrap">
               <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>

@@ -1,5 +1,6 @@
 import { getPosts } from "../../helpers";
 import { getCount } from "../../helpers/posts";
+import { sortDateArray } from "../../utils/commonFunctions";
 import {
   GET_POST_CATEGORY,
   GET_POST_CATEGORY_FAIL,
@@ -18,7 +19,7 @@ export const getPostsCategories = (
       const count = await getCount({ "category.type": category });
       dispatch({
         type: GET_POST_CATEGORY_SUCCESS,
-        payload: { posts: res, count }
+        payload: { posts: sortDateArray(res), count }
       });
     } catch (error) {
       console.log("===eror", error);
@@ -39,7 +40,7 @@ export const getPostsSubCategories = (
         "sub_categories.type": subCategory,
         ...params
       });
-      dispatch({ type: GET_POST_CATEGORY_SUCCESS, payload: res });
+      dispatch({ type: GET_POST_CATEGORY_SUCCESS, payload: sortDateArray(res) });
     } catch (error) {
       console.log("===eror", error);
       dispatch({ type: GET_POST_CATEGORY_FAIL });
@@ -59,7 +60,7 @@ export const getPostsNestedCategories = (
         "nested_categories.Sub_subcategorys": nestedCategory,
         ...params
       });
-      dispatch({ type: GET_POST_CATEGORY_SUCCESS, payload: res });
+      dispatch({ type: GET_POST_CATEGORY_SUCCESS, payload: sortDateArray(res) });
     } catch (error) {
       console.log("===eror", error);
       dispatch({ type: GET_POST_CATEGORY_FAIL });
