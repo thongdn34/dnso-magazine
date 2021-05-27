@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import FontAwesome from "../uiStyle/FontAwesome";
 // import tempIcon from "../../doc/img/icon/s4.png";
 import logo from "../../doc/img/logo/logo2.png";
-import { banner900x140 } from "../../doc/img";
+import { banner900x140, banner_headding } from "../../doc/img";
 
 const LogoAreaThree = () => {
   // const [swiper, setSwiper] = useState(null);
@@ -36,13 +36,13 @@ const LogoAreaThree = () => {
                 <img src={logo} alt="logo" />
               </Link>
               <div className="v3datentemp">
-                <img src={banner900x140} alt="900x100" />
+                <img src={banner_headding} alt="900x100" />
               </div>
             </div>
           </div>
           <div className="col-lg-9 align-self-center banner-ads">
             <div className="v3datentemp" style={{ height: "140px", flex: 1 }}>
-              <img src={banner900x140} alt="900x100" />
+              <img src={banner_headding} alt="900x100" />
             </div>
             {/* <div className="row justify-content-end">
               <div className="space-5" />
