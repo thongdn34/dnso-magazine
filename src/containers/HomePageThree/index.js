@@ -155,7 +155,6 @@ const HomePageThree = (props) => {
         <MainMenuThree className="home4menu" />
         {/* <HeroArea posts={getHottestPost()} /> */}
         <div className="bg4">
-          <div className="space-60" />
           <div className="total3 mb30">
             <div className="container">
               <div className="row">
