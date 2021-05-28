@@ -790,15 +790,15 @@ span.tranding.tranding_border {
 
 
 .widgets_small {
-  padding-left: 117px;
+  // padding-left: 117px;
   min-height: 70px;
 
   .post_img {
-    position: absolute;
+    // position: absolute;
     left: 1px;
     top: 0;
-    height: 77px;
-    width: 100px;
+    // height: 77px;
+    // width: 100px;
 
     img {
       width: 100%;
@@ -941,7 +941,7 @@ span.tranding {
   }
 
   .single_post_text {
-    padding: 20px 0;
+    padding-top: 10px;
 
     .meta {
       margin-bottom: 5px;
@@ -952,14 +952,19 @@ span.tranding {
 
     .post-p {
       opacity: .85;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 22px;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      margin-bottom: 0;
     }
 
     a {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 700;
-      line-height: 24px;
+      line-height: 28px;
     }
 
   }
@@ -1345,7 +1350,8 @@ span.tranding {
   }
 
   .post_img {
-    height: 56.25px;
+    height: 140px;
+    width: 200px;
   }
 
   .meta.meta2 {

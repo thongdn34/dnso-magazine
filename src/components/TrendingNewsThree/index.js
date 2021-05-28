@@ -80,10 +80,10 @@ const TrendingNewsThree = (props) => {
             </div>
           </div>
           <div className="single_post_text">
-            <div className="meta3">
+            {/* <div className="meta3">
               <Link to="/">{item.category.translatedName}</Link>
               <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>{convertDate(item?.updated_at)}</Link>
-            </div>
+            </div> */}
             <h4>
               <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>{item.title}</Link>
             </h4>
@@ -91,7 +91,7 @@ const TrendingNewsThree = (props) => {
         </div>
         {i + 1 < props.posts.length ? (
           <Fragment>
-            <div className="space-5" />
+            {/* <div className="space-5" /> */}
             <div className="border4" />
             <div className="space-15" />
           </Fragment>
@@ -110,8 +110,8 @@ const TrendingNewsThree = (props) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-6">{renderFirstPost()}</div>
-        <div className="col-lg-6">
+        <div className="colum-70">{renderFirstPost()}</div>
+        <div className="colum-30">
           <div className="popular_items scroll_bar">
             {/* {trendingNews.map((item, i) => (
               <Fragment key={i}>
