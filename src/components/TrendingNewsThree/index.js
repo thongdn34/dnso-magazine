@@ -101,7 +101,7 @@ const TrendingNewsThree = (props) => {
 		))
   };
   return (
-    <div className="white_bg tranding3 padding20 border-radious5 mb30 shadow7">
+    <div className="white_bg tranding3 padding20 border-radious5 mb10 shadow7">
       <div className="row">
         <div className="col-12">
           <div className="heading">

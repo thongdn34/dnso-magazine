@@ -424,7 +424,7 @@ body {
 
 .widget-title {
   font-size: $widget_font_size2;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   font-weight: $wightMedium;
   text-transform: capitalize;
   position: relative;
@@ -1350,8 +1350,9 @@ span.tranding {
   }
 
   .post_img {
-    height: 140px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10px;
   }
 
   .meta.meta2 {

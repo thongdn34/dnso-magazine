@@ -56,7 +56,7 @@ const GalleryCarousel = (props) => {
     ));
   };
   return (
-    <div className="dots_style1 mb30">
+    <div className="dots_style1 mb10">
       <div className="gallary_carousel">
         <Swiper {...params}>
           {renderGallery()}

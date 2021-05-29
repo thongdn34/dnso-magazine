@@ -45,7 +45,7 @@ const BusinessCarousel = (props) => {
   }
 
   return (
-    <div className="business_carousel nav_style4 mb30 mt30 ">
+    <div className="business_carousel nav_style4 mb10 mt10 ">
       <Swiper getSwiper={setSwiper} {...params}>
         {businessPosts.map((item, i) => (
           <div
@@ -69,19 +69,19 @@ const BusinessCarousel = (props) => {
                   </div>
                 </div>
               </div>
-              <ul className="mt20 like_cm">
+              {/* <ul className="mt20 like_cm">
                 <li>
                   <Link to="/">
                     <FontAwesome name="eye" />{item.view || 0}
                   </Link>
                 </li>
-                {/* <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li> */}
+                <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
                 <li>
                   <Link to="/">
                     <FontAwesome name="share" />{item.share || 0}
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         ))}
