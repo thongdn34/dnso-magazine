@@ -61,7 +61,7 @@ const SinglePost = (props) => {
         <h4>
           <Link to={`/${convertPath(post?.title, post?.id)}`} title={post.title}>{post?.title}</Link>
         </h4>
-        <div className="space-10" />
+        {/* <div className="space-10" /> */}
         <p className="post-p" onClick={() => onClick(post.title, post.id)}>
           {post?.subDescription || post?.subDescrtiption}
         </p>
