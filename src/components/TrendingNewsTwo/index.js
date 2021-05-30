@@ -17,7 +17,7 @@ const TrendingNewsTwo = () => {
             </div>
             <div className="row">
                 <div className="col-md-6">
-                    <div className="single_post post_type3 xs-mb90 post_type15">
+                    <div className="single_post post_type3 xs-mb10 post_type15">
                         <div className="post_img border-radious5">
                             <Link to="/">
                                 <img src={big_img} alt="big_img"/>

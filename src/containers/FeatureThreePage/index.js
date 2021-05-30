@@ -97,7 +97,7 @@ const FeatureThreePage = () => {
                                 {featurePosts.map((item, i) => (
                                     <div key={i} className="col-lg-6">
                                         <div
-                                            className={`single_post post_type3 xs-mb90 post_type15 ${i + 1 < featurePosts.length ? 'mb30' : ''}`}>
+                                            className={`single_post post_type3 xs-mb10 post_type15 ${i + 1 < featurePosts.length ? 'mb30' : ''}`}>
                                             <div className="post_img border-radious5">
                                                 <div className="img_wrap">
                                                     <Link to="">
