@@ -71,7 +71,7 @@ const TrendingNewsThree = (props) => {
   const renderRemainingPosts = () => {
     return props.posts.slice(1).map((item, i) => (
       <Fragment key={item.title}>
-        <div className="single_post type10 type16 widgets_small mb15">
+        <div className="single_post type10 type16 widgets_small mb15 single-post-mb">
           <div className="post_img">
             <div className="img_wrap">
               <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>
@@ -79,11 +79,11 @@ const TrendingNewsThree = (props) => {
               </Link>
             </div>
           </div>
-          <div className="single_post_text">
-            <div className="meta3">
+          <div className="single_post_text padding-right-20">
+            {/* <div className="meta3">
               <Link to="/">{item.category.translatedName}</Link>
               <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>{convertDate(item?.updated_at)}</Link>
-            </div>
+            </div> */}
             <h4>
               <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>{item.title}</Link>
             </h4>
@@ -91,7 +91,7 @@ const TrendingNewsThree = (props) => {
         </div>
         {i + 1 < props.posts.length ? (
           <Fragment>
-            <div className="space-5" />
+            {/* <div className="space-5" /> */}
             <div className="border4" />
             <div className="space-15" />
           </Fragment>
@@ -101,7 +101,7 @@ const TrendingNewsThree = (props) => {
 		))
   };
   return (
-    <div className="white_bg tranding3 padding20 border-radious5 mb30 shadow7">
+    <div className="white_bg tranding3 padding20 border-radious5 mb10 shadow7">
       <div className="row">
         <div className="col-12">
           <div className="heading">
@@ -110,8 +110,8 @@ const TrendingNewsThree = (props) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-6">{renderFirstPost()}</div>
-        <div className="col-lg-6">
+        <div className="colum-70">{renderFirstPost()}</div>
+        <div className="colum-30">
           <div className="popular_items scroll_bar">
             {/* {trendingNews.map((item, i) => (
               <Fragment key={i}>

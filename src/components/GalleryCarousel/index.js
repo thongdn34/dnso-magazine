@@ -36,7 +36,7 @@ const GalleryCarousel = (props) => {
     }
 
     return list.map((item, i) => (
-      <div key={i} className="single_post post_type6 border-radious7 xs-mb30">
+      <div key={i} className="single_post post_type6 border-radious7 xs-mb30 swiper-slide-nar ">
         <div className="post_img gradient1">
           <div className="img_wrap">
             <Link to={`/${convertPath(item.title, item.id)}`} style={{ height: '411px' }} title={item.title}>
@@ -56,7 +56,7 @@ const GalleryCarousel = (props) => {
     ));
   };
   return (
-    <div className="dots_style1 mb30">
+    <div className="dots_style1 mb10">
       <div className="gallary_carousel">
         <Swiper {...params}>
           {renderGallery()}

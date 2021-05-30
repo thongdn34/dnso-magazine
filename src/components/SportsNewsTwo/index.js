@@ -35,7 +35,7 @@ const SportsNewsTwo = (props) => {
   }
 
   return (
-    <div className="sports_wrap mb30 white_bg border-radious5 shadow7 padding20">
+    <div className="sports_wrap white_bg border-radious5 shadow7 padding20 scroll_bar scroll-land">
       <div className="finance ">
         <div className="heading">
           <h3 className="widget-title">{category}</h3>
@@ -61,33 +61,33 @@ const SportsNewsTwo = (props) => {
                 {list?.[0]?.title}
               </Link>
             </h4>
-            <div className="space-10" />
-            <p className="post-p">{list?.[0]?.description}</p>
-            <ul className="mt10 like_cm">
+            {/* <div className="space-10" /> */}
+            <p className="post-p line-clamp">{list?.[0]?.description}</p>
+            {/* <ul className="mt10 like_cm">
               <li>
                 <Link to="/">
                   <FontAwesome name="eye" />
                   {list?.[0]?.view || 0}
                 </Link>
               </li>
-              {/* <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li> */}
+              <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
               <li>
                 <Link to="/">
                   <FontAwesome name="share" />
                   {list?.[0]?.share || 0}
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
-        <div className="space-30" />
+        {/* <div className="space-30" /> */}
         <div className="border4" />
-        <div className="space-30" />
+        <div className="space-10" />
       </div>
       <div className="sport_buttom">
         {list?.slice(1).map((item, i) => (
           <Fragment key={item.title}>
-            <div className="single_post type10 type16 widgets_small mb15">
+            <div className="single_post type18 widgets_small mb15">
               <div className="post_img">
                 <div className="img_wrap">
                   <Link
@@ -98,7 +98,7 @@ const SportsNewsTwo = (props) => {
                   </Link>
                 </div>
               </div>
-              <div className="single_post_text">
+              <div className="single_post_text py0">
                 <h4>
                   <Link
                     to={`/${convertPath(item.title, item.id)}`}
@@ -107,30 +107,31 @@ const SportsNewsTwo = (props) => {
                     {item.title}
                   </Link>
                 </h4>
-                <ul className="like_cm">
+                {/* <ul className="like_cm">
                   <li>
                     <Link to="/">
                       <FontAwesome name="eye" />
                       {item?.view || 0}
                     </Link>
                   </li>
-                  {/* <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li> */}
-                </ul>
+                  <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
+                </ul> */}
+                <p className="post-p line-clamp">{item.description}</p>
               </div>
             </div>
             {i + 1 < list.length ? (
               <Fragment>
-                <div className="space-15" />
+                {/* <div className="space-15" /> */}
                 <div className="border4" />
-                <div className="space-15" />
+                {/* <div className="space-15" /> */}
               </Fragment>
             ) : null}
           </Fragment>
         ))}
-        <div className="space-20" />
-        <Link to="/" className="showmore">
+        {/* <div className="space-20" /> */}
+        {/* <Link to="/" className="showmore">
           Xem thêm
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

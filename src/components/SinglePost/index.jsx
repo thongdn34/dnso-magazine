@@ -18,7 +18,7 @@ const SinglePost = (props) => {
   );
 
   return (
-    <div className="single_post post_type3 xs-mb90 post_type15">
+    <div className="single_post post_type3 xs-mb10 post_type15">
       <div className="post_img border-radious5">
         <div className="img_wrap">
           <Link to={`/${convertPath(post?.title, post?.id)}`} title={post.title}>
@@ -61,7 +61,7 @@ const SinglePost = (props) => {
         <h4>
           <Link to={`/${convertPath(post?.title, post?.id)}`} title={post.title}>{post?.title}</Link>
         </h4>
-        <div className="space-10" />
+        {/* <div className="space-10" /> */}
         <p className="post-p" onClick={() => onClick(post.title, post.id)}>
           {post?.subDescription || post?.subDescrtiption}
         </p>

@@ -5,6 +5,7 @@ import Fade from "reactstrap/es/Fade";
 import { Link } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import { convertPath } from "../../utils/commonFunctions";
+import { banner900x140 } from "../../doc/img";
 
 // const data = [
 //   {
@@ -34,15 +35,23 @@ const WidgetTabPane = ({ arr, a_id, id }) => {
     <Fade in={id === a_id}>
       {arr.map((item, i) => (
         <Fragment key={i}>
-          <div className="single_post widgets_small widgets_type4">
-            <div className="post_img number">
-              <h2>{i + 1}</h2>
+          <div className="single_post widgets_small dis-flex type23">
+          <div className="post_img wid-max-30per">
+              <div className="img_wrap">
+                <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
+                  <img src={item.photo} alt="thumb" />
+                </Link>
+              </div>
             </div>
-            <div className="single_post_text">
+            {/* <div className="post_img number">
+              <h2>{i + 1}</h2>
+            </div> */}
+            <div className="single_post_text wid-max-70per padding-left-10">
               <h4>
                 <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item.title}</Link>
               </h4>
-              <div className="row">
+              
+              {/* <div className="row">
                 <div className="col-7 align-self-cnter">
                   <div className="meta4">
                     <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item?.updateAt}</Link>
@@ -64,12 +73,13 @@ const WidgetTabPane = ({ arr, a_id, id }) => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
+          <div class='space-15'></div>
           {i + 1 < arr.length ? (
             <Fragment>
-              <div className="space-15" />
+              {/* <div className="space-15" /> */}
               <div className="border4" />
               <div className="space-15" />
             </Fragment>
@@ -87,7 +97,7 @@ const WidgetTabThree = (props) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
   return (
-    <div className="tab4 padding20 white_bg border-radious5 shadow7">
+    <div className="tab4 padding-left-right-10 white_bg border-radious5 shadow7">
       <Nav tabs>
         {categories.map((item, i) => (
           <NavItem key={item}>
