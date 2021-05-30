@@ -112,7 +112,7 @@ const BusinessImageCarousel = (props) => {
     return list.map((item, i) => {
       return (
         <Fragment key={i}>
-          <div className="single_post type10 type16 type22 widgets_small mb15">
+          <div className="single_post dis-flex type10 type23 widgets_small">
             <div className="post_img">
               <div className="img_wrap">
                 <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
@@ -120,7 +120,7 @@ const BusinessImageCarousel = (props) => {
                 </Link>
               </div>
             </div>
-            <div className="single_post_text">
+            <div className="single_post_text padding-left-10">
               <h4>
                 <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
                   {item.title}
@@ -143,18 +143,18 @@ const BusinessImageCarousel = (props) => {
   return (
     <div className="row">
       {/* <div className="col-lg-7">{renderSwiper(galleryPosts)}</div> */}
-      <div className="col-lg-6">
-        <div className="padding20 white_bg border-radious5" style={{ height: '100%' }}>
+      <div className="col-lg-6 padding-right-5">
+        <div className="padding20 white_bg border-radious5 padding-right-5 " style={{ height: '100%' }}>
           <p className="meta before">{galleryPosts?.[0]?.category}</p>
-          <div className="space-15" />
+          {/* <div className="space-15" /> */}
           {renderVerticalList(galleryPosts)}
         </div>
       </div>
       {populerPosts?.length ? (
-        <div className="col-lg-6">
-          <div className="padding20 white_bg border-radious5" style={{ height: '100%' }}>
+        <div className="col-lg-6 padding-left-5">
+          <div className="padding20 white_bg border-radious5 padding-left-5" style={{ height: '100%' }}>
             <p className="meta before">{populerPosts?.[0]?.category}</p>
-            <div className="space-15" />
+            {/* <div className="space-15" /> */}
             {renderVerticalList(populerPosts)}
           </div>
         </div>

@@ -50,7 +50,7 @@ const BusinessCarousel = (props) => {
         {businessPosts.map((item, i) => (
           <div
             key={i}
-            className="business_carousel_items white_bg padding20 shadow7"
+            className="business_carousel_items white_bg padding10 shadow7"
           >
             <div className="single_international">
               <p className="meta before">{item.category}</p>
@@ -58,15 +58,15 @@ const BusinessCarousel = (props) => {
                 <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item.title}</Link>
               </h4>
               <div className="row">
-                <div className="col-7 align-self-center">
-                  <p className="business_carousel__description">{item.description}</p>
-                </div>
-                <div className="col-5 align-self-center">
+              <div className="flex-mwidth-60 align-self-center">
                   <div className="img_wrap">
                     <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
                       <img src={item.photo} alt={item.caption} />
                     </Link>
                   </div>
+                </div>
+                <div className="flex-mwidth-40 align-self-center">
+                  <p className="business_carousel__description">{item.description}</p>
                 </div>
               </div>
               {/* <ul className="mt20 like_cm">
