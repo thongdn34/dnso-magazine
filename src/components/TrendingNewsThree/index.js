@@ -71,7 +71,7 @@ const TrendingNewsThree = (props) => {
   const renderRemainingPosts = () => {
     return props.posts.slice(1).map((item, i) => (
       <Fragment key={item.title}>
-        <div className="single_post type10 type16 widgets_small mb15">
+        <div className="single_post type10 type16 widgets_small mb15 single-post-mb">
           <div className="post_img">
             <div className="img_wrap">
               <Link to={`/${convertPath(item?.title, item?.id)}`} title={item.title}>

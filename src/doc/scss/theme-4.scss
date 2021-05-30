@@ -2011,19 +2011,7 @@
     }
   }
 
-  .swiper-slide {
-    height: auto;
-    border-radius: 4px;
-    margin-right: 10px !important;
-    width: 404px !important;
-  }
-  .swiper-slide-nar {
-    height: auto;
-    border-radius: 4px !important;
-    margin-right: 0 !important;
-    width: 402px !important;
-  }
-
+   
   /*================================
       RESPONSIVE CSS
 
@@ -2066,9 +2054,9 @@
       line-height: 21px;
     }
 
-    .widgets_small .single_post_text a {
-      line-height: 19px;
-      font-size: 13px;
+    .sport_buttom .single_post_text a {
+      line-height: 22px;
+      font-size: 18px;
     }
     .single_post_text .meta3 a {
       font-size: 10px !important;
@@ -2122,14 +2110,113 @@
   @media screen and (max-width: $large) {
     .logo4 {
       margin: 0 auto;
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
+      display: block;
+      a{
+        img{
+          width: 40%;
+          padding-top: 10px;
+        }
+      }
     }
 
     .topbar .tranding_bar li {
       font-size: 12px;
     }
+    .row{
+      display: block;
+       .scroll_bar{
+        max-height: none;
+        overflow-y: unset;
+      }
+    }
+    .colum-30 .single-post-mb{
+        display: flex;
+        .post_img{
+          max-height: 70px;
+          max-width: 130px;
+          height: 100%;
+          width: 175%;
+          margin-bottom: 10px;
+        }
+        .single_post_text{
+          padding-left: 20px;
+        }
+    }
+        .padding-right-5{
+          padding-bottom: 10px;
+        }
+        .flex-mwidth-40{
+          max-width: 40%;
+          padding: 0;
+        }
+        .swiper-slide-nar {
+          height: auto;
+          border-radius: 4px !important;
+          margin-right: 0 !important;
+          width: 355px !important;
+        }
+        .swiper-slide {
+          height: auto;
+          border-radius: 4px;
+          width: 345px !important;
+        }
+        // .gallary_carousel{
+        //   .swiper-slide {
+        //   height: auto;
+        //   border-radius: 4px;
+        //   margin-right: 0px !important;
+        //   width: 355px !important;
+        //   }
+        // }
+        .single_international{
+          .row{
+            display: flex !important;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+          }
+        }
+        .post_type12 .single_post_text{
+          padding: 0;
+        }
   }
-
+  @media(min-width:992px){
+    .padding-right-5 {
+      padding-right: 5px !important;
+  }
+  .padding-left-5 {
+    padding-left: 5px !important;
+}
+    .padding-right-20 {
+      padding-right: 20px;
+  }
+  .flex-mwidth-40{
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  .swiper-slide-nar {
+    height: auto;
+    border-radius: 4px !important;
+    margin-right: 0 !important;
+    width: 402px !important;
+  }
+  .swiper-slide {
+    height: auto;
+    border-radius: 4px;
+    margin-right: 10px !important;
+    width: 404px !important;
+  }
+  .gallary_carousel{
+    .swiper-slide {
+    height: auto;
+    border-radius: 4px;
+    margin-right: 0px !important;
+    width: 402px !important;
+    }
+  }
+  
+}
   /*================================
       MOBILE LANDSCAPE DEVICE
 
@@ -2297,10 +2384,7 @@
     flex: 0 0 60%;
     max-width: 60%;
   }
-  .flex-mwidth-40{
-    flex: 0 0 40%;
-    max-width: 40%;
-  }
+  
   .line-clamp{
     overflow: hidden;
     -webkit-line-clamp: 3;
