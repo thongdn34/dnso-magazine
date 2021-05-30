@@ -155,7 +155,7 @@ const HomePageThree = (props) => {
         <MainMenuThree className="home4menu" />
         {/* <HeroArea posts={getHottestPost()} /> */}
         <div className="bg4">
-          <div className="total3 mb30">
+          <div className="total3 mb10">
             <div className="container">
               <div className="row padding-top-10">
                 <div className="col-md-12 col-xl-8 padding-right-5">
@@ -166,7 +166,7 @@ const HomePageThree = (props) => {
                         category="Bất động sản"
                         sportsNews={getLatedParticularPosts(
                           subCategories.LANDS,
-                          3,
+                          5,
                           true
                         )}
                       />
@@ -181,17 +181,17 @@ const HomePageThree = (props) => {
                         categories={threeTab1}
                         tab1={getLatedParticularPosts(
                           subCategories.HEALTHS,
-                          3,
+                          5,
                           true
                         )}
                         tab2={getLatedParticularPosts(
                           subCategories.TRAVELS,
-                          3,
+                          5,
                           true
                         )}
                         tab3={getLatedParticularPosts(
                           subCategories.STARTUPS,
-                          3,
+                          5,
                           true
                         )}
                       />
@@ -217,7 +217,7 @@ const HomePageThree = (props) => {
                   <WidgetFinanceTwo
                     data={getLatedParticularPosts(
                       subCategories.FINANCE,
-                      4,
+                      5,
                       true
                     )}
                     title="Tài chính"
@@ -235,10 +235,10 @@ const HomePageThree = (props) => {
           <div className="inernational4">
             <div className="container">
               <div className="row">
-                <div className="col-md-12 col-xl-8">
+                <div className="col-md-12 col-xl-8 padding-right-5">
                   <InternationalNews
                     data={getLatedParticularPosts(categoryNames.EVENTS)}
-                    className="mb30"
+                    className="mb10"
                     title="Sự kiện"
                     showMore={true}
                   />
@@ -262,7 +262,7 @@ const HomePageThree = (props) => {
                     posts={getLatedParticularPosts(categoryNames.TECHNOLOGIES)}
                   /> */}
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 padding-right-5">
                       <SportsNewsTwo
                         category="Thương mại"
                         sportsNews={getLatedParticularPosts(
@@ -272,7 +272,7 @@ const HomePageThree = (props) => {
                         )}
                       />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 padding-left-5">
                       <GalleryCarousel
                         galleryPosts={getLatedParticularPosts(
                           subCategories.BOOKS,
@@ -300,7 +300,7 @@ const HomePageThree = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-12 col-xl-4">
+                <div className="col-md-12 col-xl-4 padding-left-5">
                   <div className="row">
                     <div className="col-lg-6 col-xl-12 col-md-6">
                       {/* <FollowUs

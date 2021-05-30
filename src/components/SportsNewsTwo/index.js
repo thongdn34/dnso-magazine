@@ -35,7 +35,7 @@ const SportsNewsTwo = (props) => {
   }
 
   return (
-    <div className="sports_wrap mb30 white_bg border-radious5 shadow7 padding20">
+    <div className="sports_wrap white_bg border-radious5 shadow7 padding20 scroll_bar scroll-land">
       <div className="finance ">
         <div className="heading">
           <h3 className="widget-title">{category}</h3>
@@ -62,7 +62,7 @@ const SportsNewsTwo = (props) => {
               </Link>
             </h4>
             {/* <div className="space-10" /> */}
-            <p className="post-p">{list?.[0]?.description}</p>
+            <p className="post-p line-clamp">{list?.[0]?.description}</p>
             {/* <ul className="mt10 like_cm">
               <li>
                 <Link to="/">
@@ -116,6 +116,7 @@ const SportsNewsTwo = (props) => {
                   </li>
                   <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
                 </ul> */}
+                <p className="post-p line-clamp">{item.description}</p>
               </div>
             </div>
             {i + 1 < list.length ? (
@@ -127,7 +128,7 @@ const SportsNewsTwo = (props) => {
             ) : null}
           </Fragment>
         ))}
-        <div className="space-20" />
+        {/* <div className="space-20" /> */}
         {/* <Link to="/" className="showmore">
           Xem thêm
         </Link> */}

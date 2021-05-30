@@ -27,7 +27,7 @@ const InternationalNews = ({ title, showMore, className, data }) => {
               </Link>
             </div>
           </div>
-          <div className="single_post_text">
+          <div className="single_post_text line-clamp">
             <div className="row">
               {/* <div className="col-9 align-self-cnter">
                                 <div className="meta3">

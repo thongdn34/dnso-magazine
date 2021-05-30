@@ -1447,11 +1447,17 @@ input:-webkit-autofill:hover {
 .padding-left-5per {
     padding-left: 5%;
 }
+.padding-left-10 {
+    padding-left: 10px;
+}
 .padding-left-5 {
-    padding-left: 5px;
+    padding-left: 5px !important;
 }
 .padding-right-5 {
-    padding-right: 5px;
+    padding-right: 5px !important;
+}
+.padding-right-20 {
+    padding-right: 20px;
 }
 .padding-left-right-10{
     padding: 0 10px 0 10px;
@@ -1605,6 +1611,9 @@ input:-webkit-autofill:hover {
 
 .padding20 {
     padding: 20px !important;
+}
+.padding20-noim {
+    padding: 20px;
 }
 
 .padding10 {
@@ -2484,4 +2493,8 @@ WIDTH CSS
 }
 .wid-max-70per{
     max-width: 70% ;
+}
+.scroll-land{
+    overflow-y: scroll;
+    max-height: 1126px;
 }

@@ -5,7 +5,7 @@ import FontAwesome from "../uiStyle/FontAwesome";
 
 const WidgetFinanceTwo = ({ title, data }) => {
   return (
-    <div className="finance mb30 white_bg border-radious5 shadow7 padding20">
+    <div className="finance mb10 white_bg border-radious5 shadow7 padding20">
       <div className="heading">
         <h3 className="widget-title">{title}</h3>
       </div>
@@ -26,7 +26,7 @@ const WidgetFinanceTwo = ({ title, data }) => {
               </Link>
             </h4>
             {/* <div className="space-10" /> */}
-            <p className="post-p">{item.description}</p>
+            <p className="post-p line-clamp">{item.description}</p>
             {/* <ul className="mt10 like_cm">
               <li>
                 <Link to="/">
