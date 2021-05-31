@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { convertPath } from "../../utils/commonFunctions";
-import FontAwesome from "../uiStyle/FontAwesome";
 
 const WidgetFinanceTwo = ({ title, data }) => {
   return (

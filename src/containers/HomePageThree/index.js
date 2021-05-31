@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import MainMenuThree from "../../components/MainMenuThree";
 import TrendingNewsThree from "../../components/TrendingNewsThree";
 import BusinessCarousel from "../../components/BusinessCarousel";
@@ -15,7 +15,7 @@ import CategoryFour from "../../components/CategoryFour";
 
 import { connect } from "react-redux";
 import { getAllPosts } from "../../store/actions/posts";
-import { formatDataPosts, sortDateArray } from "../../utils/commonFunctions";
+import { formatDataPosts } from "../../utils/commonFunctions";
 import { categoryNames, subCategories } from "../../utils/constants";
 import { banner4 } from "../../doc/img";
 

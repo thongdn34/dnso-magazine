@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, useHistory } from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-import { convertDate, convertPath } from "../../utils/commonFunctions";
+import { convertPath } from "../../utils/commonFunctions";
 import { useCallback } from "react";
 
 const SinglePost = (props) => {
