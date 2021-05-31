@@ -9,7 +9,6 @@ import sports44 from "../../doc/img/sports/sports44.jpg";
 // import sports46 from "../../doc/img/sports/sports46.jpg";
 // import sports47 from "../../doc/img/sports/sports47.jpg";
 import { convertPath } from "../../utils/commonFunctions";
-import FontAwesome from "../uiStyle/FontAwesome";
 
 const _sportsNews = [
   {

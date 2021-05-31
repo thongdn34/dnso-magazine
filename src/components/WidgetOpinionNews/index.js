@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FontAwesome from "../uiStyle/FontAwesome";
 import { convertPath } from "../../utils/commonFunctions";
 
 // const opinionPosts = [
@@ -61,7 +60,7 @@ const WidgetOpinionNews = (props) => {
               </li>
             </ul> */}
           </div>
-          <div class="border4"></div>
+          <div className="border4"></div>
         </div>
       ))}
     </div>

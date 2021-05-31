@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import trend31 from "../../doc/img/trending/trend31.jpg";
 import SinglePost from "../SinglePost";
 import FontAwesome from "../uiStyle/FontAwesome";
-import { convertDate, convertPath } from "../../utils/commonFunctions";
+import { convertPath } from "../../utils/commonFunctions";
 
 const renderRawPost = () => {
   return (
