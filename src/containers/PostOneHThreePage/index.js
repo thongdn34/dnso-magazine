@@ -8,6 +8,7 @@ import { MarkdownPreview } from "react-marked-markdown";
 import { connect } from "react-redux";
 import { getAPost } from "../../store/actions/posts";
 import { banner4 } from "../../doc/img";
+import { Helmet } from "react-helmet";
 
 const PostOneHThreePage = (props) => {
   const { post, getPost } = props;
@@ -20,6 +21,10 @@ const PostOneHThreePage = (props) => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>{props.title}</title>
+        <meta name="description" content={props.description}/>
+      </Helmet>
       <MainMenuThree />
       <div className="single-post archives layout3 post post1 padding-top-60">
         <div className="container">
@@ -101,6 +106,8 @@ const actions = (dispatch) => ({
 });
 
 const selects = (state) => ({
-  post: state.posts.post
+  post: state.posts.post,
+  title: state.meta.title,
+  description: state.meta.description,
 });
 export default connect(selects, actions)(PostOneHThreePage);

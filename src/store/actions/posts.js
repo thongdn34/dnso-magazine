@@ -1,6 +1,6 @@
 import { getPosts } from "../../helpers";
 import { sortDateArray } from "../../utils/commonFunctions";
-import { GET_POSTS, GET_POSTS_FAIL, GET_POSTS_SUCCESS, GET_POST_FAIL, GET_POST_SUCCESS } from "../constants";
+import { GET_POSTS, GET_POSTS_FAIL, GET_POSTS_SUCCESS, GET_POST_FAIL, GET_POST_SUCCESS, SET_META } from "../constants";
 
 export const getAllPosts = (params = {}) => {
   return async (dispatch) => {
@@ -21,6 +21,7 @@ export const getAPost = (params) => {
     try {
       const res = await getPosts(params)
       dispatch({ type: GET_POST_SUCCESS, payload: res })
+      dispatch({ type: SET_META, payload: { title: res[0]?.title, description: res[0]?.subDescrtiption } })
     } catch (error) {
       console.log('====err', error)
       dispatch({ type: GET_POST_FAIL })
