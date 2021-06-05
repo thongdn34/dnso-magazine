@@ -28,7 +28,7 @@ const App = (props) => {
         <meta property="og:title"/>
         <meta property="og:description"/>
         {/* <meta property="og:image"/> */}
-        <meta property="og:image" itemprop="thumbnailUrl" content="https://s1.vnecdn.net/vnexpress/restruct/i/v391/logo_default.jpg"></meta>
+        {/* <meta property="og:image" itemprop="thumbnailUrl" content="https://s1.vnecdn.net/vnexpress/restruct/i/v391/logo_default.jpg"></meta> */}
         <meta property="og:type" content="website"/>
         <meta name="robots" content="index, follow"/>
         <meta name="theme-color" content="#ff9900"/>
