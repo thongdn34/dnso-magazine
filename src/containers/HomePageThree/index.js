@@ -147,7 +147,7 @@ const HomePageThree = (props) => {
     return formatDataPosts(res);
   };
 
-  console.log("===posts", getLatedPosts());
+  // console.log("===posts", getLatedPosts());
 
   return (
     <Fragment>
