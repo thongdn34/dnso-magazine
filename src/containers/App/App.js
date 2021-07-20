@@ -27,13 +27,13 @@ const App = (props) => {
         <meta property="og:url"/>
         <meta property="og:title"/>
         <meta property="og:description"/>
-        {/* <meta property="og:image"/> 
+        {/* <meta property="og:image"/>
         {/* <meta property="og:image" itemprop="thumbnailUrl" content="https://s1.vnecdn.net/vnexpress/restruct/i/v391/logo_default.jpg"></meta> */}
         <meta property="og:type" content="website"/>
         <meta name="robots" content="index, follow"/>
         <meta name="theme-color" content="#ff9900"/>
         <meta name="msapplication-TileColor" content="#ff9900"/>
-        <meta name="msapplication-config" content="undefinedbrowserconfig.xml"/> 
+        <meta name="msapplication-config" content="undefinedbrowserconfig.xml"/>
         <link rel="manifest" href="undefinedmanifest.json"/>
         <link rel="apple-touch-icon" sizes="180x180" href="undefinedassets/icons/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="undefinedassets/icons/favicon-32x32.png"/>

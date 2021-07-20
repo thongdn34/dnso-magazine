@@ -40,7 +40,7 @@ const GalleryCarousel = (props) => {
         <div className="post_img gradient1">
           <div className="img_wrap">
             <Link to={`/${convertPath(item.title, item.id)}`} style={{ height: '411px' }} title={item.title}>
-              <img src={item.photo} alt="thumb" />
+              <img src={item.photo} alt={item.caption} />
             </Link>
           </div>
         </div>

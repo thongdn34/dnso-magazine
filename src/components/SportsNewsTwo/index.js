@@ -46,7 +46,7 @@ const SportsNewsTwo = (props) => {
                 to={`/${convertPath(list?.[0].title, list?.[0].id)}`}
                 title={list?.[0].title}
               >
-                <img src={list?.[0]?.photo} alt="sports41" />
+                <img src={list?.[0]?.photo} alt={list[0].caption} />
               </Link>
             </div>
             <span className="batch3 date">{list?.[0]?.updateAt}</span>
@@ -93,7 +93,7 @@ const SportsNewsTwo = (props) => {
                     to={`/${convertPath(item.title, item.id)}`}
                     title={item.title}
                   >
-                    <img src={item.photo} alt="thumb" />
+                    <img src={item.photo} alt={item.caption} />
                   </Link>
                 </div>
               </div>
