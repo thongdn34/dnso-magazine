@@ -1,15 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useLayoutEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { connect } from "react-redux";
 import Routes from "../__Routes";
 import ScrollTopButton from "../../components/ScrollTopButton";
 import ScrollToTop from "../../hooks/ScrollToTop";
+import { logo2 } from "../../doc/img";
 import { Helmet } from "react-helmet";
-
 const App = (props) => {
-  const { error, success } = props;
-  if (error) toast.error(error);
-  if (success) toast.success(success);
+  // if (error) toast.error(error);
+  // if (success) toast.success(success);
   return (
     <Fragment>
       <Helmet>
@@ -27,13 +26,13 @@ const App = (props) => {
         <meta property="og:url"/>
         <meta property="og:title"/>
         <meta property="og:description"/>
-        {/* <meta property="og:image"/>
+        {/* <meta property="og:image"/> 
         {/* <meta property="og:image" itemprop="thumbnailUrl" content="https://s1.vnecdn.net/vnexpress/restruct/i/v391/logo_default.jpg"></meta> */}
         <meta property="og:type" content="website"/>
         <meta name="robots" content="index, follow"/>
         <meta name="theme-color" content="#ff9900"/>
         <meta name="msapplication-TileColor" content="#ff9900"/>
-        <meta name="msapplication-config" content="undefinedbrowserconfig.xml"/>
+        <meta name="msapplication-config" content="undefinedbrowserconfig.xml"/> 
         <link rel="manifest" href="undefinedmanifest.json"/>
         <link rel="apple-touch-icon" sizes="180x180" href="undefinedassets/icons/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="undefinedassets/icons/favicon-32x32.png"/>
