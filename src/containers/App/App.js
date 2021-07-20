@@ -1,15 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useLayoutEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { connect } from "react-redux";
 import Routes from "../__Routes";
 import ScrollTopButton from "../../components/ScrollTopButton";
 import ScrollToTop from "../../hooks/ScrollToTop";
+import { logo2 } from "../../doc/img";
 import { Helmet } from "react-helmet";
-
 const App = (props) => {
-  const { error, success } = props;
-  if (error) toast.error(error);
-  if (success) toast.success(success);
+  // if (error) toast.error(error);
+  // if (success) toast.success(success);
   return (
     <Fragment>
       <Helmet>

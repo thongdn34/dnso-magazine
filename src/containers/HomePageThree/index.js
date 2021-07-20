@@ -147,7 +147,7 @@ const HomePageThree = (props) => {
     return formatDataPosts(res);
   };
 
-  // console.log("===posts", getLatedParticularPosts(subCategories.FINANCE, 4, true));
+  // console.log("===posts", getLatedPosts());
 
   return (
     <Fragment>

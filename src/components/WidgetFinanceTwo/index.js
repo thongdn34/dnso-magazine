@@ -13,7 +13,7 @@ const WidgetFinanceTwo = ({ title, data }) => {
           <div className="post_img">
             <div className="img_wrap">
               <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>
-                <img src={item.photo} alt="thumb" />
+                <img src={item.photo} alt={item.caption} />
               </Link>
             </div>
             <span className="batch3 date">{item.updateAt}</span>

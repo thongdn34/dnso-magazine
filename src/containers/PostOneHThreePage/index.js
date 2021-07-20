@@ -11,7 +11,7 @@ import { banner4 } from "../../doc/img";
 import { Helmet } from "react-helmet";
 
 const PostOneHThreePage = (props) => {
-  const { post, getPost } = props;
+  const { post, getPost, description } = props;
 
   useEffect(() => {
     const id = props.match.params.id.split("-").slice(-1)[0];
@@ -19,11 +19,20 @@ const PostOneHThreePage = (props) => {
     getPost(id);
   }, [getPost, props.match.params.id]);
 
+  useEffect(() => {
+    if (post) {
+      document.getElementsByTagName("meta")["description"].content = description;
+      document.getElementsByTagName("meta")["og:image"].content =
+        post.thumbnail?.formats.thumbnail?.url;
+      document.getElementsByTagName("meta")["og:image:alt"].content =
+        post.thumbnail?.formats.thumbnail?.hash;
+    }
+  }, [description, post]);
+
   return (
     <Fragment>
       <Helmet>
         <title>{props.title}</title>
-        <meta name="description" content={props.description}/>
       </Helmet>
       <MainMenuThree />
       <div className="single-post archives layout3 post post1 padding-top-60">
@@ -108,6 +117,6 @@ const actions = (dispatch) => ({
 const selects = (state) => ({
   post: state.posts.post,
   title: state.meta.title,
-  description: state.meta.description,
+  description: state.meta.description
 });
 export default connect(selects, actions)(PostOneHThreePage);

@@ -23,7 +23,7 @@ const InternationalNews = ({ title, showMore, className, data }) => {
                 to={`/${convertPath(item.title, item.id)}`}
                 title={item.title}
               >
-                <img src={item.photo} alt="thumb" />
+                <img src={item.photo} alt={item.caption} />
               </Link>
             </div>
           </div>
