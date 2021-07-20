@@ -160,7 +160,7 @@ const HomePageThree = (props) => {
               <div className="row padding-top-10">
                 <div className="col-md-12 col-xl-8 padding-right-5">
                   <TrendingNewsThree posts={getLatedPosts()} />
-                  <div className="row">
+                  <div className="row dsl-fx">
                     <div className="col-md-6 padding-right-5">
                       <SportsNewsTwo
                         category="Bất động sản"
@@ -261,7 +261,7 @@ const HomePageThree = (props) => {
                   {/* <ScienceNews
                     posts={getLatedParticularPosts(categoryNames.TECHNOLOGIES)}
                   /> */}
-                  <div className="row">
+                  <div className="row" >
                     <div className="col-md-6 padding-right-5">
                       <SportsNewsTwo
                         category="Thương mại"
