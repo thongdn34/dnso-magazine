@@ -43,7 +43,7 @@ const WidgetOpinionNews = (props) => {
             <Link to={`/${convertPath(item.title, item.id)}`} title={item.title}>{item.title}</Link>
             </h4>
             {/* <div className="space-10" /> */}
-            <p className="post-p">{item.description}</p>
+            <p className="post-p line-clamp">{item.description}</p>
             {/* <ul className="mt20 like_cm">
               <li>
                 <Link to="/">
