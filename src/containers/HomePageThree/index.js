@@ -217,7 +217,7 @@ const HomePageThree = (props) => {
                   <WidgetFinanceTwo
                     data={getLatedParticularPosts(
                       subCategories.FINANCE,
-                      5,
+                      6,
                       true
                     )}
                     title="Tài chính"
@@ -276,7 +276,7 @@ const HomePageThree = (props) => {
                       <GalleryCarousel
                         galleryPosts={getLatedParticularPosts(
                           subCategories.BOOKS,
-                          4
+                          4,
                         )}
                       />
                       <WidgetTabThree
@@ -310,7 +310,7 @@ const HomePageThree = (props) => {
                       <WidgetOpinionNews
                         opinionPosts={getLatedParticularPosts(
                           subCategories.EXPERTS,
-                          0,
+                          2,
                           true
                         )}
                       />
