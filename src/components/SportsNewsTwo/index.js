@@ -49,7 +49,7 @@ const SportsNewsTwo = (props) => {
                 <img src={list?.[0]?.photo} alt={list[0].caption} />
               </Link>
             </div>
-            <span className="batch3 date">{list?.[0]?.updateAt}</span>
+            {/* <span className="batch3 date">{list?.[0]?.updateAt}</span> */}
           </div>
           <div className="single_post_text py0">
             <h4>

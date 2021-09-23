@@ -1271,6 +1271,9 @@ input:-webkit-autofill:hover {
     /*----------------------------------
         TABLET LAYOUT: 768px
     -----------------------------------*/
+    .dsl-fx{
+        display: flex !important;
+    }
     .sm-mb0 {
         margin-bottom: 0;
     }
@@ -2489,5 +2492,5 @@ WIDTH CSS
 }
 .scroll-land{
     overflow-y: scroll;
-    max-height: 1126px;
+    max-height: 1177px;
 }
