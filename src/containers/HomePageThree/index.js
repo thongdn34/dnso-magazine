@@ -88,9 +88,9 @@ const HomePageThree = (props) => {
   const getPosts = () => {
     props?.getAllPosts();
   };
-
+  
   useEffect(() => {
-    getPosts();
+    getPosts({ _limit: 500 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -98,7 +98,8 @@ const HomePageThree = (props) => {
     if (props.posts.length <= 10) {
       return posts;
     }
-
+    const a = props.posts.filter(post => post.id === 118)
+    console.log('=====a', a)
     return posts.slice(0, 10);
   };
 
